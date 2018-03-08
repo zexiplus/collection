@@ -1,0 +1,235 @@
+### js skill
+
+#####Array
+
+```js
+//合并复制数组
+var a = [{today: '1',lunch: 'food'}]
+var b = [{tomorrow: '2'}]
+var c = [...a,...b]                      
+
+//类数组转化为数组
+const foo = document.querySelectorAll('.foo');
+const nodes = Array.from(foo);
+
+//数组排序
+arr.sort(function(prev, next) {
+  return prev - next
+})
+```
+
+##### Number
+
+```js
+// 固定小数位数
+6.12333.toFixed(2) // return 6.12
+
+// 字符串转数字（'5%' -> 5）
+parseInt(num, 10)
+Number('10%') // return NaN
+```
+
+##### String
+
+```js
+//返回是否包含字符串
+String.prototype.includes(searchString[,position])
+```
+
+##### Function
+
+```js
+// 函数默认值与解构赋值
+function demo({x = 666, y} = {}) {
+  return console.log(console.log(x, y));
+}
+demo({}) == demo() // 666, undefined
+demo({x: 7, y: 8}) // 7, 8
+
+// 传undefined 会触发默认效果， null则不会
+demo({x: undefined, y: 8}) // 666, 8
+demo({x: null, y: 8}) // null, 8
+
+//rest 剩余参数
+function add(...values) {
+  let sum = 0;
+  for (var val of values) { //
+    sum += val;
+  }
+  return sum;
+}
+
+add(2, 5, 3) // 10
+add(...[2, 5, 3]) // 10
+
+// generator 生成器函数
+function* sayHello() {
+  yield 'hello1';
+  yield 'hello2';
+  return 'end'
+}
+var helloGenerator = sayHello();
+helloGenerator.next() // returns {value: 'hello1', done: false};
+helloGenerator.next() // returns {value: 'hello2', done: false};
+helloGenerator.next() // returns {value: 'end', done: true};
+
+//Iterator 迭代器
+var person = {name: 'xiaoxixi', age: 24};
+var iterator = new Iterator(person);
+var arr = [1,2,3];
+iterator.next() // returns ['name', 'xiaoxixi'];
+
+```
+
+
+
+##### new webApi
+
+```js
+/************ js动画 以60hz调用函数得函数 requestAnimationFrame **********/
+requestAnimationFrame(function (timeStack) {
+    // 接受一个函数作为参数，这个函数得参数为一个 date 对象，代表当前函数运行时的时间戳
+})
+somethingAnimation() {
+  el.style.width = `${parseInt(el.style.width, 10) + 1}%`; // 每一帧的操作
+  if(something) { // 根据判断条件调用下一帧动画
+    requestAnimationFrame(somethingAnimation)
+  }
+}
+
+/************* 文件读取构造函数 构造函数  FileReader *************************/
+<input type="file" id="fileUp">
+document.addEventListener(document.querySelector('#fileUp'), 'change', function(e) {
+  var reader = new FileReader();
+  reader.readAsDataURL(e.target.files[0]);
+  reader.onload = function() {
+    someDom.innerHTML = `<img src="${reader.result}" />`
+  }
+})
+
+/********* 对象URL  window.URL.createObjectURL() *******************/
+var objUrl = window.URL.createObjectURL(e.target.files[0]);  //指向一块内存地址
+someDom.innerHTML = `<img src="${objUrl}" />`
+
+/*********** xhr 上传文件 构造函数 FormData ******************/
+var data = new FormData();
+data.append('file',e.target.files[0]);
+xhr.send(data)
+
+/*********** Web Worker 多线程对象 ***********/
+var worker = new Worker('sort.js')
+var arr = [68,66,89,32,18]
+worder.onmessage = function(event) {
+  var data = event.data;
+  console.log('sorted array is', data)
+}
+worker.postMessage(arr)
+
+// sort.js 文件
+self.onmessage = function(event) {
+  var data = event.data;
+  data.sort(function(a, b) {
+    return a - b
+  })
+  self.postMessage(data)
+}
+```
+
+##### 4.es-lint
+
+```js
+//去除es-lint警告
+/* eslint no-param-reassign: 0 */
+
+// 去除下一行 警告
+// eslint-disable-next-line
+```
+
+##### 5.module
+
+```js
+/* 同一个js文件可以同时export {} 和 export default {}，但不建议
+  如果模块只有一个输出值，就使用export default，如果模块有多个输出值，就使用export，export default与   普通的export不要同时使用
+  如果模块默认输出一个函数，函数名的首字母应该小写。
+  如果模块默认输出一个对象，对象名的首字母应该大写。
+*/
+
+// commonJs模块加载
+let { stat, exists, readFile } = require('fs');
+// 等同于
+let _fs = require('fs');
+let stat = _fs.stat;
+let exists = _fs.exists;
+let readfile = _fs.readfile;
+
+//上面代码的实质是整体加载fs模块（即加载fs的所有方法），生成一个对象（_fs），然后再从这个对象上面读取 3 个方法，这种加载称为“运行时加载”，导致完全没办法在编译时做“静态优化”
+
+//es6模块加载
+import { stat, exists, readFile } from 'fs';
+//上面代码的实质是从fs模块加载 3 个方法，其他方法不加载
+
+//需要特别注意的是，export命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系。
+
+// 报错
+export 1;
+
+// 报错
+var m = 1;
+export m;
+// 报错
+function f() {}
+export f;
+
+// 正确
+export function f() {};
+
+// 正确
+function f() {}
+export {f};
+
+// 写法一
+export var m = 1;
+
+// 写法二
+var m = 1;
+export {m};
+
+// 写法三
+var n = 1;
+export {n as m};
+
+// 另外，export语句输出的接口，与其对应的值是动态绑定关系，即通过该接口，可以取到模块内部实时的值。
+//import命令输入的变量都是只读的，因为它的本质是输入接口。也就是说，不允许在加载模块的脚本里面，改写接口。
+import {a} from './xxx.js'
+a = {}; // Syntax Error : 'a' is read-only;
+
+//import命令具有提升效果，会提升到整个模块的头部，首先执行
+foo();
+import { foo } from 'my_module';
+```
+
+##### 6.注释规范
+
+```js
+	函数（sublime快捷键 /** + 回车）
+	/**
+    * 数据格式化
+    * @param src {Array}        长度自由的一维数组，子元素为json对象
+    * @param data {Object}      参考数据
+    * @ignore created           2013-10-11
+    * @return result {Array}    返回格式化后与src类型相同的数组
+    */
+```
+
+##### 7.promise
+
+```js
+// 手动将promise转化为失败态 reject()
+Promise.reject("Testing static reject").then(function(reason) {
+  // 未被调用
+}, function(reason) {
+  console.log(reason); // "测试静态拒绝"
+});
+
+```
+

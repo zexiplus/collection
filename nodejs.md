@@ -1,0 +1,168 @@
+## node knowladge points
+
+### require
+
+```js
+require过的文件会加载到缓存，所以多次 require 同一个文件（模块）不会重复加载
+( a->b,b->a)循环引用并不会报错，导致的结果是 require 的结果是空对象 {}，原因是 b require 了 a，a 又去 require 了 b，此时 b 还没初始化好，所以只能拿到初始值 {}
+```
+
+### module.exports
+
+```js
+	module.exports 初始值为一个空对象 {}
+	exports 是指向的 module.exports 的引用
+	require() 返回的是 module.exports 而不是 exports
+```
+
+
+
+### 异步流程控制
+
+```js
+var fs = require('fs')
+var Promise = require('bluebird')  //第三方promise模块，兼容
+global.Promise = Promise           //全局promise
+
+function readFile(filename) {
+  return new Promise((resolve,reject) => {
+     fs.readFile(filename,(err,file) => {
+       if(err) {
+          reject(err)
+       }      
+       else resolve(file)
+     })
+  })
+}
+readFile('./one.js').then(data => {  //调用
+  	console.log(data)
+})
+
+//自己写的把普通函数转换为promise函数的函数
+Function.prototype.convertPromise = function() {
+  var fn = this
+  return function() {
+      var args = [].slice.call(arguments,0)
+      return new Promise((resolve,reject) => {
+          args.push(function(err,file) {
+            if(err) {
+              reject(err)
+            }
+            else {
+              resolve(file)
+            }
+          })
+    	  fn.apply(null,args)
+      })
+  }
+}
+
+var readFile2 = fs.readFile.convertPromise()
+readFile2('./one.js').then(data => {
+  	console.log(data)
+})
+
+```
+
+### gotcha
+
+```javascript
+process.argv                 //[node路径，js文件路径，命令行参数]
+process.env                  //{系统环境对象}  
+
+//设置环境变量  
+windows => set NODE_ENV=test node test.js  
+linux => NODE_ENV=test node test.js
+跨平台 => npm i cross-env -g             cross-env NODE_ENV=test node test.js
+
+//查看npm 配置 (全局node_modules路径位置之类)
+npm config list 
+
+//设置npm配置npm install 全局安装路径
+npm config set prefix /usr/local/node_modules
+
+//检查node代码
+node inspect myscript.js
+
+
+```
+
+### 常用库
+
+```js
+var open = require('open')            //自动打开浏览器函数
+open('http://localhost:8080')
+
+var path = require('path')            //内置路径处理模块
+path.join(__dirname,'www/')           //return 'currPath/www'
+path.resolve('/usr','./local','bin')   //把路径解析为绝对路径的函数
+
+npm i -g supervisor
+supervisor index.js          //代替node index.js   启动服务器，并在每次修改之后自动重启
+
+
+
+```
+
+
+
+### http
+
+```js
+var http = require('http')
+//最基本服务器
+http.createServer((req,res) => {
+  if(req.url == '/hello') {
+    res.end('hello')
+  }
+  if(req.url == '/world') {
+    res.end('world')
+  }
+}).listen(6666)
+
+```
+
+### connect
+
+```js
+var connect = require('connect')
+var http = require('http')
+var app = connect()
+app.use((req,res,next)=> {
+  res.send('middleware')
+  next()          // 全局中间件要执行next才能执行其它中间件
+})
+app.use('/hello'(req,res) => {   
+  res.end('hello')
+})
+http.createServer(app).listen(555)
+```
+
+
+
+### express
+
+```js
+var express = require('express')
+var path = require('path')
+var app     = express()
+app.use(express.static(path.join(__dirname,'www/')))
+app.use((req,res,next) => {
+  
+})
+app.get('/',(req,res) => {
+  res.end('hello')
+})
+app.get('/',fn1,fn2,fn3) //挂载多个中间件函数
+app.listen(3000)
+
+//express router
+var users = express.Router()
+users.get('/',fn)
+users.get('/home',fn)
+router.get('/:name', function (req, res) {     //自定义路径
+  res.send('hello, ' + req.params.name)
+})
+app.use(users)
+```
+
