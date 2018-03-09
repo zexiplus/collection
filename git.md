@@ -51,8 +51,8 @@ git stash pop 	       //从Git栈中读取最近一次保存的内容，恢复�
 
 git config -e         //更改仓库地址信息,之后添加
 [user]
-        name = nieqc
-        email = nieqc@ipanel.cn
+        name = shizx	
+        email = shizx@ipanel.cn
 可以使git正确追踪commit
 
 ```

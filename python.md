@@ -28,4 +28,10 @@
 
 11. 列表解析 a = [value ** 2 for value in range(1,5)] #returns [1,4,9,16]
 
+12. 列表切片   list = [1,2,3,4]    list[0:3] #returns [1,2,3], list[:2] #returns [1,2]  , list[-3:0]  #returns [2,3,4]
+
+13. 元组  不可改变的列表，dimensions = (1,2,3,4)
+
+14. 条件判断 关键字  and (与)， or( 或) ，(in) 存在，(not in) 不存在
+
     ​

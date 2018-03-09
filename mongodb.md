@@ -4,7 +4,11 @@ mongod //启动mongo服务器
 mongod --dbpath d:\data\db  //指定目录启动mongo服务器
 ```
 
+## mongo 配置文件
 
+```shell
+/etc/mongodb.conf
+```
 
 ## mongoose 连接
 
