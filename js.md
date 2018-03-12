@@ -1,4 +1,4 @@
-### js skill
+### javascript
 
 #####Array
 
