@@ -1,14 +1,16 @@
 ## vue record
 
-#### vue 项目架构
-
-
-
 #### vue
 
 ```js
 /* ---------------异步引入模块 ------------ */
+// 写法一
 const component = () => import('componentName')  
+
+// 写法二
+const component = resolve => require(['componentName'],resolve)
+
+
 
 /* --------------header 高度为100,动态设置main容器高度 --------- */
 export default {
@@ -22,15 +24,59 @@ export default {
   },
 }
 
+
+
 /* --------------------返回当前route路径 ------------------ */
 computed() { 
   return this.$route.path
 }
 
-/* ------axios 全局拦截器   处理通用请求处理方法（类似connect中间件）----- */
-//创建ajax实例
-var ajax = axios.create();
 
+
+/* ----------单独引用element 组件使用方法------- */
+import { MessageBox } from 'element-ui'
+//单独调用
+MessageBox.alert(msg,title,{type:'error'});
+//挂载后调用
+this.$alert(msg,title,{type:'error'});
+
+
+
+/* ---------------------------------样式绑定--------------------- */
+:class="{'number-board': true}"
+
+
+
+/* --------------------------------注册指令-------------------- */
+//全局注册
+Vue.directive(‘directiveName’,{
+  	bind: function (el,binding) {
+    	//binding.value 指绑定的值
+  	},
+  	inserted: function () {},
+  	update: function () {},
+  	componentUpdated: function () {},
+ 	unbind: function () {}
+
+});
+//组建内注册
+export default {
+  directives: {
+    directiveName: {
+      bind() {} .....//一系列钩子函数
+    }
+  }
+}
+
+/*---------------动态组建 (可用于一个页面有多个弹窗)----------------------*/
+v-bind:is=”componentName”
+<component :is=”currentView”></component>
+
+```
+
+#### axios
+
+```js
 //挂载请求拦截器
 var ajax = axios.interceptors.request.use(function (config) {
     // 对请求进行设置（格式。。。）返回config
@@ -47,7 +93,7 @@ var ajax = axios.interceptors.request.use(function (config) {
 //取消拦截器
 axios.interceptors.request.eject(interceptor)
 
-/* --------- 相应拦截器，可处理失败响应等等 ----- */
+/* ------------------- 相应拦截器，可处理失败响应等等 --------------------- */
 axios.interceptors.response.use(function (response) {
     //根据响应状态吗判断
   	if (response.status !== 200) {
@@ -66,16 +112,10 @@ axios.interceptors.response.use(function (response) {
     return Promise.reject(error);
 });
 
-/* ----------单独引用element 组件使用方法------- */
-import { MessageBox } from 'element-ui'
-//单独调用
-MessageBox.alert(msg,title,{type:'error'});
-//挂载后调用
-this.$alert(msg,title,{type:'error'});
 
-/* -----------样式绑定----------------- */
-:class="{'number-board': true}"
 ```
+
+
 
 #### vuex
 

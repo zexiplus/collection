@@ -16,6 +16,13 @@ const nodes = Array.from(foo);
 arr.sort(function(prev, next) {
   return prev - next
 })
+
+// 数组去重
+[…new Set(arr)]				//es6 Set 不允许有重复值
+Array.from(new Set(arr))  
+双重循环
+先排序，再循环
+
 ```
 
 ##### Number

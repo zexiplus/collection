@@ -2,12 +2,28 @@
 ```shell
 mongod //启动mongo服务器
 mongod --dbpath d:\data\db  //指定目录启动mongo服务器
+
+sudo mongod         //启用mongo服务器              端口      27017
+
+sudo mongod --rest    //启用web界面的mongo服务器   界面端口  28017
+
+mongo               //启用mongo客户端
+
+mongo cli 命令
+
+show dbs          //显示所有数据库
+
+db                //代表当前数据库
+
+use dbName       //切换数据库
+
 ```
 
 ## mongo 配置文件
 
 ```shell
 /etc/mongodb.conf
+# 数据库路径 /data/db
 ```
 
 ## mongoose 连接

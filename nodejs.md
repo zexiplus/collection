@@ -166,3 +166,34 @@ router.get('/:name', function (req, res) {     //自定义路径
 app.use(users)
 ```
 
+### path
+
+```js
+path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');// Returns: '/foo/bar/baz/asdf'
+
+path.parse('C:\\path\\dir\\file.txt');// Returns:// { root: 'C:\\',//   dir: 'C:\\path\\dir',//   base: 'file.txt',//   ext: '.txt',//   name: 'file' }
+┌─────────────────────┬────────────┐
+│          dir        │    base    │
+├──────┬              ├──────┬─────┤
+│ root │              │ name │ ext │"  /    home/user/dir / file  .txt "
+└──────┴──────────────┴──────┴─────┘
+The path.resolve() method resolves a sequence of paths or path segments into an absolute path.
+path.resolve('/foo/bar', './baz');// Returns: '/foo/bar/baz'
+
+path.resolve('/foo/bar', '/tmp/file/');// Returns: '/tmp/file'
+
+path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');// if the current working directory is /home/myself/node,// this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
+
+```
+
+### process
+
+```js
+process.env           // 环境变量   系统上得键值对对象
+DEBUG=1 node one.js   // process.env.DEBUG == 1
+
+process.argv          // 运行node时指定得参数[node路径，文件路径，指定参数]
+node one.js hello world // process.argv = [‘/usr/bin/node’,/home/code/one.js’,’hello’,’world’]
+
+```
+

@@ -60,37 +60,22 @@ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
 
 
 
-windows 环境变量设置
+**windows 环境变量设置**
 set    //显示全部环境变量
 set Path=...  //设置环境变量path
 
-linux 显示环境变量
+
+
+**linux 显示环境变量**
 env
 
 
 
-mongodb 使用
-mongodb默认配置项  /etc/mongodb.conf
-数据库路径  /data/db
-sudo mongod         //启用mongo服务器              端口      27017
-sudo mongod --rest    //启用web界面的mongo服务器   界面端口  28017
-mongo               //启用mongo客户端
-mongo cli 命令
-show dbs          //显示所有数据库
-db                //代表当前数据库
-use dbName       //切换数据库
-
-查看端口占用情况
+**查看端口占用情况**
 netstat
 
 
 
+**此项目采用wiringPi引脚定义，图例如下**
 
-
-
-
-
-
-
-
-此项目采用wiringPi引脚定义
+![pinDefine](.\imgs\pinDefine.png)

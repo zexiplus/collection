@@ -1,7 +1,7 @@
 ##### 改变文件/文件夹所有者
 
 ```shell
-chown -R pi:pi Software    //把software文件夹拥有者改为pi
+chown -R pi:pi Software    #把software文件夹拥有者改为pi
 ```
 
 ##### 显示当前路径
@@ -10,12 +10,24 @@ chown -R pi:pi Software    //把software文件夹拥有者改为pi
 pwd
 ```
 
-
-
 ##### 创建软连接
 
 ```shell
 ln -s /usr/node/bin/node /usr/local/bin/node
+```
+
+##### 显示命令细节指示
+
+```shell
+man ls, man sudo
+```
+
+##### 新建并执行shell文件
+
+```shell
+touch demo.sh
+chmod +x demo.sh
+./demo.sh           #执行
 ```
 
 
