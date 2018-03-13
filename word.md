@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-   ​
+  ​
 
 101. **logarithmic 对数的**
 
@@ -461,15 +461,17 @@
 
 203. **cluster 簇**
 
-204. strip 剥夺
+204. **strip 剥夺**
 
-205. Zen 禅
+205. **Zen 禅**
 
-206. dense 稠密
+206. **dense 稠密**
 
-207. purity 纯度 ， 纯净
+207. **purity 纯度 ， 纯净**
 
-208. practicality 实际性
+208. **practicality 实际性**
 
-209. ambiguity 歧义
+209. **ambiguity 歧义**
+
+210. Indeterminate 不定的
 
