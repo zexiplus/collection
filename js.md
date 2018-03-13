@@ -1,6 +1,6 @@
-### javascript
+ ### javascript
 
-#####Array
+##### Array
 
 ```js
 //合并复制数组
