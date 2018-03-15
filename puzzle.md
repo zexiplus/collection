@@ -32,3 +32,9 @@ sortArr() {
 // 静态环境（node http-server服务器和apache服务器均可）  无论是<script>标签还是mounted均存在
 ```
 
+npm install 时 报错, 解决：删除package-lock.json继续下载
+
+```js
+Unexpected token < in JSON at position 25997
+```
+
