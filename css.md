@@ -8,6 +8,9 @@ word-wrap: break-word;
 div:last-child{}
 div:first-child{}
 
+//第n个p元素
+p:nth-child(n)
+
 //缩放元素
 transform: scale(0.6);
 
