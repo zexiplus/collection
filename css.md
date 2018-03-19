@@ -23,7 +23,14 @@ transform: scale(0.6);
 6.	::-webkit-scrollbar-corner 边角
 7.	::-webkit-resizer 定义右下角拖动块的样式
 
+// 计算样式
+width: calc(~"100% - 40px");
 
+// :before , :after 伪类
+.redStar:before {
+  content: '*';
+  color: red;
+}
 ```
 
 #### css实现长宽比例一致

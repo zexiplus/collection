@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-   ​
+  ​
 
 101. **logarithmic 对数的**
 
@@ -473,9 +473,9 @@
 
 209. **ambiguity 歧义**
 
-210. Indeterminate 不定的
+210. **Indeterminate 不定的**
 
      ​
 
-211. attachment 附件
+211. **attachment 附件**
 
