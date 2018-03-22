@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-  ​
+   ​
 
 101. **logarithmic 对数的**
 
@@ -478,4 +478,6 @@
      ​
 
 211. **attachment 附件**
+
+212. **duplicate 重复的**
 
