@@ -1,7 +1,7 @@
 ## git command
 
 ```shell
-ssh-keygen -t rsa -C 'zexiplus@outlook.com'   //新建ssh
+ssh-keygen -t rsa -C 'zexiplus@outlook.com'   //新建ssh key....
 
 git remote add origin git@github.com:zexiplus/oo.git         //新增远程仓库地址
 
