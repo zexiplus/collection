@@ -33,9 +33,50 @@
 
     ​
 
-13. 生成数字列表 **list(range(1,5))**,  # returns [1,2,3,4],**指定步长list(range(5,10,2))**,# returns [5,7,9]
+13. 生成数字列表 **list(range(1,5))**,  # returns [1,2,3,4],**指定步长 list(range(5,10,2))**,# returns [5,7,9]
 
 14. 列表统计计算 list = [1,2,3]   **min(list)** # returns 1,**max(list)** #returns 3,**sum(list)** #returns 6
 
-15. 列表解析 a = [**value \** 2** for value in range(1,5)] #returns [1,4,9,16]
+15. **列表解析** a = [**value \** 2** for value in range(1,5)] #returns [1,4,9,16]
+
+16. 列表**切片** list = [1,2,3,4,5]     **list[1:3]**    # returns [2,3],  **list[:3]**   # returns [1:2,3], **list[1:]** # returns [2,3,4,5] 
+
+17. **复制**列表   list2 = list[:]
+
+18. 定义**元祖**（不可改变其中元素的列表）  dimensions = **(1,2,3,4,5)**
+
+19.  **条件判断**   **与**  **and** ,  **或**  **or** , **存在于** **in** , 例如： 1 in  (1,2,3)  # returns True，**不包含 not in**
+
+20. **if语句**  if condition_test:
+
+21. if []:   不会执行，空数组的布尔值等于false
+
+22. **字典定义**  alien = {'color': 'red', num: 5},  **访问值**  alien['color'] # returns 'red' ,  **删除键值** del alien['red']
+
+23.字典遍历
+```python
+# 遍历键值
+for key,value in alien.items():
+    print(key+':'+value)
+    
+# 遍历键
+for key in alien.keys():
+    print(key)
+    
+# 遍历值
+for val in alien.values():
+    print(val)
+    
+# 顺序遍历键
+for key in sorted(alien.keys()):
+    print(key)
+
+# 遍历不重复的集合
+for key in set(alien.values()):
+    print(key)
+    
+
+```
+
+24. ​
 

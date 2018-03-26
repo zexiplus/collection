@@ -1,8 +1,22 @@
 ## css
 
 ```css
-//文字强制换行
-word-wrap: break-word;
+// 单行超出显示省略号：
+White-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+
+// 多行文本超出显示省略号
+
+display:-webkit-box;
+-webkit-line-cap:3;
+-webkit-box-orient: vertical;
+overflow:hidden;
+text-overflow:ellipsis;
+
+// 只允许在空格处换行
+word-wrap:break-word;
+
 
 //设置起始，结束位置元素样式
 div:last-child{}
@@ -33,7 +47,7 @@ width: calc(~"100% - 40px");
 }
 ```
 
-#### css实现长宽比例一致
+#### css实现长宽比例一致div容器
 
 ```html
 <div class=”container”>

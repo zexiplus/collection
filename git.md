@@ -103,6 +103,14 @@ git reset –hard HEAD^
 
 git push -f
 
+------
+
+**other.**只恢复某个文件到指定版本
+
+```
+git checkout ${commit} /path/to/file
+```
+
 
 
 ## npm command 

@@ -76,6 +76,12 @@ netstat
 
 
 
+#### 我的树莓派设置
+
+vnc 密码 12341234
+
+
+
 **此项目采用wiringPi引脚定义，图例如下**
 
 ![pinDefine](.\imgs\pinDefine.png)

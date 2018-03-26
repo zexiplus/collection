@@ -1,5 +1,17 @@
  ### javascript
 
+##### skill
+
+```js
+// 求值表达式 （0, val）
+let obj = {a: 1, b: function() {console.log(this.a)}}
+obj.b() // returns 1
+(0, obj.b)() // returns undefined
+(obj.b)() // returns 1
+```
+
+
+
 ##### Array
 
 ```js
