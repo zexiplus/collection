@@ -53,7 +53,7 @@
 
 22. **字典定义**  alien = {'color': 'red', num: 5},  **访问值**  alien['color'] # returns 'red' ,  **删除键值** del alien['red']
 
-23.字典遍历
+23.**字典遍历**
 ```python
 # 遍历键值
 for key,value in alien.items():
@@ -78,5 +78,54 @@ for key in set(alien.values()):
 
 ```
 
-24. ​
+24. **input()用户输入**  message = input('give some tips')  ， 输入的文字被视为字符串，格式化为数字   message=int(message)
+
+25. **函数**
+
+    ```python
+    # 定义函数
+    def fn():
+        """此处为文档字符串，描述函数功能，以三个引号起始"""
+        print('hello word')
+        
+    # 默认值函数
+    def fn(a=1, b=2):
+        print(a,b)
+        
+    # 传递任意数量的参数, *会创建一个args 的空元组，然后依次入参
+    def fn(*args):
+    	print(args)
+    fn(1,2,3,4) # returns (1,2,3,4)
+
+    # 传递任意数量的关键字形参 ，** 会创建一个空字典，并将收到的键值对装进这个空字典
+    def fn(**dir):
+        for key,val in dir:
+            print(key,val)
+    fn(a = 1, b = 2 )  # returns {'a': 1, 'b': 2}
+
+    ```
+
+26. **模块**
+
+    ```python
+    # 整体导入
+    import module_name 
+    # 调用模块的函数
+    module_name.fn()
+
+    # 导入特定的函数
+    from module_name import fn
+    fn()
+
+    # as 给导入的函数起别名
+    from module_name import function_name as fn
+
+    # as 给导入的模块取别名
+    import module_name as mn
+
+    # 导入模块中的所有函数 , 引入之后元模块中所有的变量都可以直接使用
+    from module_name import *
+    ```
+
+    ​
 

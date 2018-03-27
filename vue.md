@@ -74,6 +74,20 @@ v-bind:is=”componentName”
 
 ```
 
+#### Vue 选项
+
+```js
+// watch 深度观察, *注: 观察数组时不需要deep，但是arr[1] = 1,赋值操作不会触发观察,方法操作才会触发例如arr.splice(0, 1, 1)
+watch: {
+  c: {
+      handler: function (val, oldVal) { /* ... */ },
+      deep: true
+    }
+}
+```
+
+
+
 #### axios
 
 ```js
