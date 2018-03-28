@@ -1,52 +1,40 @@
 ## vue record
 
-#### vue
+**vue cli**
 
 ```js
-/* ---------------异步引入模块 ------------ */
-// 写法一
-const component = () => import('componentName')  
+vue list // 列出所有可用脚手架
+vue init webpack demo // 创建以webpack为脚手架名为demo的项目
+```
 
-// 写法二
-const component = resolve => require(['componentName'],resolve)
+**vue 入口文件属性**
 
-
-
-/* --------------header 高度为100,动态设置main容器高度 --------- */
-export default {
-  data() {
-    return { mainHeight: 0 }
-  },
-  created() {
-    window.addEventListener('resize', () => {
-      this.mainHeight = window.innerHeight - 100;         
-    })
-  },
-}
+```js
+/* ----------- main.js  ------------------ */
+import App from './App'
+new Vue({
+  el: '#app',
+  router,
+  store,
+  components: { App },
+  template: '<App/>'
+})
 
 
-
-/* --------------------返回当前route路径 ------------------ */
-computed() { 
-  return this.$route.path
-}
-
-
-
-/* ----------单独引用element 组件使用方法------- */
-import { MessageBox } from 'element-ui'
-//单独调用
-MessageBox.alert(msg,title,{type:'error'});
-//挂载后调用
-this.$alert(msg,title,{type:'error'});
+// 与上面写法等效 (使用render函数)
+new Vue({
+  el: '#app',
+  router,
+  store,
+  render: h => h(App)
+})
 
 
+```
 
-/* ---------------------------------样式绑定--------------------- */
-:class="{'number-board': true}"
+**vue 指令**
 
-
-
+```js
 /* --------------------------------注册指令-------------------- */
 //全局注册
 Vue.directive(‘directiveName’,{
@@ -68,13 +56,54 @@ export default {
   }
 }
 
-/*---------------动态组建 (可用于一个页面有多个弹窗)----------------------*/
-v-bind:is=”componentName”
-<component :is=”currentView”></component>
+```
+
+
+
+**vue 样式**
+
+```html
+<!-- 样式引入-->
+<style lang="less" scoped>
+	@import './demo.less'
+</style>
+
+<div :class="{classOne: true, classTwo: true}"
+     :style="{color: 'red', fontSize: '12px', 'background-color': 'red'}">
+</div>
 
 ```
 
-#### Vue 选项
+```js
+/* --------------header 高度为100,动态设置main容器高度 --------- */
+export default {
+  data() {
+    return { mainHeight: 0 }
+  },
+  created() {
+    window.addEventListener('resize', () => {
+      this.mainHeight = window.innerHeight - 100;         
+    })
+  },
+}
+```
+
+**vue 异步组件**
+
+```js
+/* ---------------异步引入模块 ------------ */
+// 写法一
+const component = () => import('componentName')  
+
+// 写法二
+const component = resolve => require(['componentName'],resolve)
+```
+
+
+
+
+
+**Vue 选项**
 
 ```js
 // watch 深度观察, *注: 观察数组时不需要deep，但是arr[1] = 1,赋值操作不会触发观察,方法操作才会触发例如arr.splice(0, 1, 1)
@@ -86,9 +115,7 @@ watch: {
 }
 ```
 
-
-
-#### axios
+**axios**
 
 ```js
 //挂载请求拦截器
@@ -129,9 +156,7 @@ axios.interceptors.response.use(function (response) {
 
 ```
 
-
-
-#### vuex
+**vuex**
 
 ```js
 // store.js
@@ -145,5 +170,27 @@ export default new Vuex.Store({
   strict: debug,   //设置运行模式
   plugin: debug ? [createLogger()] : [],   // 开发模式加入日志插件
 }) 
+```
+
+**vue 其它**
+
+```js
+/* --------------------返回当前route路径 ------------------ */
+computed() { 
+  return this.$route.path
+}
+
+
+/* ----------单独引用element 组件使用方法------- */
+import { MessageBox } from 'element-ui'
+//单独调用
+MessageBox.alert(msg,title,{type:'error'});
+//挂载后调用
+this.$alert(msg,title,{type:'error'});
+
+
+/*---------------动态组建 (可用于一个页面有多个弹窗)----------------------*/
+v-bind:is=”componentName”
+<component :is=”currentView”></component>
 ```
 

@@ -12,7 +12,7 @@ obj.b() // returns 1
 
 
 
-##### Array
+##### Array 
 
 ```js
 //合并复制数组
@@ -20,7 +20,7 @@ var a = [{today: '1',lunch: 'food'}]
 var b = [{tomorrow: '2'}]
 var c = [...a,...b]                      
 
-//类数组转化为数组
+//类数组转化为数组 Array.from 方法
 const foo = document.querySelectorAll('.foo');
 const nodes = Array.from(foo);
 
@@ -35,7 +35,52 @@ Array.from(new Set(arr))
 双重循环
 先排序，再循环
 
+// 数组的解构赋值
+let [a, b, c] = [1, 2, 3]
+a // 1
+b // 2
+c // 3
+
+// iterator 接口解构赋值
+function* itera() {
+  let a = 0,
+      b = 1;
+  while (a < 1000) {
+    yield a;
+    [a, b] = [b, a + b];
+  }
+}
+let [a, b, c, d, e, f] = itera();
+
+// 交换变量值
+let x = 1,
+    y = 2;
+[x, y] = [y, x]
 ```
+
+##### Object
+
+```js
+// 对象解构赋值
+let {a, b, c} = {a: 1, b: 2, c: 3}
+a // 1
+
+// 对象结构并重命名
+let {a: animal} = {a: 1, b: 2, c: 3}
+animal // 1
+
+// 函数参数默认值
+let ajax = function(url, option = { crossDomain : false, transformJson : true}) {
+  console.log(option.crossDomain,option.transformJson)
+}
+let ajax2 = function(url, { crossDomain = false, transformJson = true}) {
+  console.log(crossDomain, transformJson)
+}
+
+
+```
+
+
 
 ##### Number
 

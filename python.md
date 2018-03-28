@@ -125,7 +125,42 @@ for key in set(alien.values()):
 
     # 导入模块中的所有函数 , 引入之后元模块中所有的变量都可以直接使用
     from module_name import *
+
     ```
 
-    ​
+27. **类**
+
+    ```python
+    # 创建类
+    class Dog():
+        """模拟小狗"""
+        def __init__(self, name, age):
+            """初始化函数,每次实例化时会自动调用"""
+            self.name = name,
+            self.age = age
+        def jump(self):
+            """模拟小狗跳"""
+            print('dog' + self.name + 'is jumping')
+
+    # 实例化
+    haski = Dog('haski', 2)
+
+    # 继承类
+    class Parent():
+        """我是父类"""
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+            
+        def some_fn(self):
+            print('i am ' + self.name):
+
+    class Sub(Parent):
+        def __init__(self, name, age):
+            self.name = name
+            self.age
+    ```
+
+28. ​
+
 
