@@ -58,8 +58,6 @@ export default {
 
 ```
 
-
-
 **vue 样式**
 
 ```html
@@ -76,13 +74,21 @@ export default {
 
 ```js
 /* --------------header 高度为100,动态设置main容器高度 --------- */
+let timer;
 export default {
   data() {
     return { mainHeight: 0 }
   },
   created() {
     window.addEventListener('resize', () => {
-      this.mainHeight = window.innerHeight - 100;         
+      if (timer) {
+        cleartTimeout(timer)
+      }
+      else {
+        timer = setTimeout(() => {
+       		this.mainHeight = window.innerHeight - 100;   
+        })
+      }
     })
   },
 }
@@ -97,6 +103,38 @@ const component = () => import('componentName')
 
 // 写法二
 const component = resolve => require(['componentName'],resolve)
+```
+
+**vue 渲染组建**
+
+```html
+<custom-component>
+  <p slot="header">
+    这里是头部内容
+  </p>
+  <p>
+    这里是默认slot内容
+  </p>
+  <p slot="footer">
+    这里是底部内容
+  </p>
+</custom-component>
+```
+
+```js
+// render 函数
+Vue.component('customComponent', {
+  render(h) {
+    let hearder = this.$slot.header;
+    let main = this.$slot.default;
+    let footer = this.$slot.footer;
+    return h('div', [
+      h('header', header),
+      h('main', main),
+      h('footer', footer),
+    ])
+  }
+})
 ```
 
 

@@ -18,11 +18,13 @@
 
 9. 语句末尾**无**分号，注释用 **#**
 
-10. ​ 排序 **list.sort(reverse=True)** #按字母反向排序 , 临时排序  **list2 = list.sorted()**.
+10. 去除字符串右边空格（空行/换行符等） str.rstrip(), 去除左边空格 str.strip()
 
-11. 长度  **len(list)**
+11. ​ 排序 **list.sort(reverse=True)** #按字母反向排序 , 临时排序  **list2 = list.sorted()**.
 
-12. **for** 循环  for 语句以：结尾， 下一行有缩进
+12. 长度  **len(list)**
+
+13. **for** 循环  for 语句以：结尾， 下一行有缩进
 
     ```python
     dogs = [‘harmi’, ‘lucy’, ‘catty’]
@@ -33,25 +35,27 @@
 
     ​
 
-13. 生成数字列表 **list(range(1,5))**,  # returns [1,2,3,4],**指定步长 list(range(5,10,2))**,# returns [5,7,9]
+14. 生成数字列表 **list(range(1,5))**,  # returns [1,2,3,4],**指定步长 list(range(5,10,2))**,# returns [5,7,9]
 
-14. 列表统计计算 list = [1,2,3]   **min(list)** # returns 1,**max(list)** #returns 3,**sum(list)** #returns 6
+15. 列表统计计算 list = [1,2,3]   **min(list)** # returns 1,**max(list)** #returns 3,**sum(list)** #returns 6
 
-15. **列表解析** a = [**value \** 2** for value in range(1,5)] #returns [1,4,9,16]
+16. **列表解析** a = [**value \** 2** for value in range(1,5)] #returns [1,4,9,16]
 
-16. 列表**切片** list = [1,2,3,4,5]     **list[1:3]**    # returns [2,3],  **list[:3]**   # returns [1:2,3], **list[1:]** # returns [2,3,4,5] 
+17. 列表**切片** list = [1,2,3,4,5]     **list[1:3]**    # returns [2,3],  **list[:3]**   # returns [1:2,3], **list[1:]** # returns [2,3,4,5] 
 
-17. **复制**列表   list2 = list[:]
+18. **复制**列表   list2 = list[:]
 
-18. 定义**元祖**（不可改变其中元素的列表）  dimensions = **(1,2,3,4,5)**
+19. 定义**元祖**（不可改变其中元素的列表）  dimensions = **(1,2,3,4,5)**
 
-19.  **条件判断**   **与**  **and** ,  **或**  **or** , **存在于** **in** , 例如： 1 in  (1,2,3)  # returns True，**不包含 not in**
+20.  **条件判断**   **与**  **and** ,  **或**  **or** , **存在于** **in** , 例如： 1 in  (1,2,3)  # returns True，**不包含 not in**
 
-20. **if语句**  if condition_test:
+21.  **等于 == ,大于等于 >= ,取非 not** 
 
-21. if []:   不会执行，空数组的布尔值等于false
+22. **if语句**  if condition_test:
 
-22. **字典定义**  alien = {'color': 'red', num: 5},  **访问值**  alien['color'] # returns 'red' ,  **删除键值** del alien['red']
+23. if []:   不会执行，空数组的布尔值等于false
+
+24. **字典定义**  alien = {'color': 'red', num: 5},  **访问值**  alien['color'] # returns 'red' ,  **删除键值** del alien['red']
 
 23.**字典遍历**
 ```python
@@ -158,9 +162,46 @@ for key in set(alien.values()):
     class Sub(Parent):
         def __init__(self, name, age):
             self.name = name
-            self.age
+            self.age = age
     ```
 
-28. ​
+28. **读写文件**
+
+    ```python
+    # 打开文件读取
+    with open('some.txt') as file:
+        contents = file.read()
+        print(contents)
+
+    # 逐行读取
+    with open('some.txt') as file:
+        for line in file:
+            print(line)
+            
+    # 读取文件赋值给列表
+    with open(some.txt) as file:
+        lines = file.readLines()
+    for line in lines:
+        print(line.strip())
+
+    # 打开文件模式 , 第二个参数 mode 为 a追加, w写入, r读取(默认), r+读写 
+    open('some.txt', 'w')
+
+    # 使用json存储数据 json.dump(data, json_obj)
+    import json
+    numbers = [1,2,3,4,5]
+    with open('temp.json', 'w') as json_obj:
+        json.dump(numbers, json_obj)
+        
+    # 读取json文件
+    import json
+    with open('temp.json', 'r') as json_obj:
+        number = json.load(json_obj)
+    print(number)
+
+       
+    ```
+
+    ​
 
 
