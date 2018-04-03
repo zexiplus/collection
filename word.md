@@ -489,3 +489,11 @@
 
 216. **spec 规范**
 
+217. **quantity 数量**
+
+218. **reproduction 复制**
+
+219. **proposal 提议**
+
+220. **inventory 库存**
+

@@ -105,7 +105,7 @@ const component = () => import('componentName')
 const component = resolve => require(['componentName'],resolve)
 ```
 
-**vue 渲染组建**
+**vue 渲染组建（createElement函数）**
 
 ```html
 <custom-component>
@@ -137,7 +137,11 @@ Vue.component('customComponent', {
 })
 ```
 
+**vue 渲染组建（jsx）**
 
+```js
+
+```
 
 
 
@@ -194,21 +198,7 @@ axios.interceptors.response.use(function (response) {
 
 ```
 
-**vuex**
 
-```js
-// store.js
-import Vue form 'vue'
-import Vuex form 'vuex'
-
-const debug = process.env.NODE_ENV !== 'production'
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  strict: debug,   //设置运行模式
-  plugin: debug ? [createLogger()] : [],   // 开发模式加入日志插件
-}) 
-```
 
 **vue 其它**
 

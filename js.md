@@ -24,6 +24,15 @@ var c = [...a,...b]
 const foo = document.querySelectorAll('.foo');
 const nodes = Array.from(foo);
 
+// Array.of 将一组值转换为数组
+Array.of(1,2,3) // [1,2,3]
+Array.of(3) // [3]
+Array(1,2,3) // [1,2,3]
+Array(3) // [,,,] 
+
+// find() 找到并返回第一个为true的元素
+Array.prototype.find((n) => n > 10)
+
 //数组排序
 arr.sort(function(prev, next) {
   return prev - next
