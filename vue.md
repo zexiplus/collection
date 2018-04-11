@@ -139,8 +139,29 @@ Vue.component('customComponent', {
 
 **vue 渲染组建（jsx）**
 
-```js
+- {value} 单花括号变量名
 
+```jsx
+new Vue({
+  el: '#demo',
+  props: ['name','imgSrc'],
+  methods: {
+    handleImgClick() {
+      console.log('awesome picture')
+    }
+  },
+  render(h) {  
+    return (
+    	<div 
+          level={1} 
+          name={this.name} 
+          class={{ foo: true, bar: false }}
+      	  style={{ color: 'red', fontSize: '14px' }}>
+        	<img src={this.imgSrc} onClick={this.handleImgClick}/>
+      	</div>
+    )
+  }
+})
 ```
 
 

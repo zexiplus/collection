@@ -107,6 +107,8 @@ Number('10%') // return NaN
 ```js
 //返回是否包含字符串
 String.prototype.includes(searchString[,position])
+// 截除首字符
+str.substring(1)
 ```
 
 ##### Function
@@ -152,6 +154,23 @@ var iterator = new Iterator(person);
 var arr = [1,2,3];
 iterator.next() // returns ['name', 'xiaoxixi'];
 
+```
+
+**BOM**
+
+```js
+// window.location === window.document.location
+
+// location对象属性
+location.href // 当前url的完整路径 'http://www.google.com?q=python&y=java#123'
+location.search // 当前url的搜索字符串 '?q=python&y=java'
+location.hash // 当前url的hash    '#123'
+
+// location对象方法
+location.href='http://www.bing.com'  //与location.assign()作用相同
+location.assign('http://www.bing.com') // assign() 重定向方法，浏览器会生成记录，可后退
+location.replace('http://www.bing.com') // replace() 重定向，浏览器不会生成记录，不可后退
+location.reload() //reload()重新加载当前页,若有缓存则从缓存加载,reload(true) 强制从服务器刷新
 ```
 
 

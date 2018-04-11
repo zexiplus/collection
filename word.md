@@ -497,3 +497,15 @@
 
 220. **inventory 库存**
 
+     ​
+
+221. **delimit  划分界限**
+
+222.  **as per 按照**
+
+223.  **batch 批量**
+
+224.  **degree 学历**
+
+225.  **positive 转正**
+

@@ -14,6 +14,10 @@ display:-webkit-box;
 overflow:hidden;
 text-overflow:ellipsis;
 
+// 不定宽元素居中
+display: table;
+margin: 0 auto;
+
 // 只允许在空格处换行
 word-wrap:break-word;
 
