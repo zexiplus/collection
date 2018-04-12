@@ -325,7 +325,7 @@
 
 141. **intermediate 中间**
 
-142. **essentially 实质**
+142. **essentially 实质上**
 
 143. **arbitrary 随机**
 
@@ -507,5 +507,27 @@
 
 224.  **degree 学历**
 
-225.  **positive 转正**
+225.  **Caveats 注意事项**
+
+226.  **enhancements 增强**
+
+227.  **mimics 模仿**
+
+228.  **nor 也不**
+
+229.  **Shebangs 小东西**
+
+230.  **Interpolation 插值**
+
+     ​
+
+231.  **Sponsors 赞助商**
+
+232.  **orientation 方向**
+
+233.  **flexibility 灵活性**
+
+234.  **capabilities 功能**
+
+235.  **Suspends 挂起**
 

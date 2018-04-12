@@ -1,6 +1,6 @@
-#### nightWatch
+## nightWatch
 
-**配置文件 nightwatch.conf.js（nightwatch.json）示例**
+### 配置文件 nightwatch.conf.js（nightwatch.json）示例
 
 [配置详情](http://nightwatchjs.org/gettingstarted#settings-file)
 
@@ -33,7 +33,7 @@ module.exports = {
       selenium_port: 4444,
       selenium_host: 'localhost',
       silent: true,
-      globals: {
+      globals: { //全局变量  browser.globals.devServerURL
         devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
       }
     },
@@ -58,11 +58,7 @@ module.exports = {
 
 ```
 
-
-
-**测试文件 test.js 示例**
-
-[api参考](http://nightwatchjs.org/api)
+###  测试文件 test.js 示例
 
 ```js
 module.exports = {
@@ -81,6 +77,24 @@ module.exports = {
       .end()
   }
 }
+
+```
+
+### API
+
+[api参考](http://nightwatchjs.org/api)
+
+**Expect**
+
+```js
+// 链式调用助动词 （没有实际意义）
+to,be,been,is,that,which,and,has,have,with,at,does,of
+
+```
+
+**Assert**
+
+```js
 
 ```
 
