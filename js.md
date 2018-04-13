@@ -86,6 +86,15 @@ let ajax2 = function(url, { crossDomain = false, transformJson = true}) {
   console.log(crossDomain, transformJson)
 }
 
+// 删除Object.assign 复制的原对象属性，会改变复制后的对象
+let obj = {a: 1, b: 2, c: 3}
+let extendObj = Object.assign(obj, {d: 4}) // {a: 1, b: 2, c: 3, d: 4}
+delete obj.a
+extendObj // {b: 2, c: 3, d: 4}
+
+delete extendObj.b
+obj // {c: 3, d: 4}
+
 
 ```
 

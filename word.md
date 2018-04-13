@@ -531,3 +531,29 @@
 
 235.  **Suspends 挂起**
 
+236.  **decoupled 解耦**
+
+237.  **Productivity  生产率**
+
+238.  **coexist 共存**
+
+239.  **compose 构写**
+
+240.  **scene 情景**
+
+     ​
+
+241.  **emphasize 注重**
+
+242.  **embrace 接受，拥抱**
+
+243.  **integration of  整合**
+
+244.  **dramatically 显著的**
+
+245.  **diverse 多种**
+
+246.  **fundamental 基础的**
+
+247.  **indicator 指示符**
+
