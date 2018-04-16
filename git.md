@@ -56,7 +56,8 @@ git config -e         //更改仓库地址信息,之后添加
 可以使git正确追踪commit
 
 git add . // 把所有文件修改，删除，增加添加到暂存区
-git rm --cached filePath // 把某个文件从暂存区移除（工作区）
+git rm --cached filePath // 把某个文件从暂存区移除（工作区该文件还存在，会影响之后的本地仓库提交）
+
 ```
 
 
@@ -79,7 +80,9 @@ git diff –-cached
 
 撤销修改
 
-git reset && git checkout .
+git reset    //把更改撤销至暂存区（git add . 之前的状态） 
+
+git checkout . //完全还原（至上次的commit）
 
 或 git reset –-hard
 
