@@ -55,6 +55,8 @@ git config -e         //更改仓库地址信息,之后添加
         email = shizx@ipanel.cn
 可以使git正确追踪commit
 
+git add . // 把所有文件修改，删除，增加添加到暂存区
+git rm --cached filePath // 把某个文件从暂存区移除（工作区）
 ```
 
 
