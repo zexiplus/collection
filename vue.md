@@ -178,7 +178,39 @@ watch: {
 }
 ```
 
-**axios**
+
+
+**service**分离请求(太多ajax太丑陋，封装成单个js暴露出去，每个方法均返回promise实例)
+
+```js
+// index.js
+import Vue from 'vue'
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
+// 小 service模块
+import login from './login' 
+import cart from '.cart'
+
+export default {
+  login,
+  cart,
+}
+
+// cart.js
+import Vue from 'vue'
+export default {
+  getProductsById(id) {
+    return Vue.http.get('url', {params: {id}})
+  }
+}
+```
+
+
+
+
+
+**Vue-axios**
 
 ```js
 //挂载请求拦截器
@@ -216,7 +248,22 @@ axios.interceptors.response.use(function (response) {
     return Promise.reject(error);
 });
 
+/* ------------------ Promise.all应用(多项操作，但接口不支持多个) --------------------- */
 
+{
+  arr: [1,2,4,5]
+  getById(id) {
+    // service接口请求，返回promise实例
+    return this.service.getById(id)
+  }
+  getByIds() {
+    new Promise.all(this.arr.map(item => this.getById(item))).then(results => {
+      this.getList()
+    }).catch((err) => {
+      alert('请求出错')
+    })
+  }
+}
 ```
 
 
@@ -241,5 +288,44 @@ this.$alert(msg,title,{type:'error'});
 /*---------------动态组建 (可用于一个页面有多个弹窗)----------------------*/
 v-bind:is=”componentName”
 <component :is=”currentView”></component>
+```
+
+
+
+### elementUi
+
+**el-table**`自定义表头jsx实现`
+
+![](./imgs/el-table-header.bmp)
+
+```vue
+<template>
+  <el-table>
+    <el-table-column
+    :render-header="renderHeader">
+    </el-table-column>
+  </el-table>
+</template>
+<script>
+  export default {
+    methods: {
+      renderHeader() {
+         return (<div class="readlist-table-header">
+                    <a class={["readtab",{"active":!this.readStatus}]} 					                            href="javascript:void(0)" onClick={this.toUnread}>
+                      未读（<span>{this.tData.unreadNum}</span>）
+                    </a>
+                    <a class={["readtab",{"active":this.readStatus}]}                                                href="javascript:void(0)" onClick={this.toUnread}>
+                      已读（<span>{this.tData.readedNum}</span>）
+                    </a>
+                </div>);
+      },
+      toUnread() {
+      	console.log(...)     
+      }
+    }
+  }
+</script>
+
+
 ```
 

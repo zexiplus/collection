@@ -60,6 +60,8 @@ git rm --cached filePath // 把某个文件从暂存区移除（工作区该文�
 
 git add . //把所有文件修改，删除，增加添加到暂存区
 git reset filePath //把某个文件从暂存区的修改移除
+
+git checkout ${commit} filePath // 只恢复某个文件至某个历史版本
 ```
 
 
@@ -112,11 +114,7 @@ git push -f
 
 ------
 
-**other.**只恢复某个文件到指定版本
 
-```
-git checkout ${commit} /path/to/file
-```
 
 
 
