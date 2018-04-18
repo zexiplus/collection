@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-  ​
+   ​
 
 101. **logarithmic 对数的**
 
@@ -560,6 +560,8 @@
 248.  verbose 详细的
 
 249.  up-to-date最新的
+
+250.  Retrieve 取回
 
      ​
 

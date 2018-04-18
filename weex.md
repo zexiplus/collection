@@ -12,6 +12,7 @@ weex.requireModule('stream')
 **weex-toolkit**
 
 ```shell
+# 初始化项目
 weex create app
 ```
 

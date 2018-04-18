@@ -27,7 +27,7 @@ module.exports = {
     }
   },
 
-  test_settings: {
+  test_settings: { // 设置全局参数，默认变量
     default: {
       launch_url : "http://localhost", // 可在测试文件browser.lanuchUrl 拿到
       selenium_port: 4444,
@@ -38,7 +38,7 @@ module.exports = {
       }
     },
 
-    chrome: {
+    chrome: { // 针对chrome的配置
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
@@ -46,7 +46,7 @@ module.exports = {
       }
     },
 
-    firefox: {
+    firefox: { // 针对firefox的配置
       desiredCapabilities: {
         browserName: 'firefox', 
         javascriptEnabled: true,
@@ -84,6 +84,20 @@ module.exports = {
 
 [api参考](http://nightwatchjs.org/api)
 
+**Usual**
+
+```js
+// 元素选择器 element()
+element(selector) // browser.element('#main') 
+
+// 判断 expect
+browser.expect.element('#password').to.be.an('input')
+
+//
+```
+
+
+
 **Expect**
 
 ```js
@@ -95,6 +109,7 @@ to,be,been,is,that,which,and,has,have,with,at,does,of
 **Assert**
 
 ```js
-
+.assert  // 测试失败结束测试
+.verify // 测试失败跳过，进行下一条测试
 ```
 
