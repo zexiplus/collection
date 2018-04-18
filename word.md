@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-   ​
+  ​
 
 101. **logarithmic 对数的**
 
@@ -557,11 +557,19 @@
 
 247.  **indicator 指示符**
 
-248.  verbose 详细的
+248.  **verbose 详细的**
 
-249.  up-to-date最新的
+249.  **up-to-date最新的**
 
-250.  Retrieve 取回
+250.  **Retrieve 取回**
+
+     ​
+
+251.  **ellipse 椭圆**
+
+252.  **polyline 折线**
+
+253.  **polygon 多边形**
 
      ​
 
