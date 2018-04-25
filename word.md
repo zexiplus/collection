@@ -129,13 +129,13 @@
 
 52. **gotcha 疑难杂症**
 
-53. **Visionary   空想家**
+53. **visionary   空想家**
 
-54. **Forerunner   先行者**
+54. **forerunner   先行者**
 
-55. **Shrink     收缩**
+55. **shrink     收缩**
 
-56. **Unattended 无人值守的**
+56. **unattended 无人值守的**
 
 57. **alternate 备用的**
 
@@ -193,7 +193,7 @@
 
 81. **synchronized 同步**
 
-82. **Aggregate 合集**
+82. **aggregate 合集**
 
 83. **bulk 大批**
 
@@ -205,7 +205,7 @@
 
 87. **distinct 不同**
 
-88. **Legacy point 遗留点**
+88. **legacy point 遗留点**
 
 89. **spherical 球形**
 
@@ -223,7 +223,7 @@
 
 95. **insurance 保险**
 
-96. **Retirement 退休**
+96. **retirement 退休**
 
 97. **grid 格子**
 
@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-  ​
+   ​
 
 101. **logarithmic 对数的**
 
@@ -247,7 +247,7 @@
 
 106. **composing  构成**
 
-107. **Nested 嵌套**
+107. **nested 嵌套**
 
 108. **corresponds 对应**
 
@@ -291,7 +291,7 @@
 
 126. **specification 规范**
 
-127. **Manually 手动**
+127. **manually 手动**
 
 128. **masterpiece 杰作**
 
@@ -305,11 +305,11 @@
 
 132. **indentation 缩进**
 
-133. **Assignment 赋值**
+133. **assignment 赋值**
 
 134. **circulate 循环**
 
-135. **Unary 一元**
+135. **unary 一元**
 
 136. **Integrating 整合**
 
@@ -339,9 +339,9 @@
 
 148. **offloading 卸载**
 
-149. **Detection 发现**
+149. **detection 发现**
 
-150. **Pinned 置顶**
+150. **pinned 置顶**
 
      ​
 
@@ -357,7 +357,7 @@
 
 156. **adheres 黏附**
 
-157. **Semantic 语义**
+157. **semantic 语义**
 
 158. **commercially 商业**
 
@@ -379,7 +379,7 @@
 
 166. **illustrated 插图**
 
-167. **Catalogue 目录**
+167. **catalogue 目录**
 
 168. **segments 片段**
 
@@ -389,7 +389,7 @@
 
      ​
 
-171. **Prior  预先**
+171. **prior  预先**
 
 172. **described 描绘**
 
@@ -405,15 +405,15 @@
 
 178. **guidelines 方针**
 
-179. **Conduct 引导**
+179. **conduct 引导**
 
-180. **Collaborators 合作者**
+180. **collaborators 合作者**
 
      **​**
 
 181. **Initial  初始**
 
-182. **Consensus 共识**
+182. **consensus 共识**
 
 183. **agenda 议程**
 
@@ -507,7 +507,7 @@
 
 224.  **degree 学历**
 
-225.  **Caveats 注意事项**
+225.  **caveats 注意事项**
 
 226.  **enhancements 增强**
 
@@ -529,11 +529,11 @@
 
 234.  **capabilities 功能**
 
-235.  **Suspends 挂起**
+235.  **suspends 挂起**
 
 236.  **decoupled 解耦**
 
-237.  **Productivity  生产率**
+237.  **productivity  生产率**
 
 238.  **coexist 共存**
 
@@ -561,7 +561,7 @@
 
 249.  **up-to-date最新的**
 
-250.  **Retrieve 取回**
+250.  **retrieve 取回**
 
      ​
 
@@ -570,6 +570,16 @@
 252.  **polyline 折线**
 
 253.  **polygon 多边形**
+
+254.  **draft 草案**
+
+255.  **flagged 标记**
+
+256.  **squash 压扁**
+
+257.  **rebase 复位，垫底**
+
+     ​
 
      ​
 

@@ -93,7 +93,11 @@ element(selector) // browser.element('#main')
 // 判断 expect
 browser.expect.element('#password').to.be.an('input')
 
-//
+// 等待元素可见 
+browser.waitForElementVisible('body', 5000)
+
+// 设置input的值
+browser.setValue('#username', value)
 ```
 
 

@@ -182,6 +182,18 @@ location.replace('http://www.bing.com') // replace() 重定向，浏览器不会
 location.reload() //reload()重新加载当前页,若有缓存则从缓存加载,reload(true) 强制从服务器刷新
 ```
 
+**DOM**
+
+```html
+<input id="user[name]" />
+
+// 转义特殊css字符用双反斜杠 '\\'
+<script>
+	document.querySelector('user[name]')  // null
+  	document.querySelector('user\\[name\\]') // <input id="user[name]" />
+</script>
+```
+
 
 
 ##### new webApi
