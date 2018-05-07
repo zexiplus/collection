@@ -99,7 +99,10 @@ new Vue({
     ...mapGetters({
       getAllProducts: 'getAll'
     }),
-    ...mapState(['productions', 'selectedProductions'])
+    ...mapState(['productions', 'selectedProductions']),
+    moduleState() {
+    	return this.$store.state.moduleState.a
+  }
   },
   methods: {
     buyAll() {

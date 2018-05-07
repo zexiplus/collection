@@ -8,6 +8,16 @@ let obj = {a: 1, b: function() {console.log(this.a)}}
 obj.b() // returns 1
 (0, obj.b)() // returns undefined
 (obj.b)() // returns 1
+
+// 返回值为函数
+// old manner
+return function() {
+  return sum(5, 1)
+}
+// new manner
+return sum.bind(5, 1)
+
+
 ```
 
 
@@ -114,16 +124,27 @@ Number('10%') // return NaN
 ##### String
 
 ```js
-//返回是否包含字符串
-String.prototype.includes(searchString[,position])
+// 返回是否包含字符串
+String.prototype.includes(searchString[, position])
+
+// 是否在开头或者结尾
+'hello world'.startsWith('hel') // true
+'hello world'.endsWith('orld') // true
+
 // 截除首字符
 str.substring(1)
+
+// 字符串遍历
+for (let letter of 'abc') {
+  console.log(letter)
+}
+// 'a' 'b' 'c'
 ```
 
 ##### Function
 
 ```js
-// 函数默认值与解构赋值
+// 函数默认值与解构赋值 es6函数默认值是定义函数时指定的，不能再函数运行时指定
 function demo({x = 666, y} = {}) {
   return console.log(console.log(x, y));
 }
@@ -162,6 +183,15 @@ var person = {name: 'xiaoxixi', age: 24};
 var iterator = new Iterator(person);
 var arr = [1,2,3];
 iterator.next() // returns ['name', 'xiaoxixi'];
+
+// trampoline 蹦床函数（把递归函数转化为循环的函数，防止调用栈过多造成 maximum call exceed 错误）
+const trampoline = (f) => {
+    while (f && f instanceof Function) {
+        f = f()
+    }
+    return f
+}
+
 
 ```
 
@@ -341,7 +371,7 @@ import { foo } from 'my_module';
 Promise.reject("Testing static reject").then(function(reason) {
   // 未被调用
 }, function(reason) {
-  console.log(reason); // "测试静态拒绝"
+  console.log(reason); // "Testing static reject"
 });
 
 ```

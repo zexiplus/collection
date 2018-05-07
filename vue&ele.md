@@ -7,7 +7,7 @@ vue list // 列出所有可用脚手架
 vue init webpack demo // 创建以webpack为脚手架名为demo的项目
 ```
 
-**vue 入口文件属性**
+**vue main.js**
 
 ```js
 /* ----------- main.js  ------------------ */
@@ -32,13 +32,39 @@ new Vue({
 
 ```
 
+**Vue config**
+
+```bash
+# 在vue中使用less于编译器
+npm i less less-loader -S
+# webpack.base.config.js
+modules.exports.module.rules: [{test: /\.less$/, loader: 'style-loader!css-loader!less-loader'}]
+```
+
+**others**
+
+```js
+// Vue.extend(component) 创建并返回一个子类，可用于构造新组件用于测试
+import app from './app'
+const App = Vue.extend(app)
+new App().$mount('#id')  // 创建并挂载组件
+const vm = new App().$mount() // 创建组件并挂载（也可以不挂在）
+expect(vm.$el.querySelector('h1').textContent).toEqual('title') // 判断组件内部选择器h1内容
+
+// 路由跳转
+this.$router.push({name: 'pathName'})
+
+```
+
+
+
 **vue 指令**
 
 ```js
 /* --------------------------------注册指令-------------------- */
 //全局注册
-Vue.directive(‘directiveName’,{
-  	bind: function (el,binding) {
+Vue.directive('directiveName',{
+  	bind: function (el, binding) {
     	//binding.value 指绑定的值
   	},
   	inserted: function () {},
@@ -47,7 +73,7 @@ Vue.directive(‘directiveName’,{
  	unbind: function () {}
 
 });
-//组建内注册
+//组件内注册
 export default {
   directives: {
     directiveName: {
@@ -180,7 +206,7 @@ watch: {
 
 
 
-**service**分离请求(太多ajax太丑陋，封装成单个js暴露出去，每个方法均返回promise实例)
+**service**  分离请求(太多ajax太丑陋，封装成单个js暴露出去，每个方法均返回promise实例)
 
 ```js
 // index.js
@@ -280,9 +306,9 @@ computed() {
 /* ----------单独引用element 组件使用方法------- */
 import { MessageBox } from 'element-ui'
 //单独调用
-MessageBox.alert(msg,title,{type:'error'});
+MessageBox.alert(msg, title, {type:'error'});
 //挂载后调用
-this.$alert(msg,title,{type:'error'});
+this.$alert(msg, title, {type:'error'});
 
 
 /*---------------动态组建 (可用于一个页面有多个弹窗)----------------------*/

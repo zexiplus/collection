@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-   ​
+  ​
 
 101. **logarithmic 对数的**
 
@@ -579,7 +579,84 @@
 
 257.  **rebase 复位，垫底**
 
-     ​
+258.  **trampoline 蹦床**
+
+259.  **factorial 阶乘**
+
+260.  **detection 发现**
+
+     **​**
+
+261.  **constrained 受限，制约**
+
+262.  **ops 运营**
+
+263.  **collaboration 合作**
+
+264.  **rationalizing 合理化**
+
+265.  **agile 敏捷**
+
+266.  **legacy applications  传统应用程序**
+
+267.   **evolve  发展，变化**
+
+268.  **automate 自动化**
+
+269.  **investment 投资**
+
+     **​**
+
+270.  **rarely  很少**
+
+271.  **duplex 复式**
+
+272.  **exclusively  仅仅**
+
+273.  **retrieved 检索 纠正 挽回**
+
+274.  **potentially 可能**
+
+275.  **threshold 阈值**
+
+276.  **threads 线程**
+
+277.  **concurrency 并发**
+
+278.  **contrast 对比**
+
+279.  **construct 构造**
+
+280.  **inefficient 低效**
 
      ​
+
+281.  **scalable 可扩展的**
+
+282.   **governance 管理**
+
+283.  **collaborators 合作者**
+
+284.  **are made collaborators 成为合作者**
+
+285.  **individuals 个人**
+
+286.  **invitations 邀请函**
+
+287.  **significant 重大**
+
+288.  **identified 确定**
+
+289.  particular 特定的
+
+290.  opt 选择
+
+     ​
+
+291.  elevate 提升
+
+292.  architecture 架构
+
+293.  alcohol 酒精
+
 

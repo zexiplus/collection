@@ -15,6 +15,8 @@ git branch                                    //显示本地仓库信息
 
 git branch A === git checkout -b A 		      //新建A分支
 
+git checkout -b 本地分支名 origin/远程分支名    // 从远程拉取本地不存在的分支
+
 git branch -d A                               //删除A分支
 
 git checkout A                                //切换到A分支(从远程拉取A分支)
@@ -68,7 +70,7 @@ git checkout ${commit} filePath // 只恢复某个文件至某个历史版本
 
 ## git 四个阶段的撤销
 
-**1**.查看工作区和暂存区差别
+**1**.查看工作区和暂存区差别  (只修改了没有git add )
 
 git diff
 
@@ -78,21 +80,21 @@ git checkout **.    **或  git reset –-hard
 
 ------
 
-**2**.查看暂存区和本地仓库差异（已经git add .）
+**2**.查看暂存区和本地仓库差异（已经git add 没有 git commit）
 
 git diff –-cached
 
 撤销修改
 
-git reset    //把更改撤销至暂存区（git add . 之前的状态） 
+git reset    // 把更改撤销至暂存区 及git add . 之前的状态（git add 的反向操作） 
 
-git checkout . //完全还原（至上次的commit）
+git checkout . // 完全还原至上次的commit 
 
 或 git reset –-hard
 
 ------
 
-**3**.查看本地仓库和远程仓库差异（已提交未推送git commit）
+**3**.查看本地仓库和远程仓库差异（已提交未推送, git commit后还没有git push）
 
 git diff master origin/master
 
@@ -118,9 +120,5 @@ git push -f
 
 
 
-## npm command 
 
-```shell
-npm shrinkwrap                                        //锁定当前npm版本
-```
 

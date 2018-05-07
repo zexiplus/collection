@@ -19,6 +19,9 @@ process.argv.includes('--test') // false . node 会把所有--参数当成node�
 npm run command -- --someArg 
 npm run -- --test 
 process.argv.includes('--test') // true
+
+# 锁定当前npm版本
+npm shrinkwrap 
 ```
 
 

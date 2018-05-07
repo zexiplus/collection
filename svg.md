@@ -30,6 +30,7 @@
        width: 200px;
        height: 200px;
        background: #07f url(simple.svg) repeat;
+       fill: yellow; // 使用fill修改颜色而不是color
      }
    </style>
 ```
