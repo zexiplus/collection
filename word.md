@@ -647,16 +647,24 @@
 
 288.  **identified 确定**
 
-289.  particular 特定的
+289.  **particular 特定的**
 
-290.  opt 选择
+290.  **opt 选择**
 
      ​
 
-291.  elevate 提升
+291.  **elevate 提升**
 
-292.  architecture 架构
+292.  **architecture 架构**
 
-293.  alcohol 酒精
+293.  **alcohol 酒精**
+
+294.  **eject 推出**
+
+295.  **suppress 抑制**
+
+296.  **represent 表示**
+
+297.  **Synopsis 概要**
 
 
