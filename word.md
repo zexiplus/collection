@@ -648,30 +648,28 @@
 288. **identified 确定**
 
 
-289. particular 特定的
+289. **particular 特定的**
 
-290. opt 选择
+290. **opt 选择**
 
-     ​
+     
 
+291. **crypto 加密**
 
-294. crypto 加密
+292. **Formula 配方，公式**
 
-295. Formula 配方，公式
-     ​
+293. **elevate 提升**
 
-291.  **elevate 提升**
+294. **architecture 架构
 
-292.  **architecture 架构**
+295. **alcohol 酒精**
 
-293.  **alcohol 酒精**
+296. *eject 推出
 
-294.  **eject 推出**
+297. suppress 抑制
 
-295.  **suppress 抑制**
+298. represent 表示
 
-296.  **represent 表示**
-
-297.  **Synopsis 概要**
+299. Synopsis 概要**
 
 
