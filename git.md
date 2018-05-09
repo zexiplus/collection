@@ -5,7 +5,7 @@ ssh-keygen -t rsa -C 'zexiplus@outlook.com'   //新建ssh key....
 
 git remote add origin git@github.com:zexiplus/oo.git         //新增远程仓库地址
 
-cat /c/Users/zexip/.ssh/id_rsa.pub            //显示密钥
+cat /c/Users/username/.ssh/id_rsa.pub            //显示密钥
 
 git branch -a                                 //显示所有仓库信息
 
@@ -54,7 +54,7 @@ git stash pop 	       //从Git栈中读取最近一次保存的内容，恢复�
 git config -e         //更改仓库地址信息,之后添加
 [user]
         name = shizx	
-        email = shizx@ipanel.cn
+        email = shizx@balabala.cn
 可以使git正确追踪commit
 
 git add . // 把所有文件修改，删除，增加添加到暂存区

@@ -51,6 +51,64 @@ width: calc(~"100% - 40px");
 }
 ```
 
+
+
+####css: filter滤镜(组合能达到神奇的效果)
+
+```css
+// 灰度
+.grayscale {
+    filter: grayscale(1) // 0~1 代表灰度
+}
+
+// 褐色
+.sepia {
+    filter: sepia(.5)
+}
+
+// 饱和度
+.saturate {
+    filter: saturate(5)
+}
+
+// 色相旋转 
+.hue-rotate {
+    filter: hue-rotate(90deg)
+}
+
+// 反色
+.invert {
+    filter: invert(1)
+}
+
+// 透明度
+.opacity {
+    filter: opacity(.5)
+}
+
+// 亮度
+.brightness {
+    filter: brightness(2)
+}
+
+// 对比度
+.contrast {
+    filter: contrast(.4)
+}
+
+// 模糊
+.blur {
+    filter: blur(10px)
+}
+
+// 阴影
+.drop-shadow {
+    filter: drop-shadow(5px 5px 10px #ccc)
+}
+```
+
+
+
 #### css实现长宽比例一致div容器
 
 ```html
@@ -86,6 +144,8 @@ width: calc(~"100% - 40px");
 
 -----------*/
 ```
+
+
 
 ### less
 

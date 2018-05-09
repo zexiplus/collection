@@ -30,6 +30,15 @@ chmod +x demo.sh
 ./demo.sh           #执行
 ```
 
+##### 按cpu用量查看进程
+
+```shell
+top -o cpu
+
+# 杀死进程
+sudo kill 2200
+```
+
 
 
 #####解压文件

@@ -17,6 +17,11 @@ return function() {
 // new manner
 return sum.bind(5, 1)
 
+// arguments 不可以在箭头函数中使用，不存在
+(...rest) => {
+    console.log(arguments) // undefined
+    console.log(rest) // 使用rest数组代替arguments
+}
 
 ```
 

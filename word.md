@@ -197,7 +197,7 @@
 
 83. **bulk 大批**
 
-84. **minifier 缩小器 **
+84. **minifier 缩小器**
 
 85. **mangle 损坏**
 
@@ -417,7 +417,7 @@
 
 183. **agenda 议程**
 
-184.  **moderator  主席**
+184. **moderator  主席**
 
 185. **dissent 异议**
 
@@ -501,170 +501,175 @@
 
 221. **delimit  划分界限**
 
-222.  **as per 按照**
+222. **as per 按照**
 
-223.  **batch 批量**
+223. **batch 批量**
 
-224.  **degree 学历**
+224. **degree 学历**
 
-225.  **caveats 注意事项**
+225. **caveats 注意事项**
 
-226.  **enhancements 增强**
+226. **enhancements 增强**
 
-227.  **mimics 模仿**
+227. **mimics 模仿**
 
-228.  **nor 也不**
+228. **nor 也不**
 
-229.  **Shebangs 小东西**
+229. **Shebangs 小东西**
 
-230.  **Interpolation 插值**
-
-     ​
-
-231.  **Sponsors 赞助商**
-
-232.  **orientation 方向**
-
-233.  **flexibility 灵活性**
-
-234.  **capabilities 功能**
-
-235.  **suspends 挂起**
-
-236.  **decoupled 解耦**
-
-237.  **productivity  生产率**
-
-238.  **coexist 共存**
-
-239.  **compose 构写**
-
-240.  **scene 情景**
+230. **Interpolation 插值**
 
      ​
 
-241.  **emphasize 注重**
+231. **Sponsors 赞助商**
 
-242.  **embrace 接受，拥抱**
+232. **orientation 方向**
 
-243.  **integration of  整合**
+233. **flexibility 灵活性**
 
-244.  **dramatically 显著的**
+234. **capabilities 功能**
 
-245.  **diverse 多种**
+235. **suspends 挂起**
 
-246.  **fundamental 基础的**
+236. **decoupled 解耦**
 
-247.  **indicator 指示符**
+237. **productivity  生产率**
 
-248.  **verbose 详细的**
+238. **coexist 共存**
 
-249.  **up-to-date最新的**
+239. **compose 构写**
 
-250.  **retrieve 取回**
+240. **scene 情景**
 
      ​
 
-251.  **ellipse 椭圆**
+241. **emphasize 注重**
 
-252.  **polyline 折线**
+242. **embrace 接受，拥抱**
 
-253.  **polygon 多边形**
+243. **integration of  整合**
 
-254.  **draft 草案**
+244. **dramatically 显著的**
 
-255.  **flagged 标记**
+245. **diverse 多种**
 
-256.  **squash 压扁**
+246. **fundamental 基础的**
 
-257.  **rebase 复位，垫底**
+247. **indicator 指示符**
 
-258.  **trampoline 蹦床**
+248. **verbose 详细的**
 
-259.  **factorial 阶乘**
+249. **up-to-date最新的**
 
-260.  **detection 发现**
+250. **retrieve 取回**
+
+     ​
+
+251. **ellipse 椭圆**
+
+252. **polyline 折线**
+
+253. **polygon 多边形**
+
+254. **draft 草案**
+
+255. **flagged 标记**
+
+256. **squash 压扁**
+
+257. **rebase 复位，垫底**
+
+258. **trampoline 蹦床**
+
+259. **factorial 阶乘**
+
+260. **detection 发现**
 
      **​**
 
-261.  **constrained 受限，制约**
+261. **constrained 受限，制约**
 
-262.  **ops 运营**
+262. **ops 运营**
 
-263.  **collaboration 合作**
+263. **collaboration 合作**
 
-264.  **rationalizing 合理化**
+264. **rationalizing 合理化**
 
-265.  **agile 敏捷**
+265. **agile 敏捷**
 
-266.  **legacy applications  传统应用程序**
+266. **legacy applications  传统应用程序**
 
-267.   **evolve  发展，变化**
+267. **evolve  发展，变化**
 
-268.  **automate 自动化**
+268. **automate 自动化**
 
-269.  **investment 投资**
+269. **investment 投资**
 
      **​**
 
-270.  **rarely  很少**
+270. **rarely  很少**
 
-271.  **duplex 复式**
+271. **duplex 复式**
 
-272.  **exclusively  仅仅**
+272. **exclusively  仅仅**
 
-273.  **retrieved 检索 纠正 挽回**
+273. **retrieved 检索 纠正 挽回**
 
-274.  **potentially 可能**
+274. **potentially 可能**
 
-275.  **threshold 阈值**
+275. **threshold 阈值**
 
-276.  **threads 线程**
+276. **threads 线程**
 
-277.  **concurrency 并发**
+277. **concurrency 并发**
 
-278.  **contrast 对比**
+278. **contrast 对比**
 
-279.  **construct 构造**
+279. **construct 构造**
 
-280.  **inefficient 低效**
-
-     ​
-
-281.  **scalable 可扩展的**
-
-282.   **governance 管理**
-
-283.  **collaborators 合作者**
-
-284.  **are made collaborators 成为合作者**
-
-285.  **individuals 个人**
-
-286.  **invitations 邀请函**
-
-287.  **significant 重大**
-
-288.  **identified 确定**
-
-289.  **particular 特定的**
-
-290.  **opt 选择**
+280. **inefficient 低效**
 
      ​
 
-291.  **elevate 提升**
+281. **scalable 可扩展的**
 
-292.  **architecture 架构**
+282. **governance 管理**
 
-293.  **alcohol 酒精**
+283. **collaborators 合作者**
 
-294.  **eject 推出**
+284. **are made collaborators 成为合作者**
 
-295.  **suppress 抑制**
+285. **individuals 个人**
 
-296.  **represent 表示**
+286. **invitations 邀请函**
 
-297.  **Synopsis 概要**
+287. **significant 重大**
+
+288. **identified 确定**
+
+
+289. **particular 特定的**
+
+290. **opt 选择**
+
+     
+
+291. **crypto 加密**
+
+292. **Formula 配方，公式**
+
+293. **elevate 提升**
+
+294. **architecture 架构
+
+295. **alcohol 酒精**
+
+296. *eject 推出
+
+297. suppress 抑制
+
+298. represent 表示
+
+299. Synopsis 概要**
 
 

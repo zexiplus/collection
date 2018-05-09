@@ -197,3 +197,55 @@ node one.js hello world // process.argv = [‘/usr/bin/node’,/home/code/one.js
 
 ```
 
+### dns
+
+```js
+const dns = require('dns')
+// dns.lookup 提供域名，解析出ip地址
+dns.lookup('hostname', (err, ipAddress, ipVersion) => {
+    
+})
+// dns.resolve4 与 dns.lookup作用相同，实现不同
+// dns.reverse 提供ip地址 反向解析出域名
+
+dns.resolve4('hostname', (err, ipAddress) => {
+    dns.reverse(ipAddress, (err, hostname) => {
+        console.log(hostname)
+    })
+})
+
+// dns.Resolver 使用特定的值解析
+const server = new dns.Resolver([192.168.17.108])
+server.resolve4('hello.com', (err, ipAddress) => {
+    console.log(ipAddress) // 192.168.17.108
+})
+
+// 取消解析
+server.cancel() 
+
+// 设置和返回当前dns解析的ip数组
+server.setServers(['123.23.22.22'])
+server.getServers()
+```
+
+### child_process
+
+```js
+const cp = require('child_process')
+
+// spawn 第一个参数命令，第二个参数 命令的参数
+let ls = cp.spawn('ls', ['-lh', '/usr'])
+ls.stdout.on('data', (data) => {
+    console.log(data)
+})
+ls.stdin.on('data', data => {
+    console.log(data)
+})
+ls.stderr.on('data', err => {
+    console.err(err)
+})
+ls.on('close', code => {
+    console.log(`退出码${code}`)
+})
+```
+
