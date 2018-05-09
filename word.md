@@ -197,7 +197,7 @@
 
 83. **bulk 大批**
 
-84. **minifier 缩小器 **
+84. **minifier 缩小器**
 
 85. **mangle 损坏**
 
@@ -647,20 +647,31 @@
 
 288. **identified 确定**
 
+
 289. particular 特定的
 
 290. opt 选择
 
      ​
 
-291. elevate 提升
-
-292. architecture 架构
-
-293. alcohol 酒精
 
 294. crypto 加密
 
 295. Formula 配方，公式
+     ​
+
+291.  **elevate 提升**
+
+292.  **architecture 架构**
+
+293.  **alcohol 酒精**
+
+294.  **eject 推出**
+
+295.  **suppress 抑制**
+
+296.  **represent 表示**
+
+297.  **Synopsis 概要**
 
 
