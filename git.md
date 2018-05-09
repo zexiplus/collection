@@ -5,7 +5,7 @@ ssh-keygen -t rsa -C 'zexiplus@outlook.com'   //新建ssh key....
 
 git remote add origin git@github.com:zexiplus/oo.git         //新增远程仓库地址
 
-cat /c/Users/zexip/.ssh/id_rsa.pub            //显示密钥
+cat /c/Users/username/.ssh/id_rsa.pub            //显示密钥
 
 git branch -a                                 //显示所有仓库信息
 

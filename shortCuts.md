@@ -2,7 +2,11 @@
 
 1. 在当前文件夹下打开cmd窗口    shift + rightMouse  
 
-   ​
+   
+
+#### mac
+
+1.锁屏 ctrl + command + q
 
 #### sublime 
 
