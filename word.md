@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-   ​
+  ​
 
 101. **logarithmic 对数的**
 
@@ -652,7 +652,6 @@
 
 290. **opt 选择**
 
-     
 
 291. **crypto 加密**
 
@@ -660,16 +659,16 @@
 
 293. **elevate 提升**
 
-294. **architecture 架构
+294. **architecture 架构**
 
 295. **alcohol 酒精**
 
-296. *eject 推出
+296. **eject 推出**
 
-297. suppress 抑制
+297. **suppress 抑制**
 
-298. represent 表示
+298. **represent 表示**
 
-299. Synopsis 概要**
+299. **Synopsis 概要**
 
 
