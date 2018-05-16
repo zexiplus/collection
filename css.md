@@ -22,17 +22,17 @@ margin: 0 auto;
 word-wrap:break-word;
 
 
-//设置起始，结束位置元素样式
+// 设置起始，结束位置元素样式
 div:last-child{}
 div:first-child{}
 
-//第n个p元素
+// 第n个p元素
 p:nth-child(n)
 
-//缩放元素
+// 缩放元素
 transform: scale(0.6);
 
-//滚动条样式
+// 滚动条样式
 1.	::-weskit-scrollbar 滚动条整体部分
 2.	::-webkit-scrollbar-button 滚动条两端的按钮
 3.	::-webkit-scrollbar-track 外层轨道
@@ -50,6 +50,51 @@ width: calc(~"100% - 40px");
   color: red;
 }
 ```
+
+#### css selector
+
+```css
+p~ul  // 选择前面有 <p> 元素的每个 <ul> 元素。
+```
+
+
+
+#### BFC(block formating context)
+
+```css
+/* 创建bfc
+	float: 值不为none;
+	position: 值不为static或relative;
+	overflow: 值不为visible;
+	display: 值为 table-cell, table-caption, inline-block, flex, inline-flex
+*/
+
+/* 最常用方法 */
+overflow: hidden;
+
+```
+
+#### BFC的应用
+
+1.解决margin重叠（为每个带有margin的块包裹一个新的bfc）
+
+2.解决浮动元素无法撑开父元素的高度（给包含浮动的元素设置为bfc）
+
+3.解决文字环绕浮动元素（给包含文字的元素设置bfc）
+
+
+
+#### FLEX布局（flexible弹性布局） 
+
+[效果展示1](https://codepen.io/zexiplus/pen/ELppKb) [效果展示2](https://codepen.io/zexiplus/pen/wjxbEN)
+
+```css
+display: flex;
+display: inline-flex;
+// 注：容器设置为flex后，子元素自动成为容器成员， 子元素的float, clear, vertical-align 都将失效
+```
+
+
 
 
 

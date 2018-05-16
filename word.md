@@ -90,7 +90,7 @@
 
 35. **brewing 酿造，混合**
 
-36. **Custom Operators 自定义操作符**
+36. **custom operators 自定义操作符**
 
 37. 
     **nutshell 简而言之**
@@ -99,7 +99,7 @@
 
 39. **subsequent 随后的**
 
-40. **Recognition 识别**
+40. **recognition 识别**
 
     ​
 
@@ -111,11 +111,11 @@
 
 44. **unparalleled 空前的**
 
-45. **Distributed 分布式**
+45. **distributed 分布式**
 
-46. **Hood    罩子**
+46. **hood    罩子**
 
-47. **Leverage  杠杆**
+47. **leverage  杠杆**
 
 48. **firmata 签约**
 
@@ -187,7 +187,7 @@
 
 79. **archive 档案**
 
-80. **thread 线索，线状物**
+80. **thread 线程**
 
     ​
 
@@ -233,7 +233,7 @@
 
 100. **legend 说明**
 
-   ​
+  ​
 
 101. **logarithmic 对数的**
 
@@ -652,7 +652,7 @@
 
 290. **opt 选择**
 
-    ​      
+     
 
 291. **crypto 加密**
 
@@ -674,7 +674,7 @@
 
 300. **truncated 缩短，截去**
 
-        
+     ​      
 
 301. backslashes 反斜线
 
@@ -690,6 +690,13 @@
 
 307. Miscellaneous 杂
 
-308. 
+308. **eject 推出**
 
+309. **suppress 抑制**
+
+310. **represent 表示**
+
+     
+
+311. **Synopsis 概要**
 
