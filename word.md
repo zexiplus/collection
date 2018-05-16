@@ -652,7 +652,7 @@
 
 290. **opt 选择**
 
-     
+    ​      
 
 291. **crypto 加密**
 
@@ -660,16 +660,36 @@
 
 293. **elevate 提升**
 
-294. **architecture 架构
+294. **architecture 架构**
 
-295. **alcohol 酒精**
+295. **eject 推出**
 
-296. *eject 推出
+296. **suppress 抑制**
 
-297. suppress 抑制
+297. **represent 表示**
 
-298. represent 表示
+298. **Synopsis 概要**
 
-299. Synopsis 概要**
+299. **Manual 手册**
+
+300. **truncated 缩短，截去**
+
+        
+
+301. backslashes 反斜线
+
+302. Escape 转义
+
+303. bounce 反弹, 跳跃
+
+304. detect 检测
+
+305. stuff 东西，东东
+
+306. bunch 大量，簇
+
+307. Miscellaneous 杂
+
+308. 
 
 

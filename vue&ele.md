@@ -71,7 +71,6 @@ Vue.directive('directiveName',{
   	update: function () {},
   	componentUpdated: function () {},
  	unbind: function () {}
-
 });
 //组件内注册
 export default {
