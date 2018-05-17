@@ -249,3 +249,9 @@ ls.on('close', code => {
 })
 ```
 
+### cluster
+
+```js
+
+```
+
