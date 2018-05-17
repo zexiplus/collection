@@ -14,6 +14,9 @@ display:-webkit-box;
 overflow:hidden;
 text-overflow:ellipsis;
 
+// 单行文字均匀对齐
+text-align-last: justify;
+
 // 不定宽元素居中
 display: table;
 margin: 0 auto;
@@ -91,7 +94,42 @@ overflow: hidden;
 ```css
 display: flex;
 display: inline-flex;
-// 注：容器设置为flex后，子元素自动成为容器成员， 子元素的float, clear, vertical-align 都将失效
+display: -webkit-flex; /* Safari */
+/* 注：容器设置为flex后，子元素自动成为容器成员， 子元素的float, clear, vertical-align 都将失效 */
+
+/* 容器上的5个属性 */
+
+/* 排列方向 */
+flex-direction: row | row-reverse | column | column-reverse; 
+
+/* 换行规则 */
+flex-wrap: nowrap | wrap | wrap-reverse;
+
+/* 水平对齐规则 */ 
+justify-content: flex-start | flex-end | center | space-between | space-around;
+
+/* 垂直对齐规则 */
+align-items: flex-start | flex-end | center | baseline | stretch;
+
+/* 多轴对其规则 */
+align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+
+/* 项目上属性 */
+
+/* 排列顺序 default 0 */
+order: <integer>; 
+
+/* 如果存在剩余空间， 放大的倍数 */
+flex-grow: <number>; /* default 0 */
+
+/* 如果空间不足， 缩小 */
+flex-shrink: <number>; /* default 1 */
+
+/* 属性定义了在分配多余空间之前，项目占据的主轴空间（main size） */
+flex-basis: <length> | auto; /* default auto */
+
+/* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。 */
+align-self: auto | flex-start | flex-end | center | baseline | stretch;
 ```
 
 

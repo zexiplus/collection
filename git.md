@@ -1,69 +1,109 @@
 ## git command
 
 ```shell
-ssh-keygen -t rsa -C 'zexiplus@outlook.com'   //新建ssh key....
+### 配置git
 
-git remote add origin git@github.com:zexiplus/oo.git         //新增远程仓库地址
+# 新建ssh key....
+ssh-keygen -t rsa -C 'zexiplus@outlook.com'
 
-cat /c/Users/username/.ssh/id_rsa.pub            //显示密钥
+# 新增远程仓库地址
+git remote add origin git@github.com:zexiplus/oo.git         
 
-git branch -a                                 //显示所有仓库信息
+# 显示密钥
+cat /c/Users/username/.ssh/id_rsa.pub 
 
-git branch -r                                 //显示远程仓库信息
+# 设置账户密码
 
-git branch                                    //显示本地仓库信息
+git config --global user.name 'username'
+git config --global user.email 'username@tt.com'
 
-git branch A === git checkout -b A 		      //新建A分支
+###
 
-git checkout -b 本地分支名 origin/远程分支名    // 从远程拉取本地不存在的分支
+# 显示所有仓库信息
+git branch -a  
 
-git branch -d A                               //删除A分支
+# 显示远程仓库信息
+git branch -r
 
-git checkout A                                //切换到A分支(从远程拉取A分支)
+# 显示本地仓库信息
+git branch                                   
 
-git checkout -                                //切换回上一分支
+# 新建A分支
+git branch A === git checkout -b A 		      
 
-git merge -no-off A							  //把A分支合并到当前分支并做记录
+# 从远程拉取本地不存在的分支
+git checkout -b 本地分支名 origin/远程分支名    
 
-git commit --amend                            //修改上一条commit 记录
+# 删除A分支
+git branch -d A                              
 
-git log --graph                               //图形化查看历史记录
+# 切换到A分支(从远程拉取A分支)
+git checkout A                                
 
-git reset --hard '#hash'                      //回滚            
+# 切换回上一分支
+git checkout -                                
 
-git reflog                                    //查看回滚日志
+#把A分支合并到当前分支并做记录
+git merge -no-off A							  
 
-git diff                                      //查看工作区和暂存区差别
+#修改上一条commit 记录
+git commit --amend                            
 
-git diff HEAD                                 //查看工作区和最新提交区别(git commit后)
+#图形化查看历史记录
+git log --graph                               
 
-git push -u [origin master]                   //推送至远程仓库
+# 回滚    
+git reset --hard '#hash'                             
 
-git pull [origin master]                      //从远程仓库拉取到本地仓库并合并到当前分支
+# 查看回滚日志
+git reflog                                    
 
-git fetch [origin master]                     //从远程仓库拉取到本地仓库不自动合并
+# 查看工作区和暂存区差别
+git diff                                     
 
-git diff master origin/master                 //比较本地仓库master和拉取到的远程仓库master区别
+# 查看工作区和最新提交区别(git commit后)
+git diff HEAD                                 
 
-git merge origin/master                       //合并已拉取到的远程仓库
+# 推送至远程仓库
+git push -u [origin master]                   
 
-git stash              //备份当前的工作区的内容，从最近的一次提交中读取相关内容(被强行commit可跳过)
+# 从远程仓库拉取到本地仓库并合并到当前分支
+git pull [origin master]                      
 
-git stash pop 	       //从Git栈中读取最近一次保存的内容，恢复工作区的相关内容
+# 从远程仓库拉取到本地仓库不自动合并
+git fetch [origin master]                     
 
-git config -e         //更改仓库地址信息,之后添加
+# 比较本地仓库master和拉取到的远程仓库master区别
+git diff master origin/master                 
+
+# 合并已拉取到的远程仓库
+git merge origin/master                       
+
+# 备份当前的工作区的内容，从最近的一次提交中读取相关内容(被强行commit可跳过)
+git stash             
+
+# 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容
+git stash pop 	      
+
+# 更改仓库地址信息,之后添加
+git config -e         
 [user]
         name = shizx	
-        email = shizx@balabala.cn
-可以使git正确追踪commit
+        email = shizx@balabala.com
+# 把所有文件修改，删除，增加添加到暂存区
+git add . 
 
-git add . // 把所有文件修改，删除，增加添加到暂存区
-git rm --cached filePath // 把某个文件从暂存区移除（工作区该文件还存在，会影响之后的本地仓库提交）
+# 把某个文件从暂存区移除（工作区该文件还存在，会影响之后的本地仓库提交）
+git rm --cached filePath 
 
-git add . //把所有文件修改，删除，增加添加到暂存区
-git reset filePath //把某个文件从暂存区的修改移除
+# 把所有文件修改，删除，增加添加到暂存区
+git add . 
 
-git checkout ${commit} filePath // 只恢复某个文件至某个历史版本
+# 把某个文件从暂存区的修改移除
+git reset filePath 
+
+# 只恢复某个文件至某个历史版本
+git checkout ${commit} filePath 
 ```
 
 
