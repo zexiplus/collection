@@ -652,7 +652,7 @@
 
 290. **opt 选择**
 
-     
+        
 
 291. **crypto 加密**
 
@@ -696,7 +696,9 @@
 
 310. **represent 表示**
 
-     
+        
 
 311. **Synopsis 概要**
+
+312. idiosyncratic 特质
 

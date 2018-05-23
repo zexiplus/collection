@@ -33,7 +33,10 @@ return sum.bind(5, 1)
 //合并复制数组
 var a = [{today: '1',lunch: 'food'}]
 var b = [{tomorrow: '2'}]
-var c = [...a,...b]                      
+var c = [...a,...b] 
+
+// 把Array转化为iterator对象
+arr[Symbol.iterator]()
 
 //类数组转化为数组 Array.from 方法
 const foo = document.querySelectorAll('.foo');
