@@ -93,3 +93,8 @@ vnc 密码 12341234
 **此项目采用wiringPi引脚定义，图例如下**
 
 ![pinDefine](.\imgs\pinDefine.png)
+
+### fritizing 使用说明
+
+[资源库](http://forum.fritzing.org/c/parts-submit/l/top)
+

@@ -114,6 +114,10 @@ align-items: flex-start | flex-end | center | baseline | stretch;
 /* 多轴对其规则 */
 align-content: flex-start | flex-end | center | space-between | space-around | stretch;
 
+
+
+
+
 /* 项目上属性 */
 
 /* 排列顺序 default 0 */
@@ -131,6 +135,32 @@ flex-basis: <length> | auto; /* default auto */
 /* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。 */
 align-self: auto | flex-start | flex-end | center | baseline | stretch;
 ```
+
+
+
+#### css3-3D
+
+[demo-cube](https://codepen.io/zexiplus/pen/NMOVrX)
+
+```css
+/* 父元素设置之后，其后代元素便会有3d效果 */
+.container {
+    trnasform-style: preserve-3d; 
+}
+
+.container {
+    perspective: 300px;  // 景深  
+    perspective-origin: 0px 0px; // 视角起始点
+}
+
+.trans {
+   transform: translate3d(10px, 10px, 10px) | translateX(30px) | translateY(30px) | translateZ(30px);
+   transform: rotateX(90deg) | rotateY(90deg) | rotateZ(90deg);
+   transform: scale3d(1, 1, 1) | scaleX(1.2) | scaleY(1.2) |  scaleZ(1.2);
+}
+```
+
+![3d](./imgs/3d.jpg)
 
 
 

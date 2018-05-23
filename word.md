@@ -652,7 +652,7 @@
 
 290. **opt 选择**
 
-        
+     
 
 291. **crypto 加密**
 
@@ -676,19 +676,19 @@
 
      ​      
 
-301. backslashes 反斜线
+301. **backslashes 反斜线**
 
-302. Escape 转义
+302. **escape 转义**
 
-303. bounce 反弹, 跳跃
+303. **bounce 反弹, 跳跃**
 
-304. detect 检测
+304. **detect 检测**
 
-305. stuff 东西，东东
+305. **stuff 东西，东东**
 
-306. bunch 大量，簇
+306. **bunch 大量，簇**
 
-307. Miscellaneous 杂
+307. **miscellaneous 杂**
 
 308. **eject 推出**
 
@@ -696,9 +696,29 @@
 
 310. **represent 表示**
 
-        
+     
 
-311. **Synopsis 概要**
+311. **synopsis 概要**
 
-312. idiosyncratic 特质
+312. **circuits 电路**
+
+313. **sketch 草图**
+
+314. **affordable 实惠**
+
+315. **schematic 概要**
+
+316. **palette 调色板**
+
+317. **terms 条款** 
+
+318. **aspects 方面**
+
+319. **primed cache 启动缓存**
+
+320. compile 编译
+
+     
+
+321. idiosyncratic 特质
 
