@@ -7,4 +7,5 @@
 5. architecture-generator （项目结构生成器 输入json文件产出md文件展示项目架构)
 6. Dashboard (访问系统信息仪表板)
 7. Animation-awesome(动画效果库)
+8. Message-delivery(局域网传文件，图片，文字)
 
