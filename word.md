@@ -6,6 +6,8 @@
 **ISP     	(Internet Service Provider)互联网服务提供商**
 **FCC    	(Federal Communications Commission)美国联邦通信委员会**
 
+**PR(pull request) 提交请求**
+
 ## 单词结构
 
 1. pre 预先
@@ -80,7 +82,7 @@
 
     ​
 
-31. **proposals 提议，提案**
+31. **proposal 提议，提案**
 
 32. **interoperability 互通性**
 
@@ -445,7 +447,7 @@
 
 196. **topic heading 主标题**
 
-197. **patch 补丁**
+197. **patch 补丁，打补丁**
 
 198. **matures 成熟**
 
@@ -599,7 +601,7 @@
 
 266. **legacy applications  传统应用程序**
 
-267. **evolve  发展，变化**
+267. **evolve  发展，变化**，进化
 
 268. **automate 自动化**
 
@@ -652,7 +654,7 @@
 
 290. **opt 选择**
 
-     
+     ​      
 
 291. **crypto 加密**
 
@@ -696,7 +698,7 @@
 
 310. **represent 表示**
 
-     
+     ​      
 
 311. **synopsis 概要**
 
@@ -716,9 +718,145 @@
 
 319. **primed cache 启动缓存**
 
-320. compile 编译
+320. **compile 编译**
+
+     ​      
+
+321. **idiosyncratic 特质**
+
+322. captivating 迷人的 
+
+323. spot 斑点，发现
+
+324. cords 线
+
+325. plotter 绘图仪
+
+326. shafts 轴
+
+327. Massive 海量的
+
+328. deficits 赤字
+
+329. bio 个人简历
+
+330. mandarin 普通话 官话
 
      
 
-321. idiosyncratic 特质
+331. retweet 转载，转推
+
+332. Transparency 透明度
+
+333. Crooked 扭曲的
+
+334. Numerous 多
+
+335. terrific 了不起的
+
+336. stakeholders 利益相关者
+
+337. pioneering 创举
+
+338. ban 禁止
+
+339. tax 税 
+
+340. witch 巫婆
+
+     
+
+341. Drone 无人机
+
+342. Avenger 复仇者
+
+343. flyover 天桥
+
+344. silk 丝
+
+345. subsidies 补贴
+
+346. massive 大规模的
+
+347. destructive 破坏性的
+
+348. bycatch 误补
+
+349. territorial 领土的
+
+350. hereby 特此
+
+     
+
+351. obtaining 获得
+
+352. Council 政务会
+
+353. nuclear 核
+
+354. bode 预兆
+
+355. yup 是的 
+
+356. coated 涂
+
+357. droplets 液滴
+
+358. creatures 生物
+
+359. concise 简洁的
+
+360. conduct 开展
+
+     
+
+361. domestic 国内的
+
+362. surveillance 监控
+
+363. contact 联系
+
+364. Gotcha 明白了
+
+365. Spare 剩余的，备用的，空闲的
+
+366. yeehaw 惊叹词（兴奋的表达）
+
+367. hell 地狱
+
+368. sufficient 足够
+
+369. pros 优点
+
+370. cons 缺点
+
+     
+
+371. gauge 衡量
+
+372. metrics 指标
+
+373. exception 例外
+
+374. redundant 冗余
+
+375. regardless 而不管
+
+376. accidentally 偶然的
+
+377. stitch 缝合，拼接
+
+378. cliffs 悬崖
+
+379. mechanism 机制
+
+380. constraints 限制
+
+     
+
+381. interferes 干涉
+
+382. mitigate 缓解
+
+383. Exceptional 优秀的
 

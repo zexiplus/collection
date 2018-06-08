@@ -7,7 +7,7 @@ vue list // 列出所有可用脚手架
 vue init webpack demo // 创建以webpack为脚手架名为demo的项目
 ```
 
-**vue main.js**
+**main.js**
 
 ```js
 /* ----------- main.js  ------------------ */
