@@ -1,6 +1,6 @@
  ### javascript
 
-##### skill
+##### Skill
 
 ```js
 // 求值表达式 （0, val）
@@ -23,9 +23,18 @@ return sum.bind(5, 1)
     console.log(rest) // 使用rest数组代替arguments
 }
 
+// Object.isExtensible()
+let a = {}
+Object.isExtensible(a) // expected : true
+Object.preventExtensions(a)
+Object.isExtensible(a) // expected: false
+
+// Object.getOwnPropertyDescriptor(obj, prop)
+
+let obj = {get a() { return 1 }}
+Object.getOwnPropertyDescriptor(obj, 'a')
+// return {get: ƒ, set: undefined, enumerable: true, configurable: true}
 ```
-
-
 
 ##### Array 
 
@@ -202,6 +211,34 @@ const trampoline = (f) => {
 
 
 ```
+
+**decorator**
+
+```js
+// 装饰器修饰类 
+@decorator
+class MyClass() {
+    
+}
+function decorator(target) {
+    target.hasDecorator = true;
+    target.prototype._number = 0;
+}
+MyClass.hasDecorator // true
+new MyClass()._number === 0 // true
+
+// 装饰器修饰类的属性
+class MyClass2() {
+    @readonly
+    name() { return 'xiaoxixi' }
+}
+function readonly(target, name, descriptor) {
+    descriptor.writable = false;
+    return descriptor
+}
+```
+
+
 
 **BOM**
 

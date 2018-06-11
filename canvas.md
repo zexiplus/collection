@@ -10,7 +10,7 @@ ctx.moveTo(x,y)  //设直线段的起点
 ctx.lineTo(x,y)   //设置线段的终点
 ctx.lineWidth = 1.0  //设直线段宽度
 ctx.strokeStyle = ‘red’ //设直线段颜色
-ctx.storoke() //绘制线段
+ctx.stroke() //绘制线段
 ```
 
 ##### 绘制矩形
@@ -18,7 +18,7 @@ ctx.storoke() //绘制线段
 ```js
 ctx.fillStyle = ‘yellow’   //填充色
 ctx.fillRect(x,y,w,h)    //绘制实心矩形
-ctx.storkeRect(x,y,w,h)   //绘制空心矩形
+ctx.strokeRect(x,y,w,h)   //绘制空心矩形
 ctx.clearRect(x,y,w,h)    //清除矩形
 
 ```
