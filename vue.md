@@ -41,24 +41,9 @@ npm i less less-loader -S
 modules.exports.module.rules: [{test: /\.less$/, loader: 'style-loader!css-loader!less-loader'}]
 ```
 
-**others**
-
-```js
-// Vue.extend(component) 创建并返回一个子类，可用于构造新组件用于测试
-import app from './app'
-const App = Vue.extend(app)
-new App().$mount('#id')  // 创建并挂载组件
-const vm = new App().$mount() // 创建组件并挂载（也可以不挂在）
-expect(vm.$el.querySelector('h1').textContent).toEqual('title') // 判断组件内部选择器h1内容
-
-// 路由跳转
-this.$router.push({name: 'pathName'})
-
-```
 
 
-
-**vue 指令**
+**vue directives**
 
 ```js
 /* --------------------------------注册指令-------------------- */
@@ -83,7 +68,7 @@ export default {
 
 ```
 
-**vue 样式**
+**vue style**
 
 ```html
 <!-- 样式引入-->
@@ -119,7 +104,7 @@ export default {
 }
 ```
 
-**vue 异步组件**
+**vue load on demand**
 
 ```js
 /* ---------------异步引入模块 ------------ */
@@ -130,7 +115,7 @@ const component = () => import('componentName')
 const component = resolve => require(['componentName'],resolve)
 ```
 
-**vue 渲染组建（createElement函数）**
+**vue render（createElement function h）**
 
 ```html
 <custom-component>
@@ -162,7 +147,7 @@ Vue.component('customComponent', {
 })
 ```
 
-**vue 渲染组建（jsx）**
+**vue render（with jsx）**
 
 - {value} 单花括号变量名
 
@@ -191,7 +176,7 @@ new Vue({
 
 
 
-**Vue 选项**
+**Vue options**
 
 ```js
 // watch 深度观察, *注: 观察数组时不需要deep，但是arr[1] = 1,赋值操作不会触发观察,方法操作才会触发例如arr.splice(0, 1, 1)
@@ -230,8 +215,6 @@ export default {
   }
 }
 ```
-
-
 
 
 
@@ -291,11 +274,19 @@ axios.interceptors.response.use(function (response) {
 }
 ```
 
-
-
-**vue 其它**
+**vue others**
 
 ```js
+// Vue.extend(component) 创建并返回一个子类，可用于构造新组件用于测试
+import app from './app'
+const App = Vue.extend(app)
+new App().$mount('#id')  // 创建并挂载组件
+const vm = new App().$mount() // 创建组件并挂载（也可以不挂在）
+expect(vm.$el.querySelector('h1').textContent).toEqual('title') // 判断组件内部选择器h1内容
+
+// 路由跳转
+this.$router.push({name: 'pathName'})
+
 /* --------------------返回当前route路径 ------------------ */
 computed() { 
   return this.$route.path
@@ -313,44 +304,10 @@ this.$alert(msg, title, {type:'error'});
 /*---------------动态组建 (可用于一个页面有多个弹窗)----------------------*/
 v-bind:is=”componentName”
 <component :is=”currentView”></component>
-```
-
-
-
-### elementUi
-
-**el-table**`自定义表头jsx实现`
-
-![render-header](./imgs/el-table-header.bmp)
-
-```vue
-<template>
-  <el-table>
-    <el-table-column
-    :render-header="renderHeader">
-    </el-table-column>
-  </el-table>
-</template>
-<script>
-  export default {
-    methods: {
-      renderHeader() {
-         return (<div class="readlist-table-header">
-                    <a class={["readtab",{"active":!this.readStatus}]} 					                            href="javascript:void(0)" onClick={this.toUnread}>
-                      未读（<span>{this.tData.unreadNum}</span>）
-                    </a>
-                    <a class={["readtab",{"active":this.readStatus}]}                                                href="javascript:void(0)" onClick={this.toUnread}>
-                      已读（<span>{this.tData.readedNum}</span>）
-                    </a>
-                </div>);
-      },
-      toUnread() {
-      	console.log(...)     
-      }
-    }
-  }
-</script>
-
 
 ```
+
+
+
+
 

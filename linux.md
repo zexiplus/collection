@@ -30,6 +30,14 @@ chmod +x demo.sh
 ./demo.sh           #执行
 ```
 
+##### 新建文件并写入内容
+
+```shell
+echo "aaaa" > foo.txt
+```
+
+
+
 ##### 按cpu用量查看进程
 
 ```shell

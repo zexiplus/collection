@@ -654,7 +654,7 @@
 
 290. **opt 选择**
 
-     
+        
 
 291. **crypto 加密**
 
@@ -698,7 +698,7 @@
 
 310. **represent 表示**
 
-     
+        
 
 311. **synopsis 概要**
 
@@ -720,7 +720,7 @@
 
 320. **compile 编译**      
 
-    
+       
 
 321. **idiosyncratic 特质**
 
@@ -862,8 +862,6 @@
 
 384. **idiosyncratic 特质**
 
-385. **idiosyncratic 特质**
+385. **forgery 伪造**
 
-386. **forgery 伪造**
-
-387. **bachelor 学士**
+386. **bachelor 学士**
