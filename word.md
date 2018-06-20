@@ -149,7 +149,7 @@
 
     ​
 
-61. **ultimate 终极的**
+61. **ultimate 终极的,最终的**
 
 62. **abstraction 抽象化**
 
@@ -533,7 +533,7 @@
 
 235. **suspends 挂起**
 
-236. **decoupled 解耦**
+236. **decouple 解耦**
 
 237. **productivity  生产率**
 
@@ -654,7 +654,7 @@
 
 290. **opt 选择**
 
-        
+     ​      
 
 291. **crypto 加密**
 
@@ -698,7 +698,7 @@
 
 310. **represent 表示**
 
-        
+     ​      
 
 311. **synopsis 概要**
 
@@ -720,7 +720,7 @@
 
 320. **compile 编译**      
 
-       
+     ​     
 
 321. **idiosyncratic 特质**
 
@@ -865,3 +865,27 @@
 385. **forgery 伪造**
 
 386. **bachelor 学士**
+
+387. Teaser 预告
+
+388. celebrity 名人
+
+389. contract 合同
+
+390. retrieve 取回
+
+     
+
+391. periodic 定期
+
+392. quizzes 测验
+
+393. labs 实验室
+
+394. fairness 公平
+
+395. couple 耦合
+
+396. cast 投
+
+397. variance 差异

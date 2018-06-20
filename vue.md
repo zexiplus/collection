@@ -1,11 +1,15 @@
 ## vue record
 
+### vue core
+
 **vue cli**
 
 ```js
 vue list // 列出所有可用脚手架
 vue init webpack demo // 创建以webpack为脚手架名为demo的项目
 ```
+
+
 
 **main.js**
 
@@ -32,6 +36,8 @@ new Vue({
 
 ```
 
+
+
 **Vue config**
 
 ```bash
@@ -43,10 +49,47 @@ modules.exports.module.rules: [{test: /\.less$/, loader: 'style-loader!css-loade
 
 
 
-**vue directives**
+**vue plugins**
+
+> Vue.js 的插件应当有一个公开方法 `install` 。这个方法的第一个参数是 `Vue` 构造器，第二个参数是一个可选的选项对象：
 
 ```js
-/* --------------------------------注册指令-------------------- */
+MyPlugin.install = function (Vue, options) {
+  // 1. 添加全局方法或属性
+  Vue.myGlobalMethod = function () {
+    // 逻辑...
+  }
+
+  // 2. 添加全局资源
+  Vue.directive('my-directive', {
+    bind (el, binding, vnode, oldVnode) {
+      // 逻辑...
+    }
+    ...
+  })
+
+  // 3. 注入组件
+  Vue.mixin({
+    created: function () {
+      // 逻辑...
+    }
+    ...
+  })
+
+  // 4. 添加实例方法
+  Vue.prototype.$myMethod = function (methodOptions) {
+    // 逻辑...
+  }
+}
+```
+
+
+
+**vue directives**
+
+> 注册指令
+
+```js
 //全局注册
 Vue.directive('directiveName',{
   	bind: function (el, binding) {
@@ -67,6 +110,8 @@ export default {
 }
 
 ```
+
+
 
 **vue style**
 
@@ -104,6 +149,8 @@ export default {
 }
 ```
 
+
+
 **vue load on demand**
 
 ```js
@@ -114,6 +161,8 @@ const component = () => import('componentName')
 // 写法二
 const component = resolve => require(['componentName'],resolve)
 ```
+
+
 
 **vue render（createElement function h）**
 
@@ -146,6 +195,8 @@ Vue.component('customComponent', {
   }
 })
 ```
+
+
 
 **vue render（with jsx）**
 
@@ -190,7 +241,9 @@ watch: {
 
 
 
-**service**  分离请求(太多ajax太丑陋，封装成单个js暴露出去，每个方法均返回promise实例)
+**service**  
+
+>  分离请求(太多ajax太丑陋，封装成单个js暴露出去，每个方法均返回promise实例)
 
 ```js
 // index.js
@@ -218,7 +271,13 @@ export default {
 
 
 
-**Vue-axios**
+### vue plugins
+
+**Vue-axios**	
+
+[Click](https://github.com/axios/axios)
+
+> 全局ajax请求拦截
 
 ```js
 //挂载请求拦截器
@@ -237,7 +296,7 @@ var ajax = axios.interceptors.request.use(function (config) {
 //取消拦截器
 axios.interceptors.request.eject(interceptor)
 
-/* ------------------- 相应拦截器，可处理失败响应等等 --------------------- */
+/* -------------------响应拦截器，可处理失败响应等等 --------------------- */
 axios.interceptors.response.use(function (response) {
     //根据响应状态吗判断
   	if (response.status !== 200) {
@@ -273,6 +332,8 @@ axios.interceptors.response.use(function (response) {
   }
 }
 ```
+
+
 
 **vue others**
 
