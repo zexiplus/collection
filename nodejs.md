@@ -107,6 +107,7 @@ supervisor index.js          //代替node index.js   启动服务器，并在每
 
 
 ### http
+>  index.js
 
 ```js
 var http = require('http')
@@ -121,6 +122,60 @@ http.createServer((req,res) => {
 }).listen(6666)
 
 ```
+
+
+
+> http **method&properties**
+
+1. http.get    
+
+   ​                         
+
+
+> response  **methods&properties**
+>
+
+1. res.**setEncoding**('utf-8')                                      设置编码格式
+
+2. res.**setHeader**('Content-type', 'text/html')      设置响应头
+
+3. res.**headers**['content-type']                               获取content-type响应头
+
+4. res.**resume**()                                                        消耗res, 释放内存空间
+
+5. res.**writeHead**(statusCode, [headers])     设置响应头和响应码，会和setHeader合并，setHeader优先级高
+
+   ```js
+      res.writeHead(200, {
+          'Content-Type': 'text/plain', 
+          'Content-Length': Buffer.length(body)
+      })
+   ```
+
+   
+> request **methods&properties**
+
+
+1. req.**headers**                                                        响应头对象,格式如下
+
+   ```js
+   { host: 'localhost:3001',
+     connection: 'keep-alive',
+     'cache-control': 'max-age=0',
+     'upgrade-insecure-requests': '1',
+     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) ...',
+     accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+     'accept-encoding': 'gzip, deflate, br',
+     'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,zh-HK;q=0.7',
+      cookie: 'name=float'          // cookie会随请求头一起发送至服务器
+   }
+   ```
+
+   
+
+   
+
+
 
 ### connect
 

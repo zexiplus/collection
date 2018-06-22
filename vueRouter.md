@@ -39,8 +39,8 @@ this.$router.push({name: 'dynamicCom', {query: {name: 'xiaoxixi'}}})
 this.$router.replace()
 
 // router.go(n)
-this.router.go(-1) // 浏览器后退一步
-this.router.go(2)  // 前进两步
+this.$router.go(-1) // 浏览器后退一步
+this.$router.go(2)  // 前进两步
 ```
 
 

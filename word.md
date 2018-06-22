@@ -523,7 +523,7 @@
 
      ​
 
-231. **Sponsors 赞助商**
+231. **sponsors 赞助商**
 
 232. **orientation 方向**
 
@@ -658,7 +658,7 @@
 
 291. **crypto 加密**
 
-292. **Formula 配方，公式**
+292. **formula 配方，公式**
 
 293. **elevate 提升**
 
@@ -734,7 +734,7 @@
 
 326. **shafts 轴**
 
-327. **Massive 海量的**
+327. **massive 海量的**
 
 328. **deficits 赤字**
 
@@ -746,11 +746,11 @@
 
 331. **retweet 转载，转推**
 
-332. **Transparency 透明度**
+332. **transparency 透明度**
 
-333. **Crooked 扭曲的**
+333. **crooked 扭曲的**
 
-334. **Numerous 多**
+334. **numerous 多**
 
 335. **terrific 了不起的**
 
@@ -760,13 +760,13 @@
 
 338. **ban 禁止**
 
-339. tax 税 
+339. **tax 税** 
 
 340. **witch 巫婆**
 
      ​      
 
-341. **Drone 无人机**
+341. **drone 无人机**
 
 342. **Avenger 复仇者**
 
@@ -790,13 +790,13 @@
 
 351. **obtaining 获得**
 
-352. **Council 政务会**
+352. **council 政务会**
 
 353. **nuclear 核**
 
 354. **bode 预兆**
 
-355. yup 是的 
+355. **yup 是的** 
 
 356. **coated 涂**
 
@@ -816,9 +816,9 @@
 
 363. **contact 联系**
 
-364. **Gotcha 明白了**
+364. **gotcha 明白了**
 
-365. **Spare 剩余的，备用的，空闲的**
+365. **spare 剩余的，备用的，空闲的**
 
 366. **yeehaw 惊叹词（兴奋的表达）**
 
@@ -866,26 +866,24 @@
 
 386. **bachelor 学士**
 
-387. Teaser 预告
+387. **teaser 预告**
 
-388. celebrity 名人
+388. **celebrity 名人**
 
-389. contract 合同
+389. **contract 合同**
 
-390. retrieve 取回
+390. **periodic 定期**
 
      
 
-391. periodic 定期
+391. **quizzes 测验**
 
-392. quizzes 测验
+392. **labs 实验室**
 
-393. labs 实验室
+393. **fairness 公平**
 
-394. fairness 公平
+394. **couple 耦合**
 
-395. couple 耦合
+395. **cast 投**
 
-396. cast 投
-
-397. variance 差异
+396. **variance 差异**
