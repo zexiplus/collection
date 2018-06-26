@@ -57,7 +57,7 @@ Array.of(3) // [3]
 Array(1,2,3) // [1,2,3]
 Array(3) // [,,,] 
 
-// find() 找到并返回第一个为true的元素
+// 数组查询 find() 找到并返回第一个为true的元素
 Array.prototype.find((n) => n > 10)
 
 //数组排序

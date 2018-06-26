@@ -127,7 +127,71 @@ http.createServer((req,res) => {
 
 > http **method&properties**
 
-1. http.get    
+1. http.get(options, callback)
+
+    ```js
+   http.get('http://nodejs.org/dist/index.json', (res) => {
+     const { statusCode } = res;
+     const contentType = res.headers['content-type'];
+   
+     res.setEncoding('utf8');
+     let rawData = '';
+     res.on('data', (chunk) => { rawData += chunk; });
+     res.on('end', () => {
+       try {
+         const parsedData = JSON.parse(rawData);
+         console.log(parsedData);
+       } catch (e) {
+         console.error(e.message);
+       }
+     });
+   }).on('error', (e) => {
+     console.error(`错误: ${e.message}`);
+   });
+    ```
+
+   
+
+2. http.request(options,[callback])
+
+   
+
+   ```js
+   const postData = querystring.stringify({
+     'msg' : 'Hello World!'
+   });
+   
+   const options = {
+     hostname: 'www.google.com',
+     port: 80,
+     path: '/upload',
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/x-www-form-urlencoded',
+       'Content-Length': Buffer.byteLength(postData)
+     }
+   };
+   
+   const req = http.request(options, (res) => {
+     res.setEncoding('utf8');
+     res.on('data', (chunk) => {
+       console.log(`响应主体: ${chunk}`);
+     });
+     res.on('end', () => {
+       console.log('响应中已无数据。');
+     });
+   });
+   
+   req.on('error', (e) => {
+     console.error(`请求遇到问题: ${e.message}`);
+   });
+   
+   // 写入数据到请求主体
+   req.write(postData);
+   req.end();
+   ```
+
+   
 
    ​                         
 

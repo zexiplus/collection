@@ -273,66 +273,6 @@ export default {
 
 ### vue plugins
 
-**Vue-axios**	
-
-[Click](https://github.com/axios/axios)
-
-> 全局ajax请求拦截
-
-```js
-//挂载请求拦截器
-var ajax = axios.interceptors.request.use(function (config) {
-    // 对请求进行设置（格式。。。）返回config
-   	if (config.method === 'post') {
-      newConf.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-    }
-    return config;
-}, function (error) {
-    // 失败操作
-  	alert('操作失败')
-    return Promise.reject(error);
-});
-
-//取消拦截器
-axios.interceptors.request.eject(interceptor)
-
-/* -------------------响应拦截器，可处理失败响应等等 --------------------- */
-axios.interceptors.response.use(function (response) {
-    //根据响应状态吗判断
-  	if (response.status !== 200) {
-      alert('服务器异常');
-      return Promise.reject(response);
-    } 
-  	//根据响应返回信息判断
-  	else if (response.data.ret !== 0) {
-      alert(ERR_CODE[response.data.ret] || '操作失败');
-      //返回失败态promise
-      return Promise.reject(response.data.ret_msg);
-    }
-    return response;
-}, function (error) {
-    // 错误处理
-    return Promise.reject(error);
-});
-
-/* ------------------ Promise.all应用(多项操作，但接口不支持多个) --------------------- */
-
-{
-  arr: [1,2,4,5]
-  getById(id) {
-    // service接口请求，返回promise实例
-    return this.service.getById(id)
-  }
-  getByIds() {
-    new Promise.all(this.arr.map(item => this.getById(item))).then(results => {
-      this.getList()
-    }).catch((err) => {
-      alert('请求出错')
-    })
-  }
-}
-```
-
 
 
 **vue others**
@@ -342,7 +282,7 @@ axios.interceptors.response.use(function (response) {
 import app from './app'
 const App = Vue.extend(app)
 new App().$mount('#id')  // 创建并挂载组件
-const vm = new App().$mount() // 创建组件并挂载（也可以不挂在）
+const vm = new App().$mount() // 创建组件并挂载（也可以不挂载）
 expect(vm.$el.querySelector('h1').textContent).toEqual('title') // 判断组件内部选择器h1内容
 
 // 路由跳转

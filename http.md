@@ -57,3 +57,60 @@
 所以我们应该尽量减少reflow和replaint，我想这也是为什么现在很少有用table布局的原因之一。
 
 最后浏览器绘制各个节点，将页面展示给用户。
+
+### 2.http头信息
+
+> 请求头信息例子
+
+```js
+// http header json object
+{
+    host: "localhost:3001",
+    referer: "localhost:3001/request",
+    connection: "keep-alive",
+    upgrade-insecure-requests: "1",
+    user-agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36",
+    accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+    accept-encoding: "gzip, deflate, br",
+    accept-language: "zh-CN,zh;q=0.9,en;q=0.8,zh-HK;q=0.7",
+}
+```
+
+> 默认请求头含义
+
+* Accept: 浏览器能够处理的内容类型
+
+* Accept-Charset: 浏览器能够显示的字符集
+
+* Accept-Encoding: 浏览器能够处理的压缩编码
+
+* Accept-Language: 浏览器当前设置的语言
+
+* Host: 发出请求的页面所在域
+
+* Referer: 发送请求页面的url
+
+* Cookie: 当前页面设置的任何cookie
+
+* Connection: 浏览器与服务器之间的连接类型
+
+  ```js
+  // Connection : Keep-Alive 功能避免了建立或者重新建立连接
+  connection: 'keep-alive',
+  timeout = 5,max = 100 // 超过5秒建立新的连接， 最大请求100次
+  
+  // http/1.0
+  // Keep-Alive，当服务器收到附带有Connection: Keep-Alive的请求时，它也会在响应头中添加一个同样的字段来使用Keep-Alive。这样一来，客户端和服务器之间的HTTP连接就会被保持，不会断开（超过Keep-Alive规定的时间，意外断电等情况除外），当客户端发送另外一个请求时，就使用这条已经建立的连接
+  
+  // http/1.1
+  // 在HTTP/1.1版本中，官方规定的Keep-Alive使用标准和在HTTP/1.0版本中有些不同，默认情况下所在HTTP1.1中所有连接都被保持，除非在请求头或响应头中指明要关闭：Connection: Close  ，这也就是为什么Connection: Keep-Alive字段再没有意义的原因
+  
+  
+  ```
+
+  
+
+* User-Agent: 浏览器类型字符串
+
+> 响应头信息
+

@@ -7,14 +7,14 @@
 ```js
 {name: "mainFrame", meta: {…}, path: "/mainFrame", hash: "", query: {…}, …}
 
-// matched 表示vue-router 实例 匹配的模式
+// this.$route.matched 表示vue-router 实例 匹配的模式
 {
     name: 'page2',
     path: 'page2', // 对应的浏览器url为 localhost:8080/mainFrame/page2
     component: page2
 },
     
-// query  /path?name=xiaoxiix&id=123
+// this.$route.query  /path?name=xiaoxiix&id=123
 {
     name: 'xiaoxixi',
     id: '123'
@@ -206,4 +206,14 @@ export default router
 ```
 
 
+
+> main.js
+
+```js
+import router from './router'
+new Vue({
+    el: '#app',
+    router,
+})
+```
 
