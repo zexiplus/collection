@@ -1,43 +1,92 @@
-##mongo 命令详解
-```shell
-mongod //启动mongo服务器
-mongod --dbpath d:\data\db  //指定目录启动mongo服务器
+#mongo
 
-sudo mongod         //启用mongo服务器              端口      27017
+> [doc](https://docs.mongodb.com/master/mongo/)
 
-sudo mongod --rest    //启用web界面的mongo服务器   界面端口  28017
 
-mongo               //启用mongo客户端
 
-mongo cli 命令
+### mongo 命令详解
 
-show dbs          //显示所有数据库
+1. start mongodb
 
-db                //代表当前数据库
+   ```shell
+   sudo service mongod start
+   ```
 
-use dbName       //切换数据库
+2. stop mongodb
 
-```
+   ```shell
+   sudo service mongod stop
+   ```
 
-## mongo 配置文件
+3. restart mongodb
 
-```shell
+   ```shell
+   sudo service mongod restart
+   ```
+
+4. use mongodb
+
+   ```shell
+   # only connect to the local default mongo service
+   mongo
+   
+   # or
+   mongo --host 127.0.0.1:27017
+   ```
+
+5. others
+
+   ```shell
+   # 启动mongo服务器
+   mongod
+   
+   # 指定目录启动mongo服务器
+   mongod --dbpath d:\data\db 
+   
+   # 启用mongo服务器              端口      27017
+   sudo mongod       
+   
+   # 启用web界面的mongo服务器   界面端口  28017
+   sudo mongod --rest  
+   
+   # 启用mongo客户端
+   mongo            
+   
+   mongo cli 命令
+   
+   # 显示所有数据库
+   show dbs         
+   
+   # 代表当前数据库
+   db              
+   
+   # 切换并使用数据库
+   use dbName      
+   ```
+   
+
+### mongo 配置文件
+
+```bash
 /etc/mongodb.conf
-# 数据库路径 /data/db
 ```
 
-## mongoose 连接
+### mongoose 连接mongodb
 
 ```javascript
 var mongoose = require('mongoose')
-var db = mongoose.connect('mongodb://user:pwd@192.168.1.101:port/db_name')
+var db = mongoose.connect('mongodb://username:password@192.168.1.101:port/db_name')
 db.connection.on('open',fn)
 db.disconnect() //关闭所有连接
 ```
 
 
 
-## mongoose 模型定义及实例化
+# mongoose
+
+
+
+### mongoose 模型定义及实例化
 
 ```js	
 var userSchema = new mongoose.Schema({
@@ -59,7 +108,7 @@ var lovelydog = new Dog({name: 'lovely'})
 
 
 
-## mongoose 模型扩展
+### mongoose 模型扩展
 
 ```js
 //statics 类上扩展
@@ -87,7 +136,7 @@ var xiaoxixi = new User({username:'xiaoxixi',password: '12345'}).is_exist(cb)
 
 
 
-## mongoose promise
+### mongoose promise
 
 ```js
 //所有方法均可采用promise规范
@@ -96,7 +145,7 @@ User.find({},cb) === User.find({}).then(cb)
 
 
 
-## mongoose CRUD
+### mongoose CRUD
 
 ```js
 //增加并存储单条数据

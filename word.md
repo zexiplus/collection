@@ -5,8 +5,8 @@
 **DAO	(data access object)  数据访问对象**
 **ISP     	(Internet Service Provider)互联网服务提供商**
 **FCC    	(Federal Communications Commission)美国联邦通信委员会**
-
 **PR(pull request) 提交请求**
+**LPWA      (low power wide area)**
 
 ## 单词结构
 
@@ -874,7 +874,7 @@
 
 390. **periodic 定期**
 
-        
+     ​      
 
 391. **quizzes 测验**
 
@@ -888,4 +888,14 @@
 
 396. **variance 差异**
 
-397. molest 骚扰你
+397. **molest 骚扰**
+
+398. **oral 口的**
+
+399. **sketches 素描**
+
+400. **epic 史诗般的**
+
+     
+
+401. **criteria 标准**

@@ -1,3 +1,22 @@
+##### ssh连接服务器
+
+```shell
+ssh username@ipAddress
+```
+
+##### 软件源配置文件
+
+```shell
+# 文件名
+/etc/apt/sources.list
+
+# 文件内容 code 为系统版本代号 ubuntu 14 为 trusty， ubuntu 16 为 xenial ,ubuntu 17 为 artful ， ubuntu 18为 bionic
+deb http://nginx.org/packages/debian/ codename nginx
+deb-src http://nginx.org/packages/debian/ codename nginx
+```
+
+
+
 ##### 改变文件/文件夹所有者
 
 ```shell
@@ -35,8 +54,6 @@ chmod +x demo.sh
 ```shell
 echo "aaaa" > foo.txt
 ```
-
-
 
 ##### 按cpu用量查看进程
 
