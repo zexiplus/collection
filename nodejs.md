@@ -100,8 +100,20 @@ path.resolve('/usr','./local','bin')   //把路径解析为绝对路径的函数
 npm i -g supervisor
 supervisor index.js          //代替node index.js   启动服务器，并在每次修改之后自动重启
 
+```
+
+### fs
+
+> Open file
 
 
+
+```js
+const fs = require('fs')
+fs.open('test.txt', 'r+', (err, fd) => {
+    if (err) throw err
+    console.log(fd)
+})
 ```
 
 
@@ -130,10 +142,10 @@ http.createServer((req,res) => {
 1. http.get(options, callback)
 
     ```js
-   http.get('http://nodejs.org/dist/index.json', (res) => {
+      http.get('http://nodejs.org/dist/index.json', (res) => {
      const { statusCode } = res;
      const contentType = res.headers['content-type'];
-   
+      
      res.setEncoding('utf8');
      let rawData = '';
      res.on('data', (chunk) => { rawData += chunk; });
@@ -145,9 +157,9 @@ http.createServer((req,res) => {
          console.error(e.message);
        }
      });
-   }).on('error', (e) => {
+      }).on('error', (e) => {
      console.error(`错误: ${e.message}`);
-   });
+      });
     ```
 
    

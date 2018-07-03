@@ -896,6 +896,24 @@
 
 400. **epic 史诗般的**
 
-     
+        
 
 401. **criteria 标准**
+
+402. **supreme 至上的**
+
+403. **uphold 维持**
+
+404. **except for 除了**
+
+405. **racism 种族主义**
+
+406. Estimated 预估
+
+407. encapsulates 包括包裹
+
+408. identical 相同，一致
+
+409. delegate 代表
+
+410. 

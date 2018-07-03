@@ -17,13 +17,13 @@ axios.create({
 > 2.全局ajax请求拦截
 
 
-```
+```js
 
 //挂载请求拦截器
-var ajax = axios.interceptors.request.use(function (config) {
+var interceptor = axios.interceptors.request.use(function (config) {
     // 对请求进行设置（格式。。。）返回config
    	if (config.method === 'post') {
-      newConf.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+      config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
     }
     return config;
 }, function (error) {
