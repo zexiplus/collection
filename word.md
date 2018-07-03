@@ -896,7 +896,7 @@
 
 400. **epic 史诗般的**
 
-        
+     ​      
 
 401. **criteria 标准**
 
@@ -908,12 +908,20 @@
 
 405. **racism 种族主义**
 
-406. Estimated 预估
+406. **Estimated 预估**
 
-407. encapsulates 包括包裹
+407. **encapsulates 包括包裹**
 
-408. identical 相同，一致
+408. **identical 相同，一致**
 
-409. delegate 代表
+409. **delegate 代表**
 
-410. 
+410. **cascade 及联**
+
+     
+
+411. performant 高性能的
+
+412. aka 别名
+
+413. stale 陈旧的
