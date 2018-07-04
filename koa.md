@@ -30,17 +30,17 @@ app.listen(3000)
 console.log('the server is listenning at 3000 port')
 ```
 
-| app's attributes | using                            | explian                         |
-| ---------------- | -------------------------------- | ------------------------------- |
-| app.listen       | app.listen(3000)                 | 监听端口                        |
-| app.env          | app.env == 'development'         | app环境变量                     |
-| app.use          | app.use(function (ctx, next) {}) | 使用中间件                      |
-| app.keys         | app.keys = ['name', 'xiaoxixi']  | 设置cookie                      |
-| app.context.db   | app.context.db = new Db()        | 全局context 设置                |
-| app.slient       | app.slient = true                | 关闭警告模式(error事件不会出发) |
-| app.on           | app.on('error \| ')              | 监听事件                        |
-| app.proxy        | app.proxy = true                 | 设置代理                        |
-|                  |                                  |                                 |
+| app's attributes | using                             | explian                              |
+| ---------------- | --------------------------------- | ------------------------------------ |
+| app.listen       | app.listen(3000)                  | 监听端口                             |
+| app.env          | app.env == 'development'          | app环境变量                          |
+| app.use          | app.use(function (ctx, next) {})  | 使用中间件                           |
+| app.keys         | app.keys = ['name', 'xiaoxixi']   | 设置cookie                           |
+| app.context.db   | app.context.db = new Db()         | 全局context 设置                     |
+| app.slient       | app.slient = true                 | 关闭警告模式(error事件不会出发)      |
+| app.on           | app.on('error \| ')               | 监听事件                             |
+| app.proxy        | app.proxy = true                  | 设置代理                             |
+| app.callback()   | http.createServer(app.callback()) | 返回可以被http/connect使用的回调函数 |
 
 
 
@@ -98,10 +98,29 @@ app.use((ctx, next) => {
 
 // koa-router 中间件
 const Router = require('koa-router')
-const user = new Router()
-user.get('/', ctx => {
-    
+
+// 定义2个子路由
+const config = new Router()
+const home = new Router()
+
+home.get('/one', ctx => {
+   ctx.body = 'home one' 
 })
+
+config.get('/user', ctx => {
+    ctx.body = 'user'
+}).get('/setting', ctx => {
+    ctx.body = setting
+})
+
+// 创建父路由，装载子路由
+const router = new Router()
+router.use('/home', home.routes(), home.allowedMethods())
+router.use('/config', config.routes(), config.allowedMethods())
+
+// app对象使用父路由
+app.use(router.routes()).use(router.allowedMethods())
+
 ```
 
 
@@ -132,7 +151,7 @@ user.get('/', ctx => {
 | ctx.request.method              | ctx.method                                    | 请求方法                         | ctx.method = 'post'                                          |
 | ctx.request.origin              | ctx.origin                                    | 请求源地址(协议和地址)           | =>  http://bing.com                                          |
 | ctx.request.length              |                                               | 请求长度  Content-Length         |                                                              |
-| ctx.request.url                 | ctx.url                                       | 请求url                          |                                                              |
+| ctx.request.url                 | ctx.url                                       | 请求url(不包括host)              | /path?a=123&b=456                                            |
 | ctx.requset.path                | ctx.path                                      | 请求路径                         | /path                                                        |
 | ctx.request.href                | ctx.href                                      | 请求href(protocol, host and url) | (http://example.com/foo/bar?q=1)                             |
 | ctx.request.queryString         | ctx.queryString                               | 查询字符串                       | a=123&b=456                                                  |
@@ -154,6 +173,8 @@ user.get('/', ctx => {
 | ctx.request.socket              |                                               | 返回request的socket连接对象      |                                                              |
 | ctx.request.get(filed)          |                                               | 获得请求头字段                   | request.get(‘Content-Type‘)                                  |
 
+
+
 #### 6.ctx.response
 
 | ctx.response.attributes           | alias                    | Explian                                | Demo                                                         |
@@ -172,11 +193,11 @@ user.get('/', ctx => {
 | ctx.response.is(types)            |                          | 判断响应体的类型                       | if(ctx.response.is('html')) return                           |
 | ctx.response.redirect(url)        | ctx.redirect(url)        | 响应跳转                               | ctx.redirect('back'); ctx.redirect('back', '/index.html'); ctx.redirect('/login');      ctx.redirect('http://google.com'); |
 | ctx.response.attachment(filename) | ctx.attachment(filename) | 触发浏览器下载                         |                                                              |
-| response.headerSent               | ctx.headerSent           | 检查是否已经发送响应头                 | if (ctx.headerSent) { // do}                                 |
-| response.lastModified             | ctx.lastModified         | 返回/设置Last-Modified响应头的日期对象 | ctx.lastModified = new Date();                               |
-|                                   |                          |                                        |                                                              |
-|                                   |                          |                                        |                                                              |
-|                                   |                          |                                        |                                                              |
+| ctx.response.headerSent           | ctx.headerSent           | 检查是否已经发送响应头                 | if (ctx.headerSent) { // do}                                 |
+| ctx.response.lastModified         | ctx.lastModified         | 返回/设置Last-Modified响应头的日期对象 | ctx.lastModified = new Date();                               |
+| ctx.response.etag                 | ctx.etag                 |                                        | ctx.etag = crypto.createHash('md5').update(ctx.body).digest('hex'); |
+| ctx.response.vary(field)          |                          |                                        |                                                              |
+| ctx.response.flushHeaders()       |                          | 刷新响应头，并开始响应体               |                                                              |
 
 
 

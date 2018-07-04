@@ -92,6 +92,11 @@ let [a, b, c, d, e, f] = itera();
 let x = 1,
     y = 2;
 [x, y] = [y, x]
+
+// 遍历数组键值对
+for (let [index, val] of arr.entries()) {
+    console.log(index, val)
+}
 ```
 
 ##### Object

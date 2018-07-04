@@ -103,7 +103,7 @@
 
 40. **recognition 识别**
 
-    ​
+    
 
 41. **Violations 违规**
 
@@ -674,7 +674,7 @@
 
 299. **Manual 手册**
 
-300. **truncated 缩短，截去**
+300. **truncat  截去**
 
      ​      
 
@@ -920,8 +920,8 @@
 
      
 
-411. performant 高性能的
+411. **performant 高性能的**
 
-412. aka 别名
+412. **aka 别名**
 
-413. stale 陈旧的
+413. **stale 陈旧的**
