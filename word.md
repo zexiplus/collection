@@ -714,7 +714,7 @@
 
 317. **terms 条款** 
 
-318. **aspects 方面**
+318. **aspect 方面**
 
 319. **primed cache 启动缓存**
 
@@ -918,10 +918,22 @@
 
 410. **cascade 及联**
 
-     
+        
 
 411. **performant 高性能的**
 
 412. **aka 别名**
 
 413. **stale 陈旧的**
+
+414. craft 打造，手艺
+
+415. Typography 排印，排版
+
+416. Horizontally 水平的
+
+417. Vertical 垂直的
+
+418. slack 偷懒
+
+419. insomnia 失眠症

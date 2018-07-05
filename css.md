@@ -118,7 +118,7 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 
 
-/* 项目上属性 */
+/* 子属性 */
 
 /* 排列顺序 default 0 */
 order: <integer>; 
