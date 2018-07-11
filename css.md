@@ -54,6 +54,37 @@ width: calc(~"100% - 40px");
 }
 ```
 
+
+
+#### responsive img
+
+```html
+<!-- 在retina 屏上加载standard-big.png图片, 标准屏幕加载standard.png图片, 老旧浏览器不支持srcset则加载src属性 -->
+<img src="images/standard.png"
+     srcset="images/standard.png 1x, images/standard-big.png 2x"
+     style="width: 100%"/>
+
+<!-- 告知浏览器photo-big.jpg 2000px宽, photo-small.jpg 1000px宽，屏幕宽度大于960px以960px加载photo-big.jpg, 其他情况下以100%的宽度加载photo-small.jpg  -->
+<img src='images/photo-small.jpg'
+         srcset='images/photo-big.jpg 2000w,
+                 images/photo-small.jpg 1000w'
+         sizes='(min-width: 960px) 960px,
+                100vw'/>
+<!-- 在移动设备和宽屏设备加载不同的图片 -->
+
+<picture>
+  <source media='(min-width: 401px)'
+          srcset='images/photo-big.jpg'/>
+  <source media='(max-width: 400px)'
+          srcset='images/photo-tall.jpg'/>
+  <img src='images/photo-small.jpg'/>
+</picture>
+```
+
+
+
+
+
 #### css selector
 
 ```css

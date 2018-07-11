@@ -103,7 +103,6 @@
 
 40. **recognition 识别**
 
-    
 
 41. **Violations 违规**
 
@@ -918,7 +917,7 @@
 
 410. **cascade 及联**
 
-     ​      
+
 
 411. **performant 高性能的**
 
@@ -940,7 +939,7 @@
 
 420. discard 抛弃
 
-        
+     ​      
 
 421. eliminate 消除
 
@@ -962,7 +961,7 @@
 
 430. landscape mode 横屏模式
 
-        
+     ​      
 
 431. mockup 模型，样例
 
@@ -984,7 +983,7 @@
 
 440. contemplating 考虑
 
-     
+     ​      
 
 441. manipulate 操作
 
@@ -1006,7 +1005,7 @@
 
 450. ink 墨水
 
-     
+     ​      
 
 451. dip 浸
 
@@ -1028,6 +1027,8 @@
 
 460. mass 块
 
+     
+
 461. critical 临界
 
 462. hit critical mass  达到临界质量
@@ -1035,3 +1036,27 @@
 463. wind up 以...结束
 
 464. multiple 多
+
+465. intrinsic 固有的
+
+466. inherent 固有的
+
+467. complicate 使...复杂
+
+468. impact 碰撞
+
+469. illustration 插图
+
+470. crisply 清晰
+
+     
+
+471. fuzzy 模糊
+
+472. narrow 狭窄
+
+473. suffix 后缀
+
+474. scenarios  场景
+
+475. incognito 匿名的
