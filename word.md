@@ -103,7 +103,6 @@
 
 40. **recognition 识别**
 
-    
 
 41. **Violations 违规**
 
@@ -918,7 +917,6 @@
 
 410. **cascade 及联**
 
-        
 
 411. **performant 高性能的**
 
@@ -937,3 +935,29 @@
 418. slack 偷懒
 
 419. insomnia 失眠症
+
+420. intrinsic 固有的
+
+     ​
+
+421. inherent 固有的
+
+422. complicate 使...复杂
+
+423.  impact 碰撞
+
+424. illustration 插图
+
+425. crisply 清晰
+
+426. fuzzy 模糊
+
+427. narrow 狭窄
+
+428. suffix 后缀
+
+429. scenarios  场景
+
+430. incognito 匿名的
+
+431. ​
