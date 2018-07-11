@@ -85,6 +85,16 @@ overflow: hidden;
 
 3.解决文字环绕浮动元素（给包含文字的元素设置bfc）
 
+#### media queries
+
+```css
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    #main {
+        ...
+    }
+}
+```
+
 
 
 #### FLEX布局（flexible弹性布局） 
@@ -102,14 +112,19 @@ display: -webkit-flex; /* Safari */
 /* 排列方向 */
 flex-direction: row | row-reverse | column | column-reverse; 
 
-/* 换行规则 */
+/* 换行规则  */
 flex-wrap: nowrap | wrap | wrap-reverse;
+/* nowrap ： 不换行，所有item排列成一排，width ： 100% 被忽略 */
+/* wrap ： 换行显示 */
 
 /* 水平对齐规则 */ 
 justify-content: flex-start | flex-end | center | space-between | space-around;
+/* space-between: 等间隔排列 第一项前无间隔 */
+/* space-around : 等间隔排列 第一项前有间隔 */
 
 /* 垂直对齐规则 */
 align-items: flex-start | flex-end | center | baseline | stretch;
+/* stretch: flex-item 被纵向拉伸至flex-contanier 一样的高度 */
 
 /* 多轴对其规则 */
 align-content: flex-start | flex-end | center | space-between | space-around | stretch;
@@ -120,7 +135,7 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 /* 子属性 */
 
-/* 排列顺序 default 0 */
+/* 排列顺序 default 0 用此属性改变排列顺序 */
 order: <integer>; 
 
 /* 如果存在剩余空间， 放大的倍数 */

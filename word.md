@@ -351,7 +351,7 @@
 
 152. **toolset 工具集**
 
-153. **manipulating 使用**
+153. **manipulate 使用，操纵**
 
 154. **occasions 场合**
 
@@ -555,7 +555,7 @@
 
 245. **diverse 多种**
 
-246. **fundamental 基础的**
+246. **fundamental 基础的， 基本原理**
 
 247. **indicator 指示符**
 
@@ -918,7 +918,7 @@
 
 410. **cascade 及联**
 
-        
+     ​      
 
 411. **performant 高性能的**
 
@@ -937,3 +937,101 @@
 418. slack 偷懒
 
 419. insomnia 失眠症
+
+420. discard 抛弃
+
+        
+
+421. eliminate 消除
+
+422. counterpart 副本
+
+423. demonstrate 演示
+
+424. curly braces 大括号
+
+425. dimensions 尺寸
+
+426. encounter 遇到
+
+427. portrait 纵向，肖像
+
+428. portrait mode 竖屏模式
+
+429. landscape 风景
+
+430. landscape mode 横屏模式
+
+        
+
+431. mockup 模型，样例
+
+432. realm 领域
+
+433. Universal 通用
+
+434. tweak 调整，拧
+
+435. ultra 超
+
+436. dedicated 专用的
+
+437. diagram 图表
+
+438. Alternatively 另外
+
+439. boil it down 总结一下
+
+440. contemplating 考虑
+
+     
+
+441. manipulate 操作
+
+442. versus 相对
+
+443. screw something up 把事情搞砸了
+
+444. orthogonal to 和...息息相关
+
+445. overwhelmed 不堪重负
+
+446. vast 广大
+
+447. historical 历史的
+
+448. lens 镜头
+
+449. characters 字符
+
+450. ink 墨水
+
+     
+
+451. dip 浸
+
+452. trendy 新潮
+
+453. concrete 具体的
+
+454. conceptual 概念上的
+
+455. crap 废物
+
+456. warranted 必要的
+
+457. decade 十，年代
+
+458. inevitably 必将
+
+459. run into 遇到
+
+460. mass 块
+
+461. critical 临界
+
+462. hit critical mass  达到临界质量
+
+463. wind up 以...结束
+
+464. multiple 多

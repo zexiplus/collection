@@ -157,7 +157,10 @@ const router = new Router({
 })
 // 全局路由钩子
 router.beforeEach((to, form, next) => {
-    if (to.matched.some(item => item.needAuth)) {
+    // 进入默认主页
+    if（to.fullPath === '/') {
+        next({name: 'home'})
+    } else if (to.matched.some(item => item.needAuth)) {
         next({name: 'needAuth'})
     } else {
         next() // 通过路由
