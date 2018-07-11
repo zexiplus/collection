@@ -1,20 +1,28 @@
-## 	英文简称
+## 	term
 
-**SSO      （Single Sign O）单点登录**
-**CAS      （Central Authentication Service）中心授权服务**
-**DAO	(data access object)  数据访问对象**
-**ISP     	(Internet Service Provider)互联网服务提供商**
-**FCC    	(Federal Communications Commission)美国联邦通信委员会**
-**PR(pull request) 提交请求**
-**LPWA      (low power wide area)**
+| abbr     | full                              | explain                                                      |
+| -------- | --------------------------------- | ------------------------------------------------------------ |
+| SSO      | Single Sign O                     | 单点登录                                                     |
+| CAS      | Central Authentication Service    | 中心授权服务                                                 |
+| DAO      | data access object                | 数据访问对象                                                 |
+| ISP      | Internet Service Provider         | 互联网服务提供商                                             |
+| FCC      | Federal Communications Commission | 美国联邦通信委员会                                           |
+| PR       | pull request                      | 提交请求                                                     |
+| LPWA     | low power wide area               |                                                              |
+| A/B test |                                   | 网站更新了新UI，统计用户是否更喜欢新页面。定义之前的页面为A，新页面为B，一半用户会被重定向至B， 统计下通过A/B页面到达网站内页的用户占的百分比是多少。 |
+| UX       | User expreience                   | 用户体验                                                     |
 
-## 单词结构
+
+
+## Prefix & suffix
 
 1. pre 预先
 2. de  反
 3. re 重复
 
-## 单词
+
+
+## words
 
 1. **intersect  相交**
 
@@ -1060,3 +1068,32 @@
 474. scenarios  场景
 
 475. incognito 匿名的
+
+476. commerce 商业，商务的
+
+477. e-commerce 电子商务
+
+478. measure 测量
+
+479. subjected 受到
+
+480. former 前者
+
+     
+
+481. get around 绕过
+
+482. populate 填充
+
+483. descendant 后代
+
+484. arbitrary 随意的
+
+485. Inherit 继承的
+
+486. pluck 选取
+
+487. crucial 重要的
+
+488. coordinate 配合，协作
+

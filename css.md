@@ -1,12 +1,12 @@
 ## css
 
 ```css
-// 单行超出显示省略号：
+/* 单行超出显示省略号：*/
 White-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis;
 
-// 多行文本超出显示省略号
+/* 多行文本超出显示省略号 */
 
 display:-webkit-box;
 -webkit-line-cap:3;
@@ -14,28 +14,28 @@ display:-webkit-box;
 overflow:hidden;
 text-overflow:ellipsis;
 
-// 单行文字均匀对齐
+/*  单行文字均匀对齐 */
 text-align-last: justify;
 
-// 不定宽元素居中
+/* 不定宽元素居中 */
 display: table;
 margin: 0 auto;
 
-// 只允许在空格处换行
+/* 只允许在空格处换行 */
 word-wrap:break-word;
 
 
-// 设置起始，结束位置元素样式
+/* 设置起始，结束位置元素样式 */
 div:last-child{}
 div:first-child{}
 
-// 第n个p元素
+/* 第n个p元素 */
 p:nth-child(n)
 
-// 缩放元素
+/* 缩放元素 */
 transform: scale(0.6);
 
-// 滚动条样式
+/* 滚动条样式 */
 1.	::-weskit-scrollbar 滚动条整体部分
 2.	::-webkit-scrollbar-button 滚动条两端的按钮
 3.	::-webkit-scrollbar-track 外层轨道
@@ -44,7 +44,7 @@ transform: scale(0.6);
 6.	::-webkit-scrollbar-corner 边角
 7.	::-webkit-resizer 定义右下角拖动块的样式
 
-// 计算样式
+/* 计算样式 */
 width: calc(~"100% - 40px");
 
 // :before , :after 伪类
@@ -52,6 +52,11 @@ width: calc(~"100% - 40px");
   content: '*';
   color: red;
 }
+
+/* 可继承属性恢复初始值 */
+line-height: initial;
+font-size: initial;
+
 ```
 
 

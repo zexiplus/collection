@@ -10,7 +10,7 @@ ssh username@ipAddress
 logout
 ```
 
-##### ftp连接服务器
+##### scp从服务器上传/下载文件
 
 > ftp默认端口 22
 
