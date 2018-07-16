@@ -57,6 +57,12 @@ width: calc(~"100% - 40px");
 line-height: initial;
 font-size: initial;
 
+/* 内容可选择 */
+user-select: none | text | all | element
+
+/* 倍数行距 当前字体乘以1.3 */
+line-height: 1.3;
+
 ```
 
 
@@ -88,12 +94,11 @@ font-size: initial;
 
 
 
-
-
 #### css selector
 
 ```css
-p~ul  // 选择前面有 <p> 元素的每个 <ul> 元素。
+/* 选择前面有 <p> 元素的每个 <ul> 元素。 */
+p~ul
 ```
 
 
@@ -120,6 +125,8 @@ overflow: hidden;
 2.解决浮动元素无法撑开父元素的高度（给包含浮动的元素设置为bfc）
 
 3.解决文字环绕浮动元素（给包含文字的元素设置bfc）
+
+
 
 #### media queries
 
@@ -153,12 +160,12 @@ flex-wrap: nowrap | wrap | wrap-reverse;
 /* nowrap ： 不换行，所有item排列成一排，width ： 100% 被忽略 */
 /* wrap ： 换行显示 */
 
-/* 水平对齐规则 */ 
+/* 垂直对齐规则 */ 
 justify-content: flex-start | flex-end | center | space-between | space-around;
 /* space-between: 等间隔排列 第一项前无间隔 */
 /* space-around : 等间隔排列 第一项前有间隔 */
 
-/* 垂直对齐规则 */
+/* 水平对齐规则 */
 align-items: flex-start | flex-end | center | baseline | stretch;
 /* stretch: flex-item 被纵向拉伸至flex-contanier 一样的高度 */
 
@@ -186,6 +193,19 @@ flex-basis: <length> | auto; /* default auto */
 /* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。 */
 align-self: auto | flex-start | flex-end | center | baseline | stretch;
 ```
+
+
+
+#### css-animation
+
+```css
+/* transition */
+.trans {
+    transition: all 1s ease-out;
+}
+```
+
+
 
 
 

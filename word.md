@@ -1035,7 +1035,7 @@
 
 460. mass 块
 
-     
+  ​      
 
 461. critical 临界
 
@@ -1057,7 +1057,7 @@
 
 470. crisply 清晰
 
-     
+  ​      
 
 471. fuzzy 模糊
 
@@ -1079,7 +1079,7 @@
 
 480. former 前者
 
-     
+  ​      
 
 481. get around 绕过
 
@@ -1097,3 +1097,10 @@
 
 488. coordinate 配合，协作
 
+489. satellite 卫星
+
+490. communities 社区
+
+     
+
+491. thrive 茁壮成长

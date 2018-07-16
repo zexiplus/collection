@@ -202,6 +202,16 @@ fs.open('test.txt', 'r+', (err, fd) => {
 })
 ```
 
+> watch file
+
+```js
+// 监听filePath文件变化， 一旦改变，则运行回调函数
+fs.watchFile('filePath', (curr, prev) => {
+    console.log(`current file state is ${curr.sate}`)
+    cp.exec('mv index.js index-dep.js')
+})
+```
+
 
 
 ### http
