@@ -10,6 +10,8 @@ node.getAttribute('class') // => epic
 // 设置节点的class属性
 
 node.setAttribute('class', 'epic2')
+
+
 ```
 
 
