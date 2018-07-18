@@ -1035,7 +1035,7 @@
 
 460. mass 块
 
-  ​      
+    ​      
 
 461. critical 临界
 
@@ -1057,7 +1057,7 @@
 
 470. crisply 清晰
 
-  ​      
+    ​      
 
 471. fuzzy 模糊
 
@@ -1079,7 +1079,7 @@
 
 480. former 前者
 
-  ​      
+    ​      
 
 481. get around 绕过
 
@@ -1101,6 +1101,46 @@
 
 490. communities 社区
 
-     
+        
 
 491. thrive 茁壮成长
+
+492. mechanics 机制
+
+493. disposal 处置
+
+494. era 时代
+
+495. reduction 减少
+
+496. decent 正经的，像样的，合适的
+
+497. audience 听众
+
+498. premium 额外付费
+
+499. budget 预算
+
+500. trade-offs 权衡
+
+     
+
+501. Scavenger 清道夫
+
+502. condensed 精简
+
+503. generic 通用的
+
+504. serif 趁线
+
+505. genuine 真实的
+
+506. synthesized 综合的 
+
+507.  roman 常规的
+
+508. representative 代表
+
+509.  
+
+     

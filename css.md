@@ -67,6 +67,42 @@ line-height: 1.3;
 
 
 
+#### font-face
+
+![font-style](/Users/float/Desktop/repo/collection/imgs/font-style.png)
+
+```css
+/* 定义字体 */
+@font-face {
+    font-family: 'myfont'; /* 自定义名 */
+    src: url('myfont.woff') format('woff')  /* 路径，格式 */
+}
+
+/* 定义字体多种形态 */
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Light-webfont.woff') format('woff');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-LightItalic-webfont.woff') format('woff');
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Bold-webfont.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+}
+```
+
+
+
 #### responsive img
 
 ```html
@@ -196,7 +232,7 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch;
 
 
 
-#### css-animation
+#### css-transition
 
 ```css
 /* transition */
@@ -204,8 +240,6 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch;
     transition: all 1s ease-out;
 }
 ```
-
-
 
 
 
@@ -293,7 +327,7 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch;
 
 
 
-#### css实现长宽比例一致div容器
+#### css 实现长宽比例一致div容器
 
 ```html
 <div class=”container”>
@@ -303,13 +337,15 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch;
 ```
 
 ```css
+/* 原理：父容器设置一个bfc（overflow：hidden），让子元素能撑开父元素，站位dummy div设置margen-top为100%，把父元素的高度撑到和其宽一样，.content div用来放真正的内容 */
+
 .container {
   position:relative;
   overflow: hidden;
   border: 1px solid red;
  }
 .dummy {
-  margin-top: 100%;
+  margin-top: 100%; /* 指代父容器宽度的 100% 撑开父元素 */
 }
 .content {
   position: absolute;
@@ -320,25 +356,26 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch;
 }
 ```
 
-```js
-// 原理
-/*----------
-首先容器container块内包含了两个div，一个是dummy，这个纯粹是为了实现缩放效果加的，另一个content里面放的是我们真正想要展现的内容。其实原理也很简单，大家都知道div是块元素，它默认就是占一行，宽度本来就是自适应的，所以我们需要做的是让它的高度能随宽度改变。在不使用js的前提下，靠的就是前面提到的dummy那个块来实现，dummy只设置了一个css属性，margin-top:100%，相信大家都反应过来了。因为容器宽度已经在那儿了，通过dummy块的margin-top来把整个的高度撑得和宽度一样，当容器宽度改变时，dummy的位置也会改变，进而容器高度就跟着发生了变化。
-为什么给父元素这样设置之后就能把父元素高度撑起来呢，准确的原理解释起来有点复杂。可以简单的理解为，当子元素脱离文档流时，父元素不知道子元素的存在，所以导致高度塌陷。当设置父元素为display:inline-block或者overflow:hidden时，迫使父元素去检查自己内部有哪些子元素，而这时候就发现了之前absolute定位的子元素，所以高度就撑开了
 
------------*/
-```
 
 
 
 ### less
 
 ```less
-& // 指代自身
+// & 指代自身
 p {
   &:hover {
     ...
   }
+}
+
+// @定义变量
+@apple: #fff;
+
+// 使用变量
+span {
+    color: @apple;
 }
 
 
