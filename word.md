@@ -336,7 +336,7 @@
 
 142. **essentially 实质上**
 
-143. **arbitrary 随机**
+143. **arbitrary 随机，随意**
 
 144. **dimensional 尺寸的，空间的**
 
@@ -1087,7 +1087,7 @@
 
 483. descendant 后代
 
-484. arbitrary 随意的
+484. leeway 余地
 
 485. Inherit 继承的
 
@@ -1101,7 +1101,7 @@
 
 490. communities 社区
 
-        
+    ​      
 
 491. thrive 茁壮成长
 
@@ -1123,7 +1123,7 @@
 
 500. trade-offs 权衡
 
-     
+       
 
 501. Scavenger 清道夫
 
@@ -1137,10 +1137,72 @@
 
 506. synthesized 综合的 
 
-507.  roman 常规的
+507. roman 常规的
 
 508. representative 代表
 
-509.  
+509. numerically 数字
+
+510. monk 和尚
+
+    
+
+511. gothic 哥特
+
+512. cursive 草体，行书
+
+513. gears 齿轮
+
+514. amateur 业余
+
+515. subconscious 潜意识
+
+516. caption  标题
+
+517. ligature  连字
+
+518. nudge 轻推
+
+519. reserve 保留
+
+520. twofold 双重
+
+    
+
+521. activate 激活
+
+522. subtle 巧妙的
+
+523. hyphens 连字符（-）
+
+524. uneven 不均匀的
+
+525. inviting 诱人的
+
+526. strips 带子
+
+527. optimal 最佳的
+
+528. inconsistent 不一致的
+
+529. scratch 划破，挠
+
+530. barely 仅仅
+
+    
+
+531. burden 负担
+
+532. apostrophes 逗号标点
+
+533. vocabulary 词汇
+
+534. alter 改变
+
+535. underlying 底层
+
+536. 
 
      
+
+       

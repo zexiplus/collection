@@ -1,69 +1,6 @@
 ## css
 
-```css
-/* 单行超出显示省略号：*/
-White-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-
-/* 多行文本超出显示省略号 */
-
-display:-webkit-box;
--webkit-line-cap:3;
--webkit-box-orient: vertical;
-overflow:hidden;
-text-overflow:ellipsis;
-
-/*  单行文字均匀对齐 */
-text-align-last: justify;
-
-/* 不定宽元素居中 */
-display: table;
-margin: 0 auto;
-
-/* 只允许在空格处换行 */
-word-wrap:break-word;
-
-
-/* 设置起始，结束位置元素样式 */
-div:last-child{}
-div:first-child{}
-
-/* 第n个p元素 */
-p:nth-child(n)
-
-/* 缩放元素 */
-transform: scale(0.6);
-
-/* 滚动条样式 */
-1.	::-weskit-scrollbar 滚动条整体部分
-2.	::-webkit-scrollbar-button 滚动条两端的按钮
-3.	::-webkit-scrollbar-track 外层轨道
-4.	::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）
-5.	::-webkit-scrollbar-thumb （滚动条里面可以拖动的那个）
-6.	::-webkit-scrollbar-corner 边角
-7.	::-webkit-resizer 定义右下角拖动块的样式
-
-/* 计算样式 */
-width: calc(~"100% - 40px");
-
-// :before , :after 伪类
-.redStar:before {
-  content: '*';
-  color: red;
-}
-
-/* 可继承属性恢复初始值 */
-line-height: initial;
-font-size: initial;
-
-/* 内容可选择 */
-user-select: none | text | all | element
-
-/* 倍数行距 当前字体乘以1.3 */
-line-height: 1.3;
-
-```
+Learn css and make pages pretty
 
 
 
@@ -135,6 +72,11 @@ line-height: 1.3;
 ```css
 /* 选择前面有 <p> 元素的每个 <ul> 元素。 */
 p~ul
+
+/* 选择.container 的第一个p元素 */
+.container p:first-of-type {
+    
+}
 ```
 
 
@@ -178,7 +120,7 @@ overflow: hidden;
 
 #### FLEX布局（flexible弹性布局） 
 
-[效果展示1](https://codepen.io/zexiplus/pen/ELppKb) [效果展示2](https://codepen.io/zexiplus/pen/wjxbEN)
+[demo1](https://codepen.io/zexiplus/pen/ELppKb) [demo2](https://codepen.io/zexiplus/pen/wjxbEN)
 
 ```css
 display: flex;
@@ -207,7 +149,6 @@ align-items: flex-start | flex-end | center | baseline | stretch;
 
 /* 多轴对其规则 */
 align-content: flex-start | flex-end | center | space-between | space-around | stretch;
-
 
 
 
@@ -358,8 +299,6 @@ align-self: auto | flex-start | flex-end | center | baseline | stretch;
 
 
 
-
-
 ### less
 
 ```less
@@ -378,8 +317,75 @@ span {
     color: @apple;
 }
 
-
 ```
 
 
+
+#### others
+
+```css
+/* 单行超出显示省略号：*/
+White-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+
+/* 多行文本超出显示省略号 */
+
+display:-webkit-box;
+-webkit-line-cap:3;
+-webkit-box-orient: vertical;
+overflow:hidden;
+text-overflow:ellipsis;
+
+/*  单行文字均匀对齐 */
+text-align-last: justify;
+
+/* 不定宽元素居中 */
+display: table;
+margin: 0 auto;
+
+/* 只允许在空格处换行 */
+word-wrap:break-word;
+
+
+/* 设置起始，结束位置元素样式 */
+div:last-child{}
+div:first-child{}
+
+/* 第n个p元素 */
+p:nth-child(n)
+
+/* 缩放元素 */
+transform: scale(0.6);
+
+/* 滚动条样式 */
+1.	::-weskit-scrollbar 滚动条整体部分
+2.	::-webkit-scrollbar-button 滚动条两端的按钮
+3.	::-webkit-scrollbar-track 外层轨道
+4.	::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）
+5.	::-webkit-scrollbar-thumb （滚动条里面可以拖动的那个）
+6.	::-webkit-scrollbar-corner 边角
+7.	::-webkit-resizer 定义右下角拖动块的样式
+
+/* 计算样式 */
+width: calc(~"100% - 40px");
+
+// :before , :after 伪类
+.redStar:before {
+  content: '*';
+  color: red;
+}
+
+/* 可继承属性恢复初始值 */
+line-height: initial;
+font-size: initial;
+
+/* 内容可选择 */
+user-select: none | text | all | element
+
+/* 倍数行距 当前字体乘以1.3 */
+line-height: 1.3;
+
+
+```
 

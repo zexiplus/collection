@@ -6,7 +6,6 @@
 // 引入模块
 weex.requireModule('stream')
 
-
 ```
 
 **weex-toolkit**

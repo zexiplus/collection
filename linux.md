@@ -1,5 +1,7 @@
 ### linux
 
+
+
 ##### ssh连接服务器
 
 ```shell
@@ -9,6 +11,8 @@ ssh username@ipAddress
 # 登出
 logout
 ```
+
+
 
 ##### scp从服务器上传/下载文件
 
@@ -43,6 +47,8 @@ deb http://nginx.org/packages/debian/ codename nginx
 deb-src http://nginx.org/packages/debian/ codename nginx
 ```
 
+
+
 ##### 查找文件
 
 ```shell
@@ -53,11 +59,47 @@ find /etc -name nginx.conf
 find / -name usr -type d
 ```
 
+
+
+##### grep 文本搜索
+
+```shell
+grep /regExp/ fileName [options]
+
+#### [options] ###
+#
+# －c：只输出匹配行的计数。
+# －I：不区分大 小写(只适用于单字符)。
+# －h：查询多文件时不显示文件名。
+# －l：查询多文件时只输出包含匹配字符的文件名。
+# －n：显示匹配行及 行号。
+# －s：不显示不存在或无匹配文本的错误信息。
+# －v：显示不包含匹配文本的所有行。
+## *********** ###
+
+# demo: 
+
+# 显示所有以d开头的文件中包含 test的行
+grep ‘test’ d*
+
+# 显示在aa，bb，cc文件中匹配test的行。
+$ grep ‘test’ aa bb cc
+
+# 显示所有包含每个字符串至少有5个连续小写字符的字符串的行。
+$ grep ‘[a-z]\{5\}’ aa
+
+
+```
+
+
+
 ##### 改变文件/文件夹所有者
 
 ```shell
 chown -R pi:pi Software    #把software文件夹拥有者改为pi
 ```
+
+
 
 ##### 显示当前路径
 
@@ -65,17 +107,23 @@ chown -R pi:pi Software    #把software文件夹拥有者改为pi
 pwd
 ```
 
+
+
 ##### 创建软连接
 
 ```shell
 ln -s /usr/node/bin/node /usr/local/bin/node
 ```
 
+
+
 ##### 显示命令细节指示
 
 ```shell
 man ls, man sudo
 ```
+
+
 
 ##### 新建并执行shell文件
 
@@ -85,11 +133,15 @@ chmod +x demo.sh
 ./demo.sh           #执行
 ```
 
+
+
 ##### 新建文件并写入内容
 
 ```shell
 echo "aaaa" > foo.txt
 ```
+
+
 
 ##### 按cpu用量查看进程
 
