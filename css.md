@@ -131,19 +131,20 @@ display: -webkit-flex; /* Safari */
 /* 容器上的5个属性 */
 
 /* 排列方向 */
-flex-direction: row | row-reverse | column | column-reverse; 
+flex-direction: row | row-reverse | column | column-reverse;
+/* 当flex-direction 从 row 变为 column 时，justify-content 的意义变为 align-items */
 
 /* 换行规则  */
 flex-wrap: nowrap | wrap | wrap-reverse;
 /* nowrap ： 不换行，所有item排列成一排，width ： 100% 被忽略 */
 /* wrap ： 换行显示 */
 
-/* 垂直对齐规则 */ 
+/* 水平对齐规则 */ 
 justify-content: flex-start | flex-end | center | space-between | space-around;
 /* space-between: 等间隔排列 第一项前无间隔 */
 /* space-around : 等间隔排列 第一项前有间隔 */
 
-/* 水平对齐规则 */
+/* 垂直对齐规则 */
 align-items: flex-start | flex-end | center | baseline | stretch;
 /* stretch: flex-item 被纵向拉伸至flex-contanier 一样的高度 */
 
@@ -154,6 +155,11 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 
 
 /* 子属性 */
+
+/* 宽度倍数 flex */
+flex: initial; /* 原始宽度 */
+flex: 1; /* 单位宽度（若其他item没设置，则被拉伸填满）*/
+flex: 2; /* 单位宽度的两倍 */
 
 /* 排列顺序 default 0 用此属性改变排列顺序 */
 order: <integer>; 
@@ -169,6 +175,9 @@ flex-basis: <length> | auto; /* default auto */
 
 /* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。 */
 align-self: auto | flex-start | flex-end | center | baseline | stretch;
+
+/* 其他 */
+margin-left: auto; /* 会把item撑到右侧 */
 ```
 
 

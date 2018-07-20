@@ -995,7 +995,7 @@
 
 441. manipulate 操作
 
-442. versus 相对
+442. versus 相对，与
 
 443. screw something up 把事情搞砸了
 
@@ -1123,7 +1123,7 @@
 
 500. trade-offs 权衡
 
-       
+    ​     
 
 501. Scavenger 清道夫
 
@@ -1145,7 +1145,7 @@
 
 510. monk 和尚
 
-    
+      
 
 511. gothic 哥特
 
@@ -1167,7 +1167,7 @@
 
 520. twofold 双重
 
-    
+      
 
 521. activate 激活
 
@@ -1189,7 +1189,7 @@
 
 530. barely 仅仅
 
-    
+      
 
 531. burden 负担
 
@@ -1201,8 +1201,28 @@
 
 535. underlying 底层
 
-536. 
+536. disposable 一次性的
 
-     
+537. tenant 客户，租户
+
+538. swaps 交换
+
+539. emphasis 重点
+
+540. extra 额外的，特别
+
+    
+
+541. replicate 复制
+
+542. flat 平坦，简介
+
+543. Workbench 工作台
+
+544. Migration 迁移
+
+545. Wizard 向导
 
        
+
+    ​     
