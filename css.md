@@ -118,6 +118,15 @@ overflow: hidden;
 
 
 
+#### FLOAT layout
+
+1. clear: left; 排除 当前元素之前 float: left;元素对此元素的影响， 但之前元素的float: left仍对自身有效；
+2. 如果一个父元素中有浮动元素，若让子元素撑开父元素的高度，方法一：在父元素末尾添加clear: both;的元素。方法二：在父元素增加 overflow: hidden;属性。
+
+
+
+
+
 #### FLEX布局（flexible弹性布局） 
 
 [demo1](https://codepen.io/zexiplus/pen/ELppKb) [demo2](https://codepen.io/zexiplus/pen/wjxbEN)

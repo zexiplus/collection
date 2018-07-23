@@ -1,16 +1,16 @@
 ## 	term
 
-| abbr     | full                              | explain                                                      |
-| -------- | --------------------------------- | ------------------------------------------------------------ |
-| SSO      | Single Sign O                     | 单点登录                                                     |
-| CAS      | Central Authentication Service    | 中心授权服务                                                 |
-| DAO      | data access object                | 数据访问对象                                                 |
-| ISP      | Internet Service Provider         | 互联网服务提供商                                             |
-| FCC      | Federal Communications Commission | 美国联邦通信委员会                                           |
-| PR       | pull request                      | 提交请求                                                     |
-| LPWA     | low power wide area               |                                                              |
+| abbr     | full                              | explain                                  |
+| -------- | --------------------------------- | ---------------------------------------- |
+| SSO      | Single Sign O                     | 单点登录                                     |
+| CAS      | Central Authentication Service    | 中心授权服务                                   |
+| DAO      | data access object                | 数据访问对象                                   |
+| ISP      | Internet Service Provider         | 互联网服务提供商                                 |
+| FCC      | Federal Communications Commission | 美国联邦通信委员会                                |
+| PR       | pull request                      | 提交请求                                     |
+| LPWA     | low power wide area               |                                          |
 | A/B test |                                   | 网站更新了新UI，统计用户是否更喜欢新页面。定义之前的页面为A，新页面为B，一半用户会被重定向至B， 统计下通过A/B页面到达网站内页的用户占的百分比是多少。 |
-| UX       | User expreience                   | 用户体验                                                     |
+| UX       | User expreience                   | 用户体验                                     |
 
 
 
@@ -1001,7 +1001,7 @@
 
 444. orthogonal to 和...息息相关
 
-445. overwhelmed 不堪重负
+445. overwhelmed 不堪重负，压倒
 
 446. vast 广大
 
@@ -1145,7 +1145,8 @@
 
 510. monk 和尚
 
-      
+    ​
+
 
 511. gothic 哥特
 
@@ -1167,7 +1168,8 @@
 
 520. twofold 双重
 
-      
+     ​
+
 
 521. activate 激活
 
@@ -1189,7 +1191,8 @@
 
 530. barely 仅仅
 
-      
+     ​
+
 
 531. burden 负担
 
@@ -1205,17 +1208,18 @@
 
 537. tenant 客户，租户
 
-538. swaps 交换
+538. swap 交换
 
 539. emphasis 重点
 
 540. extra 额外的，特别
 
-    
+     ​
+
 
 541. replicate 复制
 
-542. flat 平坦，简介
+542. flat 平坦，简洁
 
 543. Workbench 工作台
 
@@ -1223,6 +1227,34 @@
 
 545. Wizard 向导
 
-       
+546. effectively 实际上
 
-    ​     
+547. gentler 简洁的
+
+548. sophisticated 复杂的
+
+549. thus far 至此
+
+550. divergence  差异
+
+     ​
+
+551. comes in handy 派上用场
+
+552. summarize 总结
+
+553. incorporate 合并，包括
+
+554. accommodate 适应容纳
+
+555. conventions 公约
+
+556. overarching 总体
+
+557. recursive 递归，逐步
+
+558. obsolete 过时的
+
+
+
+
