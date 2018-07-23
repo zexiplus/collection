@@ -1255,6 +1255,8 @@
 
 558. obsolete 过时的
 
+559. etiquette 礼仪
+
 
 
 
