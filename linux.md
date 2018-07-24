@@ -286,7 +286,7 @@ http {
 }
 ```
 
-**静态html目录**
+**nginx默认静态html目录**
 
 > /usr/share/nginx/html
 

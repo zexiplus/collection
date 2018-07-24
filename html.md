@@ -12,4 +12,18 @@
 
 look like this ![figure](/Users/float/Desktop/repo/collection/imgs/figure.png)
 
-2. 
+2. <a> 跳转
+
+   ```html
+   <!-- 相同页面跳转 -->
+   <a href="#my-place"></a>
+   ...
+   <div id="my-place">
+       
+   </div>
+   
+   <!-- 不同页面跳转 -->
+   <a href="space.html#my-place"></a>
+   ```
+
+   

@@ -677,7 +677,7 @@
 
 297. **represent 表示**
 
-298. **Synopsis 概要**
+298. **synopsis 概要**
 
 299. **Manual 手册**
 
@@ -1237,7 +1237,7 @@
 
 550. divergence  差异
 
-     ​
+     
 
 551. comes in handy 派上用场
 
@@ -1256,6 +1256,46 @@
 558. obsolete 过时的
 
 559. etiquette 礼仪
+
+560. granular 细粒度
+
+     
+
+561. pseudo 伪
+
+562. armed with 用...武装
+
+563. **presentational 表征的**
+
+564. solely 独自的
+
+565. equivalent 等同
+
+566. maintainable 可维护的
+
+567. alterations 改变
+
+568. sake of 为了
+
+569. complications 并发症
+
+570. stringent 严格
+
+     
+
+571. gnarly 复杂，粗糙
+
+572. frowned upon （皱眉头）不满意
+
+573. glossed over 轻轻带过
+
+574. versatile 多才多艺的
+
+575. interplay 相互作用
+
+576. installment 部分，分期
+
+577. fault 故障
 
 
 

@@ -1,26 +1,24 @@
-#### node operate
+#### HTMLCollection && nodeList
 
-```js
-// 获得所有class为epic的节点并遍历
-let node = document.querySelectorAll('epic').forEach()
+similiarty:
 
-// 获得节点的class属性
-node.getAttribute('class') // => epic
+1. 都是类数组，都有length属性
+2. 都有getter， list.item(0) 或 list[0]
+3. 都是动态的， 其内元素变化会反映到其自身
 
-// 设置节点的class属性
+difference:
 
-node.setAttribute('class', 'epic2')
+1. nodeList 保存的是node( 包含含空节点，文本节点, 注释等)，HTMLCollection 保存的是 element（element继承node，不含其他元素， 只有html元素）
 
+2. HTMLCollection有个nameItem() 方法，可以返回集合中name属性和id属性值的元素。
 
-```
+   
 
+#### dom 节点属性 
 
-
-#### Dom 节点属性 
-
-| Dom node attribute | Intro                                  | demo                                                         |
+| attribute | Intro                                  | demo                                                         |
 | ------------------------ | -------------------------------------- | ------------------------------------------------------------ |
-| someNode.nodeType        | 节点类型（1 - 12）                     |                                                              |
+| someNode.nodeType        | 节点类型（1 - 12）                     | 1 为 元素element，3 为文本，11 位文档片段documentFregment |
 | someNode.nodeName        | 节点标签名                             | 'p', 'div'                                                   |
 | someNode.nodeValue       | 节点值                                 |                                                              |
 | someNode.childNodes      | 节点的子节点类数组，保存着一个nodeList | someNode.childNodes[0]<br>someNode.childNodes.item(1)<br>Array.prototype.slice.call(childNodes, 0) |
@@ -35,7 +33,7 @@ node.setAttribute('class', 'epic2')
 
 #### dom 操作
 
-| Dom node operator           | Intro                                                        | Demo                                                         |
+| method                      | Intro                                                        | Demo                                                         |
 | --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | someNode.appendChild(A)     | 在someNode的nodeList末尾添加一个A                            |                                                              |
 | someNode.insertBefore(A, B) | 在参照节点（B）前添加一个A 节点, 若第二个参数是 null , 则执行与 appendChild 相同操作 |                                                              |
@@ -46,6 +44,84 @@ node.setAttribute('class', 'epic2')
 |                             |                                                              |                                                              |
 |                             |                                                              |                                                              |
 |                             |                                                              |                                                              |
+
+
+
+#### document 
+
+| Attr & method                     | Intro                                               | Demo                                                         |
+| --------------------------------- | --------------------------------------------------- | ------------------------------------------------------------ |
+| document.documentElement          | 取得对<html>元素的引用                              | document.documentElement === document.childNodes[0] === document.firstChild |
+| document.title                    | 获取/设置文档标题                                   | document.title // 获取titile                                                document.title = 'epic doc' // 设置title |
+| document.URL                      | 获取页面完整的url（不可设置）                       | https://cn.demo.com/search?q=1234                            |
+| document.domain                   | 获取/设置页面的域名，只能设置其站点的子域名         | document.domain // https://cn.demo.com    document.domain = 'demo.com' // success    document.domain = 'baidu.com' // failed |
+| document.referrer                 | 获取跳转到当前页面的那个页面的url                   |                                                              |
+| document.getElementById()         |                                                     |                                                              |
+| document.getElementsByTagName()   | 返回一个HTMLCollection,有个方法nameItem()           | const list = document.getElementsByTagName('p');       list.nameItem('myName') // 返回这个htmlCollection 中name为myName的元素 |
+| document.getElementsByName()      | 返回一个HTMLCollection                              |                                                              |
+| document.anchors                  | 返回一个HTMLCollection，包含所有带name属性的<a>元素 |                                                              |
+| document.forms                    | 返回所有<form>元素                                  |                                                              |
+| document.images                   | 返回所有<img>元素                                   |                                                              |
+| document.links                    | 返回所有带href属性的<a>元素                         |                                                              |
+| document.open()                   |                                                     |                                                              |
+| docuement.close()                 |                                                     |                                                              |
+| document.createElement(tagName)   | 创建元素                                            | document.createElement('div')                                |
+| document.createTextNode(string)   | 创建文本节点                                        | document.createTextNode('hello world')                       |
+| document.createDocumentFragment() | 创建轻量级文档，继承document的所有属性。            | const fregment = document.createDocumentFragment();  for( let i = 0; i < 3; i++) { let li = document.createElement('li'); fregment.appendChild(li)} |
+
+
+
+#### element
+
+* **Nodetype 为 1** (important)
+* nodevalue为 null
+
+| attr && method       | Intro                | demo                                 |
+| -------------------- | -------------------- | ------------------------------------ |
+| el.nodeName          | 返回元素标签名(大写) | el.nodeName === el.tagName === 'DIV' |
+| el.tagName           | 返回元素标签名(大写) |                                      |
+| el.id                | 返回元素的id         |                                      |
+| el.className         | 返回元素的类名       |                                      |
+| el.title             | 返回元素的标题       |                                      |
+| el.style | 返回 一个 以object 表示的css描述 | el.style // => {color: '#fff'} |
+| el.getAttribute(attrName) | 返回属性字符串表示 |                                      |
+| el.setAttribute(attrName, attrValue) | 设置属性 |                                      |
+| el.removeAttribute(attrname) | 移除属性 |                                      |
+|                      |                      |                                      |
+
+
+
+#### dynamic script && style
+
+```js
+// dynamic script
+
+function dynamicScript(url) {
+    let script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = url
+    document.body.appendChild(script)
+}
+
+function dynamicScriptWithText(text) {
+    let script = document.createElement('script')
+    script.type = 'text/javascript'
+    let textNode = document.createTextNode(text)
+    script.appendChild(textNode)
+    document.body.appendChild(script)
+}
+
+// dynamic style 
+function dynamicStyle(url) {
+    let link = document.createElement('link')
+    link.type = 'text/css'
+    link.rel = 'stylesheet'
+    link.href = url
+    document.head.appendChild(link)
+}
+```
+
+
 
 
 
@@ -68,7 +144,7 @@ node.setAttribute('class', 'epic2')
 
 
 
-####node size
+####dom size
 
 1. window.innerHeight     // 浏览器视窗内高度（当前页面 ，不包括外层iframe）
 2. window.innerWidth      // 浏览器内宽度

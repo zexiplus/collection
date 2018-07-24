@@ -73,10 +73,23 @@ Learn css and make pages pretty
 /* 选择前面有 <p> 元素的每个 <ul> 元素。 */
 p~ul
 
+/* pseudo-class */
+
+/* 访问过且鼠标滑过的链接 */
+a:visited:hover {
+    color: red;
+}
+
 /* 选择.container 的第一个p元素 */
 .container p:first-of-type {
     
 }
+
+/* 选择.container 的最后一个p元素 */
+.container p:last-of-type {
+    
+}
+
 ```
 
 
