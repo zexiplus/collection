@@ -1,6 +1,26 @@
-## nightWatch
+# unit test
 
-### 配置文件 nightwatch.conf.js（nightwatch.json）示例
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# e2e test
+
+###nightWatch
+
+
+
+#### 配置文件 nightwatch.conf.js（nightwatch.json）示例
 
 [配置详情](http://nightwatchjs.org/gettingstarted#settings-file)
 
@@ -58,7 +78,9 @@ module.exports = {
 
 ```
 
-###  测试文件 test.js 示例
+
+
+#### 测试文件 test.js 示例
 
 ```js
 module.exports = {
@@ -80,9 +102,11 @@ module.exports = {
 
 ```
 
-### API
+####API
 
 [api参考](http://nightwatchjs.org/api)
+
+
 
 **Usual**
 
@@ -109,6 +133,8 @@ browser.setValue('#username', value)
 to,be,been,is,that,which,and,has,have,with,at,does,of
 
 ```
+
+
 
 **Assert**
 

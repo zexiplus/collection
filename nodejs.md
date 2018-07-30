@@ -4,7 +4,7 @@
 
 *  require过的文件会加载到缓存，所以多次 require 同一个文件（模块）不会重复加载
 
-* ( a->b,b->a)循环引用并不会报错，导致的结果是 require 的结果是空对象 {}，原因是 b require 了 a，a 又去 require 了 b，此时 b 还没初始化好，所以只能拿到初始值 {}
+*  ( a->b,b->a)循环引用并不会报错，导致的结果是 require 的结果是空对象 {}，原因是 b require 了 a，a 又去 require 了 b，此时 b 还没初始化好，所以只能拿到初始值 {}
 
 
 
@@ -114,26 +114,22 @@ readFile2('./one.js').then(data => {
 ### 常用库
 
 ```js
-var open = require('open')            //自动打开浏览器函数
-open('http://localhost:8080')
-
 var path = require('path')            //内置路径处理模块
 path.join(__dirname,'www/')           //return 'currPath/www'
 path.resolve('/usr','./local','bin')   //把路径解析为绝对路径的函数
-
 ```
 
 ### fs
 
 > File system flags
 
-| Flag | detail                                                 |
-| ---- | ------------------------------------------------------ |
-| a    | 打开文件进行追加。如果文件不存在，则创建该文件         |
-| a+   | 打开文件读取并追加。如果文件不存在，则创建该文件       |
-| r    | 打开文件并读取。如果文件不存在，则发生异常             |
-| r+   | 打开文件读取并写入。如果不存在，则发生异常             |
-| w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖       |
+| Flag | detail                      |
+| ---- | --------------------------- |
+| a    | 打开文件进行追加。如果文件不存在，则创建该文件     |
+| a+   | 打开文件读取并追加。如果文件不存在，则创建该文件    |
+| r    | 打开文件并读取。如果文件不存在，则发生异常       |
+| r+   | 打开文件读取并写入。如果不存在，则发生异常       |
+| w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖    |
 | w+   | 打开文件并读取和写入。如果文件不存在则创建，存在则覆盖 |
 
 
@@ -258,11 +254,10 @@ http.createServer((req,res) => {
       });
     ```
 
-   
+
 
 2. http.request(options,[callback])
 
-   
 
    ```js
    const postData = querystring.stringify({
@@ -324,7 +319,7 @@ http.createServer((req,res) => {
       })
    ```
 
-   
+
 > request **methods&properties**
 
 
@@ -343,7 +338,6 @@ http.createServer((req,res) => {
    }
    ```
 
-   
 
 
 ### path

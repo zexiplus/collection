@@ -242,7 +242,7 @@
 
 100. **legend 说明**
 
-  ​
+   ​
 
 101. **logarithmic 对数的**
 
@@ -957,7 +957,7 @@
 
 424. curly braces 大括号
 
-425. dimensions 尺寸
+425. dimensions 尺寸，维度
 
 426. encounter 遇到
 
@@ -1237,7 +1237,7 @@
 
 550. divergence  差异
 
-        
+
 
 551. comes in handy 派上用场
 
@@ -1259,7 +1259,7 @@
 
 560. granular 细粒度
 
-        
+     
 
 561. pseudo 伪
 
@@ -1281,7 +1281,7 @@
 
 570. stringent 严格
 
-        
+
 
 571. gnarly 复杂，粗糙
 
@@ -1297,11 +1297,21 @@
 
 577. fault 故障
 
-578. heap 堆
+578. generalization 概要
 
-579. shim 垫片
+579. vectors 矢量
 
-580. crack 破解
+580. scalar 标量
+
+     
+
+581. matrices  矩阵，模型
+
+582. heap 堆
+
+583. shim 垫片
+
+584. crack 破解
 
 
 
