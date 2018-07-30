@@ -242,7 +242,7 @@
 
 100. **legend 说明**
 
-  ​
+   ​
 
 101. **logarithmic 对数的**
 
@@ -957,7 +957,7 @@
 
 424. curly braces 大括号
 
-425. dimensions 尺寸
+425. dimensions 尺寸，维度
 
 426. encounter 遇到
 
@@ -1237,7 +1237,6 @@
 
 550. divergence  差异
 
-     
 
 551. comes in handy 派上用场
 
@@ -1259,7 +1258,6 @@
 
 560. granular 细粒度
 
-     
 
 561. pseudo 伪
 
@@ -1281,21 +1279,18 @@
 
 570. stringent 严格
 
-     
 
 571. gnarly 复杂，粗糙
-
 572. frowned upon （皱眉头）不满意
-
 573. glossed over 轻轻带过
-
 574. versatile 多才多艺的
-
 575. interplay 相互作用
-
 576. installment 部分，分期
-
 577. fault 故障
+578. generalization 概要
+579. vectors 矢量
+580. scalar 标量
+581.  matrices  矩阵，模型
 
 
 

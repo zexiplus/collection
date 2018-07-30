@@ -2,7 +2,6 @@
 
 1. 在当前文件夹下打开cmd窗口    shift + rightMouse  
 
-   
 
 #### mac
 
@@ -15,7 +14,8 @@
 3. 移动当前行 ctrl + shift + 上下左右箭头
 4. Ctrl+Shift+M：选中花括号里面的全部内容不包括{}
 5. 按住shift + ctrl然后按←或→可快速选中一行中的某一部分，连续按扩大选择范围
-6. ​
+
+   ​
 
 #### chrome
 

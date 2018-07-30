@@ -8,6 +8,8 @@
 }
 ```
 
+
+
 **npm script**
 
 ```shell
@@ -28,8 +30,6 @@ npm shrinkwrap
 
 1.**moment** 时间格式化库
 
-**demo**：
-
 ```js
 //es6 import引入
 import moment from 'moment' 
@@ -45,9 +45,9 @@ moment('2018-01-09 12:14:27')
 
 
 
-2.**rollup**   一个能把片段js代码整合成单个js文件的库,[地址](https://github.com/rollup/rollup#quick-start-guide)
+2.**rollup**   整合多个js文件到一个js文件
 
-**demo**: 
+> doc [link](https://github.com/rollup/rollup#quick-start-guide)
 
 ```js
 const path = require('path')
@@ -65,3 +65,70 @@ rollup({
 	console.error(e)
 })
 ```
+
+
+
+3**.busboy**  文件上传插件
+
+> doc [link](https://github.com/mscdex/busboy)
+
+> download: `npm i busboy`
+
+```js
+const Busboy = require('busboy')
+const http = require('http')
+
+http.createServer((req, res) => {
+   var busboy = new Busboy({ headers: req.headers });
+    busboy.on('file', function(fieldname, file, filename, encoding, mimetype) {
+      var saveTo = path.join(os.tmpDir(), path.basename(fieldname));
+      file.pipe(fs.createWriteStream(saveTo));
+    });
+    busboy.on('finish', function() {
+      res.writeHead(200, { 'Connection': 'close' });
+      res.end("That's all folks!");
+    });
+    return req.pipe(busboy);
+  }
+  res.writeHead(404);
+  res.end();
+}).listen(3000)
+```
+
+
+
+4 **.opn**    操作浏览器
+
+> [git link](https://github.com/sindresorhus/opn)
+
+```js
+var opn = require('opn')            //自动打开浏览器函数
+open('http://localhost:8080')
+
+opn('unicorn.png').then(() => {
+	// image viewer closed
+});
+
+opn('http://sindresorhus.com', {app: 'firefox'});
+
+
+```
+
+
+
+5.**weex** 用vue做native app
+
+> [official website](http://weex.apache.org/cn/guide/)
+
+> download `npm install weex-toolkit -g `
+
+> 初始化项目 `weex create app`
+
+**module**
+
+```js
+// 引入模块
+weex.requireModule('stream')
+```
+
+​

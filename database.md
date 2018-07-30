@@ -1,10 +1,10 @@
-#mongo
+# NO-SQL
+
+### 1.mongoDB
 
 > [doc](https://docs.mongodb.com/master/mongo/)
 
-
-
-### mongo 命令详解
+#### mongo 命令详解
 
 1. start mongodb
 
@@ -29,24 +29,23 @@
    ```shell
    # 指定目录启动mongo服务器
    mongod --dbpath d:\data\db 
-   
+
    # 启用web界面的mongo服务器   界面端口  28017
    sudo mongod --rest
-   
+
    # only connect to the local default mongo service
    mongo
-   
+
    # or 指定host和端口访问
    mongo --host 192.168.0.4:27017
-   
+
    # 指定用户名密码和数据库访问
    mongo  -u "myUserAdmin" -p "abc123" --authenticationDatabase "admin"
    ```
 
 
 
-
-### mongo 配置文件
+#### mongo 配置文件
 
 ```bash
 # 文件路径
@@ -65,7 +64,7 @@ security:
 
 
 
-### mongo cli
+#### mongo cli
 
 > [账号密码管理](https://blog.csdn.net/fofabu2/article/details/78983741)
 
@@ -93,18 +92,18 @@ db.createUser({user: 'xiaoxixi', pwd: 'admin123', roles: [{
 db.auth('xiaoxixi', 'admin123') 
 ```
 
->role取值
+> role取值
 
 1. readAndWrite   读写
 2. userAdminAnyDatabase 用户管理身份任意数据库
 
 
 
+#### mongoose
 
+> [offcial link]
 
-# mongoose
-
-### mongoose 连接mongodb
+##### mongoose 连接mongodb
 
 ```javascript
 var mongoose = require('mongoose')
@@ -115,7 +114,7 @@ db.disconnect() //关闭所有连接
 
 
 
-### mongoose 模型定义及实例化
+##### mongoose 模型定义及实例化
 
 ```js	
 var userSchema = new mongoose.Schema({
@@ -137,7 +136,7 @@ var lovelydog = new Dog({name: 'lovely'})
 
 
 
-### mongoose 模型扩展
+##### mongoose 模型扩展
 
 ```js
 //statics 类上扩展
@@ -235,4 +234,16 @@ User.where('age').gte(18).where('name',/^b/)
 
 
 ```
+
+
+
+
+
+
+
+
+
+# SQL
+
+### 1.mySQL
 
