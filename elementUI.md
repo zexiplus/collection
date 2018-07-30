@@ -2,7 +2,7 @@
 
 **el-table**`自定义表头jsx实现`
 
-![render-header](/Users/float/Desktop/repo/collection/imgs/el-table-header.bmp)
+![render-header](./imgs/el-table-header.bmp)
 
 ```vue
 <template>

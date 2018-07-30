@@ -164,7 +164,7 @@ function dynamicStyle(url) {
 
 
 
-####dom size
+#### dom size
 
 1. window.innerHeight     // 浏览器视窗内高度（当前页面 ，不包括外层iframe）
 2. window.innerWidth      // 浏览器内宽度

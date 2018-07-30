@@ -8,7 +8,7 @@
 - convert failure to expreience
 - Fun & Enjoy
 
-###awesome interview collection
+### awesome interview collection
 
 - https://blog.csdn.net/kongjiea/article/details/46341575
 
@@ -20,7 +20,7 @@
 
 ------
 
-####1.xss 和 csrf区别
+#### 1.xss 和 csrf区别
 
 - csrf (Cross-site request forgery) 
 
@@ -52,7 +52,7 @@
   
 ------
 
-####2.http 和 https 的区别
+#### 2.http 和 https 的区别
 
 http默认端口80，https默认端口443
 
@@ -64,7 +64,7 @@ https的web服务器启用ssl需要获得一个服务器证书，并将该证书
 
 
 
-####3.懒加载（load on demand)
+#### 3.懒加载（load on demand)
 
 懒加载或者按需加载，是一种很好的优化网页或应用的方式。这种方式实际上是先把你的代码在一些逻辑断点处分离开，然后在一些代码块中完成某些操作后，立即引用或即将引用另外一些新的代码块
 
@@ -93,7 +93,7 @@ export default class LoadableDashboard extends React.Component {
 
 ------
 
-####4.浏览器在输入url敲回车后发生了什么
+#### 4.浏览器在输入url敲回车后发生了什么
 
 
 
@@ -110,7 +110,7 @@ export default class LoadableDashboard extends React.Component {
 
 **建立tcp连接**
 
-![tcp三次握手](/Users/float/Desktop/repo/collection/imgs/tcp.jpg)
+![tcp三次握手](./imgs/tcp.jpg)
 
 ​	客户端：“你好，在家不，有你快递。”
 
@@ -120,11 +120,11 @@ export default class LoadableDashboard extends React.Component {
 
 **发送http请求**
 
-![http-request](/Users/float/Desktop/repo/collection/imgs/http_request.jpg)
+![http-request](./imgs/http_request.jpg)
 
 **关闭tcp连接**
 
-![closeLink](/Users/float/Desktop/repo/collection/imgs/closeLink.jpg)
+![closeLink](./imgs/closeLink.jpg)
 
 客户端：“兄弟，我这边没数据要传了，咱关闭连接吧。”
 

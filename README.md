@@ -33,7 +33,7 @@
 
 ##### others
 
-* -[tensorflow](./tensorflow)              「谷歌深度学习库」
+* -[tensorflow](./tensorflow.md)              「谷歌深度学习库」
 * -[shortCuts](./shortCuts.md)                「pc快捷键」
 * -[linux](./linux.md)                         「linux系统配置,操作总结」
 * -[raspberry](./raspberry.md)
