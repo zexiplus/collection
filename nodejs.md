@@ -68,8 +68,8 @@ var Promise = require('bluebird')  //第三方promise模块，兼容
 global.Promise = Promise           //全局promise
 
 function readFile(filename) {
-  return new Promise((resolve,reject) => {
-     fs.readFile(filename,(err,file) => {
+  return new Promise((resolve, reject) => {
+     fs.readFile(filename,(err, file) => {
        if(err) {
           reject(err)
        }      

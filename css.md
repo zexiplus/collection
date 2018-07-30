@@ -1,6 +1,15 @@
-## css
+#css
 
 Learn css and make pages pretty
+
+
+
+###design principle
+
+> 1. 移动优先原则，及默认的css样式为移动样式，然后通过媒体查询 用 桌面样式覆盖
+> 2. 整体字体在 14px 到 20px 之间
+> 3. 保持适当行距（1.5倍）
+> 4. 段落采用缩进或隔行，不能两者同时用，首段不用隔行或缩进
 
 
 
@@ -324,7 +333,7 @@ margin-left: auto; /* 会把item撑到右侧 */
   top:0;
   left:0;
   right:0;
-  bottom:0
+  bottom:0;
 }
 ```
 

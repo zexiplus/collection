@@ -1237,7 +1237,7 @@
 
 550. divergence  差异
 
-     
+        
 
 551. comes in handy 派上用场
 
@@ -1259,7 +1259,7 @@
 
 560. granular 细粒度
 
-     
+        
 
 561. pseudo 伪
 
@@ -1281,7 +1281,7 @@
 
 570. stringent 严格
 
-     
+        
 
 571. gnarly 复杂，粗糙
 
@@ -1296,6 +1296,12 @@
 576. installment 部分，分期
 
 577. fault 故障
+
+578. heap 堆
+
+579. shim 垫片
+
+580. crack 破解
 
 
 
