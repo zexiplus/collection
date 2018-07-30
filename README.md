@@ -36,7 +36,7 @@
 * -[tensorflow](./tensorflow.md)              「谷歌深度学习库」
 * -[shortCuts](./shortCuts.md)                「pc快捷键」
 * -[linux](./linux.md)                         「linux系统配置,操作总结」
-* -[raspberry](./raspberry.md)
+* -[raspberry](./raspberry.md)                「树莓派开发总结」
 * -[puzzle](./puzzle.md)                       「工作中的技术上的bug,疑问记录」
 * -[python](./python.md)                      「python学习笔记」
 * -[word](./word.md)                         「阅读英文文档记录下来的一些单词」

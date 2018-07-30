@@ -92,7 +92,7 @@ vnc 密码 12341234
 
 **wiringPi引脚定义，图例如下**
 
-![pinDefine](.\imgs\pinDefine.png)
+![pinDefine](./imgs/pinDefine.png)
 
 ### fritizing 使用说明
 
