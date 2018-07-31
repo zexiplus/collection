@@ -1,10 +1,10 @@
-#css
+# css
 
 Learn css and make pages pretty
 
 
 
-###design principle
+### design principle
 
 > 1. 移动优先原则，及默认的css样式为移动样式，然后通过媒体查询 用 桌面样式覆盖
 > 2. 整体字体在 14px 到 20px 之间
@@ -15,7 +15,7 @@ Learn css and make pages pretty
 
 #### font-face
 
-![font-style](/Users/float/Desktop/repo/collection/imgs/font-style.png)
+![font-style](./imgs/font-style.png)
 
 ```css
 /* 定义字体 */
@@ -252,7 +252,7 @@ margin-left: auto; /* 会把item撑到右侧 */
 
 
 
-####css: filter滤镜(组合能达到神奇的效果)
+#### css: filter滤镜(组合能达到神奇的效果)
 
 ```css
 // 灰度

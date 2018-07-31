@@ -1,6 +1,6 @@
 **package.json 选项**
 
-```json
+```js
 “scripts”: {
   “prebuild”:….,   // npm run build 前执行
    “build”:….,

@@ -1,5 +1,6 @@
-#html
-###tag
+# html
+
+### tag
 1. <figure>
 
 ```html
@@ -10,7 +11,7 @@
 </figure>
 ```
 
-look like this ![figure](/Users/float/Desktop/repo/collection/imgs/figure.png)
+look like this ![figure](./imgs/figure.png)
 
 ------
 
@@ -29,7 +30,6 @@ look like this ![figure](/Users/float/Desktop/repo/collection/imgs/figure.png)
    <!-- 不同页面跳转 -->
    <a href="space.html#my-place"></a>
    ```
-
 
 ------
 
@@ -63,7 +63,7 @@ look like this ![figure](/Users/float/Desktop/repo/collection/imgs/figure.png)
    ​
 
    ​
-###template
+### template
 
 
 

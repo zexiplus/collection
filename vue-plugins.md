@@ -1,4 +1,4 @@
-#Vue-axios	
+# Vue-axios	
 
 [Click](https://github.com/axios/axios)
 
@@ -129,7 +129,7 @@ export default {
 
 
 
-#vue router
+#  vue router
 
 > [参考链接](https://router.vuejs.org/installation.html)
 
@@ -355,7 +355,7 @@ new Vue({
 
 
 
-#vuex
+# vuex
 
 [doc链接](https://vuex.vuejs.org/zh/guide/state.html)
 

@@ -1,4 +1,4 @@
-#svg
+# svg
 
 > 简介：基于xml的矢量图形描述文件
 
@@ -110,7 +110,7 @@ fill,   stroke,   stroke-width,   transform
 
 
 
-#canvas
+# canvas
 
 ##### 绘制路径
 
