@@ -22,7 +22,7 @@ difference:
 
 | attribute | Intro                                  | demo                                                         |
 | ------------------------ | -------------------------------------- | ------------------------------------------------------------ |
-| someNode**.nodeType**    | 节点类型（1 - 12）                     | 1 为 元素element，3 为文本，11 位文档片段documentFregment |
+| someNode.**nodeType**   | 节点类型（1 - 12）                     | 1 为 元素element，3 为文本，11 位文档片段documentFregment |
 | someNode.nodeName        | 节点标签名                             | 'p', 'div' , someNode.tagName                           |
 | someNode.nodeValue       | 节点值                                 |                                                              |
 | someNode.**childNodes**  | 节点的子节点类数组，保存着一个nodeList | someNode.childNodes[0]<br>someNode.childNodes.item(1)<br>Array.prototype.slice.call(childNodes, 0) |

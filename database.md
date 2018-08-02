@@ -180,25 +180,25 @@ User.find({},cb) === User.find({}).then(cb)
 var userone = new User({username:'123',password:'456'}).save(function(err,user) {})
 
 //搜索多条文档
-User.find({},function(err,users) {})               //users为文档数组   {}为查询条件
+User.find({}, function(err,users) {})               //users为文档数组   {}为查询条件
 
 //搜索单条文档
-User.findOne({},function(err,user) {})             //user为单条文档
+User.findOne({}, function(err,user) {})             //user为单条文档
 
 //查询并更新
-User.findOneAndUpdate(conditions,update,cb)
+User.findOneAndUpdate(conditions, update,cb)
 
 //查询并删除
-User.findOneAndRemove(conditions,cb)
+User.findOneAndRemove(conditions, cb)
 
 //按id查询
-User.findById(xiaoxixi._id,function(err,user) {})  
+User.findById(xiaoxixi._id, function(err,user) {})  
 
 //移除文档
 userone.remove((err,user) => {})                    //user参数指代userone
 
 //按条件删除单条文档
-User.deleteOne({username:'123'},err => {})
+User.deleteOne({username:'123'}, err => {})
 
 //批量删除
 User.deleteMany({username:/xiaoxixi/,age: {$gte: 18}},err => {})
@@ -219,10 +219,10 @@ User.bulkWrite([
 ]).then(err => {})
 
 //查询符合条件的数量
-User.count({name: 'xiaoxixi'},(err,count) => {})
+User.count({name: 'xiaoxixi'}, (err,count) => {})
 
 //新建单/多条数据
-User.create([{name: 'xiaoxixi'},{name: 'daxixi'}],(err,users) => {
+User.create([{name: 'xiaoxixi'},{name: 'daxixi'}], (err,users) => {
   var xiaoxixi = users[0]
   var daxixi = users[1]
 })
