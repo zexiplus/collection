@@ -1,3 +1,7 @@
+# DOM
+
+
+
 #### HTMLCollection && nodeList
 
 similiarty:
@@ -22,6 +26,7 @@ difference:
 | someNode.nodeName        | 节点标签名                             | 'p', 'div' , someNode.tagName                           |
 | someNode.nodeValue       | 节点值                                 |                                                              |
 | someNode.**childNodes**  | 节点的子节点类数组，保存着一个nodeList | someNode.childNodes[0]<br>someNode.childNodes.item(1)<br>Array.prototype.slice.call(childNodes, 0) |
+| someNode.**children** | 返回子节点中还是元素的集合(nodetype为1),是HTMLCollection的实例 | someNode.children[0] |
 | someNode.hasChildNodes() | 子节点是否含有childNodes | someNode.childNodes.length === 0 |
 | someNode.**parentNode**  | 节点的父节点，所有子节点拥有同一父节点 |                                                              |
 | someNode.previousSibling | 节点的兄弟节点（相邻的上一个节点）     |                                                              |
@@ -46,7 +51,7 @@ difference:
 | ------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **someNode.appendChild(A)**          | 在someNode的nodeList末尾添加一个A                            |                                                              |
 | **someNode.insertBefore(A, B)**      | 在参照节点（B）前添加一个A 节点, 若第二个参数是 null , 则执行与 appendChild 相同操作 |                                                              |
-| **someNode.replaceChild(A, B)**      | 用B节点替换 A节点，B为someNode的子节点                       | someNode.replaceChild(node, someNode.firstChild)             |
+| **someNode.replaceChild(new,old)**   | 用new节点替换 old节点，old为someNode的子节点                 | someNode.replaceChild(node, someNode.firstChild)             |
 | **someNode.removeChild(A)**          | 移除someNode下的某个子节点A                                  | A.removeChild(A.firstChild)                                  |
 | **someNode.cloneNode(boolean)**      | 复制节点 ，boolean 为 true 执行深复制， boolean 为 false 执行浅复制(只复制当前元素，不复制子元素)。执行复制之后的节点没有父节点，成了孤儿，必须通过以上集中操作才能显示。 | const deepNode  = someNode.cloneNode(true)  deepNode.length // 3                        const shallowNode = someNode.cloneNode(false)   shallowNode.length // 0 |
 | someNode.machesSelector(cssSelector) | 接收一个css选择符作为参数，返回                              | el.machesSelector('body.label') // => true or false          |
@@ -101,13 +106,18 @@ difference:
 | el.tagName           | 返回元素标签名(大写) |                                      |
 | el.id                | 返回元素的id         |                                      |
 | el.className         | 返回元素的类名字符串，多个类名用空格隔开 |                                      |
-| **el.classList** | 返回一个具有length属性的DOMTokenList的实例,具有item(), add(), contains(), remove(), toggle() 方法 | **el.classList.add(val)** //添加 **el.classList.contains(val)**  // 判断<br/>**el.classList.remove(val)**        // 删除<br/>**el.toggle(val)** // 切换 |
+| **el.classList** | 返回一个具有length属性的DOMTokenList的实例,具有item(), add(), contains(), remove(), toggle() 方法 | **el.classList.add(val)** //添加 **el.classList.contains(val)**  // 判断<br/>**el.classList.remove(val)**        // 删除<br/>**el.classList.toggle(val)** // 切换 |
 | el.title             | 返回元素的标题       |                                      |
-| **el.style** | 返回 一个 以object 表示的css描述 | el.style // => {color: '#fff'}                 el.getAttribute('style') // => 'color: ...' |
-| el.getAttribute(attrName) | 返回属性字符串表示 |                                      |
-| el.setAttribute(attrName, attrValue) | 设置属性 |                                      |
-| el.removeAttribute(attrname) | 移除属性 |                                      |
-|                      |                      |                                      |
+| **el.style** | 返回 一个 以object 表示的css描述, 属性转换为驼峰命名法,例如: background-color => style.backgroundColor = 'red' | el.style // => {color: '#fff'}                 el.getAttribute('style') // => 'color: ...' |
+| **el.getAttribute(attrName)** | 返回属性字符串表示 |                                      |
+| **el.setAttribute(attrName, attrValue)** | 设置属性 |                                      |
+| **el.removeAttribute(attrname)** | 移除属性 |                                      |
+| **el.contains(A)** | 判断节点A是否是el的子节点,返回true,false |  |
+| **el.scrollIntoView(true/false)** | 使元素出现在视窗内 | |
+| el.scrollByLines(lineCount) | 使元素滚动指定的行数,lineCount 可以是正负值     **non-standard** | |
+| el.scrollByPages(pageCount) | 使元素滚动指定的页数,pageCount 可以是正负值    **non-standard** | |
+|  |  | |
+|  |  | |
 
 
 

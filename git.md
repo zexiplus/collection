@@ -90,6 +90,10 @@ git config -e
 [user]
         name = shizx	
         email = shizx@balabala.com
+# 存储提交人信息, 之后不用输入账户密码
+[credential]
+		helper = store
+		
 # 把所有文件修改，删除，增加添加到暂存区
 git add . 
 

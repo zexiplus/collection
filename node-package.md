@@ -1,4 +1,4 @@
-**package.json 选项**
+### package.json options
 
 ```js
 “scripts”: {
@@ -10,7 +10,7 @@
 
 
 
-**npm script**
+### npm script
 
 ```shell
 # npm 参数 --argname
@@ -27,6 +27,12 @@ npm shrinkwrap
 ```
 
 
+
+### javascript library
+
+
+
+#### utils
 
 1.**moment** 时间格式化库
 
@@ -68,7 +74,7 @@ rollup({
 
 
 
-3**.busboy**  文件上传插件
+3**.busboy**  文件上传
 
 > doc [link](https://github.com/mscdex/busboy)
 
@@ -116,7 +122,11 @@ opn('http://sindresorhus.com', {app: 'firefox'});
 
 
 
-5.**weex** 用vue做native app
+5.. **data-fns** 时间处理库 
+
+> 
+
+6.**weex** 用vue做native app
 
 > [official website](http://weex.apache.org/cn/guide/)
 
@@ -131,4 +141,3 @@ opn('http://sindresorhus.com', {app: 'firefox'});
 weex.requireModule('stream')
 ```
 
-​

@@ -1,4 +1,99 @@
-### optmize page's proposal
+### bowser render block optmize 
+
+------
+
+#### 什么是阻塞？
+
+在页面中我们通常会引用外部文件，而浏览器在解析HTML页面是**从上到下依次解析**、渲染，如果<head>中引用了一个a.js文件，而这个文件很大或者有问题，需要2秒加载，那么浏览器会停止渲染页面（此时是白屏显示），2秒后加载完成才会继续渲染，这个就是阻塞。
+
+#### 为什么会阻塞？
+
+因为浏览器不知道a.js中执行了哪些脚本，会对页面造成什么影响，所以浏览器会等**js文件下载并执行完成后**才继续渲染，如果这个时间过长，会白屏。
+
+ CSS文件也一样，因为CSS文件会对DOM的样式，布局，色彩，效果产生影响，所以浏览器会等**CSS文件下载并执行完成后**继续。
+
+#### 解决阻塞
+
+1. **延迟加载 defer**
+
+   把script标签放到 body 的最后一行,  或者在script标签加入 defer属性
+
+   **这两种的不同点**:  
+
+   defer 会 **立即下载**,但到 浏览器解析至html标签时才**顺序执行**.而放在body后的script代码会在遇到这个标签时才下载,下载完成后执行.
+
+   
+
+   ```html
+   <head>
+       <script	src="js/defer.js" defer></script>
+       <script	src="js/defer2.js" defer></script>
+   </head>
+   
+   <!-- other -->
+   <html>   
+   	<body>
+   	</body>
+   	<script src="js/defer.js"></script>
+   </html>
+   ```
+
+   
+
+2. **异步加载 async**
+
+   告知浏览器可以边下载边渲染而不用等到js下载再执行后才渲染, 使用了 async 属性的脚本不能保证执行的先后顺序, 异步脚本一定会在页面**load事件前执行**(所有资源都下载完), 但可能会在**DOMContentLoaded 事件前或后**执行
+
+   ```html
+   <head>
+       <script src="js/async.js" async></script>
+       <script src="js/async2.js" async></script>
+   </head>
+   ```
+
+   
+
+3. **动态加载 createElement('script')**
+
+   当有需要时,再加载脚本
+
+   ```js
+   function createScript(src) {
+       var script = document.createElement('script')
+       script.type = 'text/javascript'
+       script.src = src
+       document.head.append(script)
+   }
+   document.querySelector('button').onclick = createScript
+   ```
+
+4. **load 事件之后加载**
+
+   Onload 事件为页面中所有的图片, 视频,js文件,css文件 等资源都加载完才触发
+
+   ```js
+   window.onload = function () {
+       createScript('js/onload.js')
+   }
+   ```
+
+5. **DOMContentLoaded 事件之后加载**
+
+   DOMContentLoaded 事件为 形成完整的DOM树后就会触发, 不会理会图像, javascript文件, css文件等其他资源时候下载完毕
+
+   ```js
+   window.addEventListener('DOMContentLoaded', function () {
+       createScript('js/onDOM.js')
+   })
+   ```
+
+   
+
+
+
+
+
+### page optmize proposal
 
 ---
 

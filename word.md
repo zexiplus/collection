@@ -1303,7 +1303,7 @@
 
 580. scalar 标量
 
-     
+     ​      
 
 581. matrices  矩阵，模型
 
@@ -1312,6 +1312,18 @@
 583. shim 垫片
 
 584. crack 破解
+
+585. durable 耐用的
+
+586. sustainable 可持续发展的
+
+587. portable 轻便的
+
+588. discard 放弃
+
+589. hint 提示
+
+590. chunk 块
 
 
 

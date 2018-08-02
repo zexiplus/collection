@@ -17,7 +17,9 @@ look like this ![figure](./imgs/figure.png)
 
 
 
-2. **<a> 跳转**
+2. 
+
+* **<a> 跳转**
 
    ```html
    <!-- 相同页面跳转 -->
@@ -26,10 +28,16 @@ look like this ![figure](./imgs/figure.png)
    <div id="my-place">
        
    </div>
-
+   
    <!-- 不同页面跳转 -->
    <a href="space.html#my-place"></a>
    ```
+* <a> **下载**
+```html
+<a download="file_name" href="file_path">download</a>
+```
+
+
 
 ------
 
