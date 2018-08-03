@@ -1325,6 +1325,14 @@
 
 590. chunk 块
 
+        
+
+591. saturate 饱和度
+
+592. chaos 混沌
+
+593. keygen 注册机
+
 
 
 

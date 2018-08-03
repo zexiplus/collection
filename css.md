@@ -45,6 +45,12 @@ Learn css and make pages pretty
   font-style: normal;
   font-weight: 700;
 }
+
+/* 使用字体 */
+
+.use {
+    font-family: 'Robot';
+}
 ```
 
 
