@@ -1,16 +1,21 @@
 ## 	term
 
-| abbr     | full                              | explain                                  |
-| -------- | --------------------------------- | ---------------------------------------- |
-| SSO      | Single Sign O                     | 单点登录                                     |
-| CAS      | Central Authentication Service    | 中心授权服务                                   |
-| DAO      | data access object                | 数据访问对象                                   |
-| ISP      | Internet Service Provider         | 互联网服务提供商                                 |
-| FCC      | Federal Communications Commission | 美国联邦通信委员会                                |
-| PR       | pull request                      | 提交请求                                     |
-| LPWA     | low power wide area               |                                          |
+| abbr     | full                              | explain                                                      |
+| -------- | --------------------------------- | ------------------------------------------------------------ |
+| SSO      | Single Sign O                     | 单点登录                                                     |
+| CAS      | Central Authentication Service    | 中心授权服务                                                 |
+| DAO      | data access object                | 数据访问对象                                                 |
+| ISP      | Internet Service Provider         | 互联网服务提供商                                             |
+| FCC      | Federal Communications Commission | 美国联邦通信委员会                                           |
+| PR       | pull request                      | 提交请求                                                     |
+| LPWA     | low power wide area               |                                                              |
 | A/B test |                                   | 网站更新了新UI，统计用户是否更喜欢新页面。定义之前的页面为A，新页面为B，一半用户会被重定向至B， 统计下通过A/B页面到达网站内页的用户占的百分比是多少。 |
-| UX       | User expreience                   | 用户体验                                     |
+| UX       | User expreience                   | 用户体验                                                     |
+| GR       | graceful degradation              | 优雅降级, 先从最主流的浏览器实现,再回头兼容老版本浏览器,修复bug |
+| PE       | progressive enhancement           | 先从最基本的功能做起, 保证高度的兼容性, 逐渐迭代复杂功能     |
+| FAQ      | Frequently asked question         | 常见问题                                                     |
+|          |                                   |                                                              |
+|          |                                   |                                                              |
 
 
 
@@ -518,7 +523,7 @@
 
 225. **caveats 注意事项**
 
-226. **enhancements 增强**
+226. **enhancement 增强**
 
 227. **mimics 模仿**
 
@@ -1325,13 +1330,19 @@
 
 590. chunk 块
 
-        
+    ​      
 
 591. saturate 饱和度
 
 592. chaos 混沌
 
 593. keygen 注册机
+
+594. material 材料
+
+595. median 中位数
+
+596. vendor 供应商
 
 
 
