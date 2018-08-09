@@ -1333,6 +1333,14 @@
 
 593. keygen 注册机
 
+594. simulation 模拟
+
+595. monotony 单调，乏味
+
+596. address 解决
+
+597. reproducible 可复现的
+
 
 
 
