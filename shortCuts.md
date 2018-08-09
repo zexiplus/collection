@@ -5,7 +5,13 @@
 
 #### mac
 
-1.锁屏 ctrl + command + q
+1. 锁屏 ctrl + command + q
+2. 强制退出应用 command + shift + esc
+3. 搜索文件 command + 空格
+
+
+
+
 
 #### sublime 
 
