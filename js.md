@@ -140,6 +140,44 @@ obj // {c: 3, d: 4}
 
 
 
+##### JSON
+
+```js
+// obj 为需要格式的对象， filter为函数或数组， space为空格缩进
+JSON.stringify(obj, filter, space)
+
+// demo
+let obj = {a: 1, b: 2, c: 3}
+let str1 = JSON.stringify(obj, ['a', 'b'], 4)
+/* 
+	str => "{
+    	"a": 1,
+    	"b": 2
+	}"
+*/
+
+// 函数过滤器, 
+let str2 = JSON.stringify(obj, function (key, val) {
+    switch (key) {
+        case 'a':
+            return '123';
+        case 'b':
+            return '456';
+        case 'c':
+            return undefined; // 返回undefined去除c属性和值
+        default:
+            return val
+    }
+})
+
+/* 注意 函数遍历器接收的第一个key是空字符串, val是传入的obj这个对象. 第二次key才是属性a
+
+```
+
+
+
+
+
 ##### Number
 
 ```js

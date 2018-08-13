@@ -28,7 +28,7 @@ npm shrinkwrap
 
 
 
-### javascript library
+### node packages
 
 
 
@@ -122,22 +122,91 @@ opn('http://sindresorhus.com', {app: 'firefox'});
 
 
 
-5.. **data-fns** 时间处理库 
+5.**supervisor**
 
-> 
+> 用于检测node.js代码变化， 自动重启脚本 
 
-6.**weex** 用vue做native app
+> [gitlink](https://github.com/petruisfan/node-supervisor)
 
-> [official website](http://weex.apache.org/cn/guide/)
+```shell
+# download
+$ sudo npm i -g supervisor
 
-> download `npm install weex-toolkit -g `
+# use 
+supervisor test.js
+```
 
-> 初始化项目 `weex create app`
 
-**module**
+
+6.**Mocha** 
+
+> 用于node测试代码 
+
+> [docLink](https://mochajs.org/)
+
+```shell
+# download
+$ sudo npm i -g mocha
+
+# use
+mocha test.js
+```
+
+> test.js
 
 ```js
-// 引入模块
-weex.requireModule('stream')
+var assert = require('assert');
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      assert.equal([1,2,3].indexOf(4), -1);
+    });
+  });
+});
 ```
+
+
+
+7.**should.js**
+
+> BDD 风格（behavior driven development) 测试库，是assert模块的扩展
+
+> [gitLink](https://github.com/shouldjs/should.js)
+
+```shell
+# install
+npm i should -D
+```
+
+```js
+var should = require('should')
+
+var user = {
+    name: 'tj'
+  , pets: ['tobi', 'loki', 'jane', 'bandit']
+};
+
+user.should.have.property('name', 'tj');
+user.should.have.property('pets').with.lengthOf(4);
+
+// If the object was created with Object.create(null)
+// then it doesn't inherit `Object.prototype`, so it will not have `.should` getter
+// so you can do:
+should(user).have.property('name', 'tj');
+
+// also you can test in that way for null's
+should(null).not.be.ok();
+
+someAsyncTask(foo, function(err, result){
+  should.not.exist(err);
+  should.exist(result);
+  result.bar.should.equal(foo);
+});
+```
+
+
+
+### webfont library
+
+
 
