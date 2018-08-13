@@ -105,6 +105,10 @@ a:visited:hover {
     
 }
 
+/* 属性选择器  class以foundicon- 开头的的元素 */
+[class*="foundicon-"] {
+    
+}
 ```
 
 

@@ -1,5 +1,9 @@
  ### javascript
 
+> javascript 常用知识点总结
+
+
+
 ##### Skill
 
 ```js
@@ -35,6 +39,8 @@ let obj = {get a() { return 1 }}
 Object.getOwnPropertyDescriptor(obj, 'a')
 // return {get: ƒ, set: undefined, enumerable: true, configurable: true}
 ```
+
+
 
 ##### Array 
 
@@ -99,6 +105,8 @@ for (let [index, val] of arr.entries()) {
 }
 ```
 
+
+
 ##### Object
 
 ```js
@@ -143,6 +151,8 @@ parseInt(num, 10)
 Number('10%') // return NaN
 ```
 
+
+
 ##### String
 
 ```js
@@ -162,6 +172,8 @@ for (let letter of 'abc') {
 }
 // 'a' 'b' 'c'
 ```
+
+
 
 ##### Function
 
@@ -217,7 +229,9 @@ const trampoline = (f) => {
 
 ```
 
-**decorator**
+
+
+##### decorator
 
 ```js
 // 装饰器修饰类 
@@ -245,7 +259,7 @@ function readonly(target, name, descriptor) {
 
 
 
-**BOM**
+##### BOM
 
 ```js
 // window.location === window.document.location
@@ -262,7 +276,9 @@ location.replace('http://www.bing.com') // replace() 重定向，浏览器不会
 location.reload() //reload()重新加载当前页,若有缓存则从缓存加载,reload(true) 强制从服务器刷新
 ```
 
-**DOM**
+
+
+##### DOM
 
 ```html
 <input id="user[name]" />
@@ -328,7 +344,9 @@ self.onmessage = function(event) {
 }
 ```
 
-##### 4.es-lint
+
+
+##### es-lint
 
 ```js
 //去除es-lint警告
@@ -338,7 +356,9 @@ self.onmessage = function(event) {
 // eslint-disable-next-line
 ```
 
-##### 5.module
+
+
+##### module
 
 ```js
 /* 同一个js文件可以同时export {} 和 export default {}，但不建议
@@ -401,7 +421,9 @@ foo();
 import { foo } from 'my_module';
 ```
 
-##### 6.注释规范
+
+
+##### 注释规范
 
 ```js
 	函数（sublime快捷键 /** + 回车）
@@ -414,7 +436,9 @@ import { foo } from 'my_module';
     */
 ```
 
-##### 7.promise
+
+
+##### promise
 
 ```js
 // 手动将promise转化为失败态 reject()

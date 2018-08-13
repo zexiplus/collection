@@ -6,11 +6,33 @@
 
 在页面中我们通常会引用外部文件，而浏览器在解析HTML页面是**从上到下依次解析**、渲染，如果<head>中引用了一个a.js文件，而这个文件很大或者有问题，需要2秒加载，那么浏览器会停止渲染页面（此时是白屏显示），2秒后加载完成才会继续渲染，这个就是阻塞。
 
+
+
 #### 为什么会阻塞？
 
 因为浏览器不知道a.js中执行了哪些脚本，会对页面造成什么影响，所以浏览器会等**js文件下载并执行完成后**才继续渲染，如果这个时间过长，会白屏。
 
  CSS文件也一样，因为CSS文件会对DOM的样式，布局，色彩，效果产生影响，所以浏览器会等**CSS文件下载并执行完成后**继续。
+
+
+
+#### css 阻塞
+
+css 的加载**不会**阻塞dom的解析(DOM tree), 但**会**阻塞dom 树的渲染(render tree). **会**阻塞之后js代码的执行.
+
+为了避免dom树重新渲染回溯影响性能浪费,  所以css代码的加载会阻塞dom树渲染.
+
+
+
+#### 加载事件
+
+> load 事件和 DOMContentLoaded 事件
+
+**load事件**: 页面中的所有静态资源加载完成时触发包括样式表, 图像, 脚本
+
+**DOMContentLoaded事件**: 当初始的 **HTML** 文档被完全加载和解析完成之后，**DOMContentLoaded** 事件被触发，而无需等待样式表、图像和子框架的完成加载. **注意**：**DOMContentLoaded** 事件必须等待其所属script**之前**的样式表加载解析完成才会触发
+
+
 
 #### 解决阻塞
 
@@ -62,7 +84,7 @@
        var script = document.createElement('script')
        script.type = 'text/javascript'
        script.src = src
-       document.head.append(script)
+       document.head.appendChild(script)
    }
    document.querySelector('button').onclick = createScript
    ```
