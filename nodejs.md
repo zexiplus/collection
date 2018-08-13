@@ -460,27 +460,6 @@ http.createServer(app).listen(555)
 ### express
 
 ```js
-var express = require('express')
-var path = require('path')
-var app     = express()
-app.use(express.static(path.join(__dirname,'www/')))
-app.use((req,res,next) => {
-  
-})
-app.get('/',(req,res) => {
-  res.end('hello')
-})
-app.get('/',fn1,fn2,fn3) //挂载多个中间件函数
-app.listen(3000)
 
-//express router
-var users = express.Router()
-users.get('/',fn)
-users.get('/home',fn)
-router.get('/:name', function (req, res) {     //自定义路径
-  res.send('hello, ' + req.params.name)
-})
-app.use(users)
 ```
 
-### 

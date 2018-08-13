@@ -136,7 +136,7 @@
 
 ### 3. http status
 
-
+> **usually used**
 
 | status code | information                            |
 |------- | ----------- |
