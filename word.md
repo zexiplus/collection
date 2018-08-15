@@ -14,6 +14,8 @@
 | GR       | graceful degradation              | 优雅降级, 先从最主流的浏览器实现,再回头兼容老版本浏览器,修复bug |
 | PE       | progressive enhancement           | 先从最基本的功能做起, 保证高度的兼容性, 逐渐迭代复杂功能     |
 | FAQ      | Frequently asked question         | 常见问题                                                     |
+| TCP      | Transmisssion control protocol    | 传输控制协议 负责在不可靠的传输信道上提供可靠的抽象层        |
+| IP       | internet Protocol                 | 因特网协议                                                   |
 |          |                                   |                                                              |
 |          |                                   |                                                              |
 

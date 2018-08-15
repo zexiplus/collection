@@ -167,9 +167,22 @@ echo "aaaa" > foo.txt
 ```shell
 top -o cpu
 
-# 杀死进程
-sudo kill 2200
+# 杀死进程 2200 为进程id
+sudo kill -9 2200
 ```
+
+
+
+##### 按端口占用查看进程
+
+ ```bash
+ # 查看3000端口对应的进程
+ lsof -i :3000
+ 
+ kill -9 pid
+ ```
+
+
 
 
 

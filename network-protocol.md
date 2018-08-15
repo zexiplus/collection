@@ -131,6 +131,7 @@
 | Server           | 服务器名字。Servlet一般不设置这个值，而是由Web服务器自己设置。 |
 | Set-Cookie       | 设置和页面关联的Cookie。Servlet不应使用response.setHeader("Set-Cookie", ...)，而是应使用HttpServletResponse提供的专用方法addCookie。参见下文有关Cookie设置的讨论。 |
 | WWW-Authenticate | 客户应该在Authorization头中提供什么类型的授权信息？在包含401（Unauthorized）状态行的应答中这个头是必需的。例如，response.setHeader("WWW-Authenticate", "BASIC realm=＼"executives＼"")。  注意Servlet一般不进行这方面的处理，而是让Web服务器的专门机制来控制受密码保护页面的访问（例如.htaccess）。 |
+| Etag             | 是资源的特定版本识别符, 可以让缓存更高效,如果没有改变, web服务器不需要发送完整的响应. 例如  ETag  :  "33a64df551425fcc55e4d42a148795d9f25f89d4" |
 
 
 
