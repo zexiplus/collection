@@ -131,6 +131,15 @@ fs.readDir(path, (err, files) => {
 
 
 
+> 新建目录
+
+```js
+// 若没有重名目录 则新建目录
+fs.existsSync(logFold) || fs.mkdirSync(logFold)
+```
+
+
+
 > Open file
 
 ```js
@@ -386,7 +395,7 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
 
 ### process
 
-```js
+```shell
 process.env           // 环境变量   系统上得键值对对象
 DEBUG=1 node one.js   // process.env.DEBUG == 1
 
@@ -460,24 +469,6 @@ ls.on('close', code => {
 ```
 
 
-
-
-
-### connect
-
-```js
-var connect = require('connect')
-var http = require('http')
-var app = connect()
-app.use((req,res,next)=> {
-  res.send('middleware')
-  next()          // 全局中间件要执行next才能执行其它中间件
-})
-app.use('/hello'(req,res) => {   
-  res.end('hello')
-})
-http.createServer(app).listen(555)
-```
 
 
 

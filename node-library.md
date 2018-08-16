@@ -32,9 +32,15 @@ npm shrinkwrap
 
 
 
-#### utils
+* **moment** 
 
-1.**moment** 时间格式化库
+> 时间格式化库
+
+> https://github.com/moment/moment
+
+```shell
+npm i moment
+```
 
 ```js
 //es6 import引入
@@ -51,9 +57,15 @@ moment('2018-01-09 12:14:27')
 
 
 
-2.**rollup**   整合多个js文件到一个js文件
+* **rollup**  
 
-> doc [link](https://github.com/rollup/rollup#quick-start-guide)
+> 整合多个js文件到一个js文件
+
+> https://github.com/rollup/rollup#quick-start-guide
+
+```shell
+npm i rollup
+```
 
 ```js
 const path = require('path')
@@ -74,11 +86,15 @@ rollup({
 
 
 
-3**.busboy**  文件上传
+* **busboy** 
 
-> doc [link](https://github.com/mscdex/busboy)
+> 文件上传
 
-> download: `npm i busboy`
+> https://github.com/mscdex/busboy
+
+```shell
+npm i busboy
+```
 
 ```js
 const Busboy = require('busboy')
@@ -103,30 +119,35 @@ http.createServer((req, res) => {
 
 
 
-4 **.opn**    操作浏览器
+* **opn**  
 
-> [git link](https://github.com/sindresorhus/opn)
+> 预览文件插件 浏览器/图片
+
+> https://github.com/sindresorhus/opn
+
+```shell
+npm i opn 
+```
 
 ```js
-var opn = require('opn')            //自动打开浏览器函数
+var opn = require('opn')   
 open('http://localhost:8080')
 
 opn('unicorn.png').then(() => {
-	// image viewer closed
+	// 预览图片
 });
 
 opn('http://sindresorhus.com', {app: 'firefox'});
-
 
 ```
 
 
 
-5.**supervisor**
+* **supervisor**
 
-> 用于检测node.js代码变化， 自动重启脚本 
+> 检测node.js代码变化， 自动重启脚本 
 
-> [gitlink](https://github.com/petruisfan/node-supervisor)
+> https://github.com/petruisfan/node-supervisor
 
 ```shell
 # download
@@ -138,11 +159,11 @@ supervisor test.js
 
 
 
-6.**Mocha** 
+* **Mocha** 
 
 > 用于node测试代码 
 
-> [docLink](https://mochajs.org/)
+> https://mochajs.org/
 
 ```shell
 # download
@@ -167,14 +188,13 @@ describe('Array', function() {
 
 
 
-7.**should.js**
+* **should.js**
 
 > BDD 风格（behavior driven development) 测试库，是assert模块的扩展
 
-> [gitLink](https://github.com/shouldjs/should.js)
+> https://github.com/shouldjs/should.js
 
 ```shell
-# install
 npm i should -D
 ```
 
@@ -203,6 +223,29 @@ someAsyncTask(foo, function(err, result){
   result.bar.should.equal(foo);
 });
 ```
+
+
+
+* **node-notifier**
+
+> 跨平台的系统通知插件
+
+> https://github.com/mikaelbr/node-notifier
+
+```shell
+npm install node-notifier
+```
+
+```js
+const notifier = require('node-notifier')
+notifier.notify('message')
+notifier.nogiry({
+    title: 'My title',
+    message: 'hello world'
+})
+```
+
+
 
 
 

@@ -1335,7 +1335,9 @@
  
 
 591. saturate 饱和度
+
 592. chaos 混沌
+
 593. keygen 注册机
 
 594. material 材料
@@ -1352,11 +1354,15 @@
 
 600. monotony 单调，乏味
 
-     
+        
 
 601. address 解决
 
 602. reproducible 可复现的
+
+603. unobtrusive 不显眼的
+
+604. partial 局部的
 
 
 
