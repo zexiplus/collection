@@ -27,28 +27,28 @@
 
 
 
-
-
 #### vsCode
 
 > 插件介绍 https://zhuanlan.zhihu.com/p/27905838
 
 > 修改编辑器快捷键 **code/ 首选项/ 键盘快捷方式**
 
-| vsCode 快捷键说明        | 按键                     |
-| ------------------------ | ------------------------ |
-| 开启命令面板             | **command + shift + p**  |
-| 转到定义                 | **command + option + ↓** |
-| 开启/切换终端面板        | **command  + shift + Y** |
-| 格式化代码               | **option + shift + f**   |
-| 把文件夹在 finder 中显示 | **command + option + R** |
-| 向上移动行               | **option + ↓**           |
-| 预览markdown文件         | **command + K V**        |
-| 启用调试                 | **F5**                   |
-| 启用多行编辑             | **alt + 鼠标选择**       |
-| 在文件夹中查找           | **command + shift + F**  |
-| 启用quokka               | **command + K Q**        |
-| 停用quokka               | **command + K S**        |
+| vsCode 快捷键说明                 | 按键                                      |
+| --------------------------------- | ----------------------------------------- |
+| 开启命令面板                      | **command + shift + p**                   |
+| 转到定义                          | **command + option + ↓**                  |
+| 开启/切换终端面板                 | **command  + shift + Y**                  |
+| 格式化代码                        | **option + shift + f**                    |
+| 把文件夹在 finder 中显示          | **command + option + R**                  |
+| 向上移动行                        | **option + ↓**                            |
+| 预览markdown文件                  | **command + K V**                         |
+| 启用调试                          | **F5**                                    |
+| 启用多行编辑                      | **option + 鼠标选择**                     |
+| 在文件夹中查找                    | **command + shift + F**                   |
+| 启用quokka                        | **command + K Q**                         |
+| 停用quokka                        | **command + K S**                         |
+| 使用markdonw toc 插件生成文档目录 | **markdown 中右键 , markdown toc insert** |
+| 使用expand-region 选中括号内内容  | **command + shift + M**                   |
 
 
 

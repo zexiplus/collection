@@ -247,7 +247,13 @@ notifier.nogiry({
 
 
 
+* **ora**
 
+> 彩色显示 stdout
 
+> https://github.com/sindresorhus/ora
 
+```js
+npm i ora
+```
 

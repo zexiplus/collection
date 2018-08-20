@@ -4,7 +4,20 @@
 
 
 
-#### 快速使用
+## 目录
+
+- [express](#express)
+        - [快速使用](#快速使用)
+        - [API](#api)
+        - [express router](#express-router)
+        - [express with https](#express-with-https)
+        - [express middleware](#express-middleware)
+        - [debug](#debug)
+        - [others](#other)
+
+
+
+### 快速使用
 
 ```js
 var express = require('express')
@@ -355,8 +368,6 @@ app.use(users)
 
 
 
-
-
 * #### response
 
   * **res.writeHead(statusCode, options)**
@@ -366,7 +377,6 @@ app.use(users)
   * ```js
     res.writeHead(200, {'Content-Type': 'text/plain', 'Content-Length': 1234})
     ```
-    
 
   * **res.setHeader(key, value)**
 
@@ -490,13 +500,17 @@ app.use(users)
     res.type('application/json')
     ```
 
-    
+  * **res.json()**
+
+    > 返回对象
+
+    ```js
+    res.json({name: 'float'})
+    res.json(null)
+    res.status(500).json({ error: 'message' })
+    ```
 
     
-
-    
-
-
 
 ### express router
 
@@ -550,6 +564,8 @@ app.use(users)
 
   
 
+
+
 ### express with https
 
 >搭建https服务器
@@ -557,9 +573,8 @@ app.use(users)
 ```js
 const fs = require('fs')
 const options = {
-    keys: fs.readFileSync('/usr/local/myServer.key'),
-    cert: fs.readFileSync('/usr/local/myServer.crt'),
-    passphrase: '1234',
+    keys: fs.readFileSync('/usr/local/key.pem'),
+    cert: fs.readFileSync('/usr/local/key-cert.pem'),
 }
 
 const https = require('https');
@@ -568,6 +583,16 @@ const app = express()
 
 let server = https.createServer(options, app)
 server.listen(3000)
+```
+
+> Https 证书, 私钥创建
+
+```shell
+# 创建私钥
+openssl genrsa 1024 > key.pem
+
+# 创建证书
+openssl req -x509 -new -key key.pem > key-cert.pem
 ```
 
 
@@ -641,6 +666,11 @@ server.listen(3000)
     
     // parse application/json
     app.use(bodyParser.json())
+    
+    // 或直接使用express 内置函数
+    app.use(express.urlencoded({ extend: false }))
+    app.use(express.json())
+    
     ```
 
     
@@ -681,14 +711,14 @@ server.listen(3000)
 
     > https://github.com/expressjs/compression
 
-    > 用来压缩解压http 相应
+    > 用来压缩响应
 
     ```shell
     npm i compression
     ```
 
     ```js
-    const expression = require('expression')
+    const expression = require('compression')
     
     // 压缩所有的响应 需要在添加路由前调用
     app.use(expression())
@@ -747,8 +777,8 @@ server.listen(3000)
     ```js
     const session = require('session')
     app.use(session({
-        cookie: { secure: true },
-        secret: 'keyboard cat',
+        cookie: { secure: true , maxAge: 60 * 60 * 1000 * 24},// 设置过期时间为1天的session
+        secret: 'myapp_sid',
         resave: false,
         saveUninitialized: true
     }))
@@ -779,12 +809,17 @@ server.listen(3000)
     const path = require('path')
     const fs = require('fs')
     
-    // 把日志存档
+    // 把日志存档到日志
     const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {
         flags: 'a'
     })
     
-    app.use(morgan('combined', {stream: accessLogStream}))
+    app.use(morgan('combined', {
+        stream: accessLogStream,
+        skip: function (req, res) {
+            return res.statusCode < 400
+        }
+    }))
     
     ```
 
@@ -856,6 +891,154 @@ server.listen(3000)
     ```
 
     
+
+  * **cors**
+
+    >https://github.com/expressjs/cors
+
+    > 处理跨域请求
+
+    ```shell
+    npm i cors
+    ```
+
+    ```js
+    const cors = require('cors')
+    
+    // 允许全部请求跨域
+    app.use(cors())
+    
+    // 允许制定路由跨域
+    app.get('/cors', cors(), (req, res) => {
+        res.status(201).end('hello world')
+    })
+    ```
+
+    
+
+  * **method-override**
+
+    > https://github.com/expressjs/method-override
+
+    > 支持你在没有put delete的浏览器上使用这些方法
+
+    ```shell
+    npm install method-override
+    ```
+
+    ```js
+    const methodOverride = require('method-override')
+    app.use(methodOverride('X-HTTP-Method-Override'))
+    ```
+
+  * **http-errors**
+
+    > https://github.com/jshttp/http-errors
+
+    > 创建错误的http响应
+
+    ```shell
+    npm i http-errors
+    ```
+
+    ```js
+    const httpErrors = require('http-errors')
+    app.use((req, res, next) => {
+        if (!req.user) {
+            return next(httpErrors(401, 'please login first'))
+        }
+        next()
+    })
+    ```
+
+    
+
+### debug
+
+> 启动调试
+
+```shell
+# on mac
+$ DEBUG=express:* node server.js
+
+# on windows
+set DEBUG=express:* & node server.js
+```
+
+
+
+### Dev & Ops
+
+* **forever | supervisor**
+
+  > 开发环境node程序管理程序
+
+  
+
+* **pm2**
+
+  > 生产环境程序管理程序
+
+  ```shell
+  npm i -g pm2
+  
+  # 启动node程序
+  pm2 start app.js
+  
+  # 手动分配四个cluster数量启动node进程
+  pm2 start app.js -i 4
+  
+  # 默认启动最大进程数
+  pm2 start app.js -i max
+  
+  # 列出pm2的进程列表
+  pm2 list
+  
+  # 根据id停止进程
+  pm2 stop 0
+  
+  # 重启
+  pm2 restart 0
+  
+  # 显示 进程 0 的详细信息
+  pm2 show 0
+  
+  # 从列表删除
+  pm2 delete 0
+  ```
+
+  
+
+* **upstart**
+
+  > **系统**进程管理工具
+
+  ```shell
+  # download
+  sudo apt install upstart
+  
+  # 修改配置文件 必须位于/etc/init/ 目录下
+  sudo touch /etc/init/hellonode.conf
+  ```
+
+  
+
+  > hellonode.conf
+
+  ```bash
+  author            "float"                      	# 指定作者
+  description       "hellonode"					# 程序的名称或描述
+  setuid            "nonrootuser"        			# 用nonrootuser用户运行程序
+  
+  start on (local-filesystems and net-device-up IFACE=eth0) # 在文件系统和网络可用时启动程序
+  stop on shutdown                 				# 关机时停止
+  respawn											# 程序崩溃时停止(默认5秒10次)
+  respawn limit 20 5    							# 设置为5秒内重启20次, 如果崩溃的话
+  console log					 # 将 stdin 和 sterr 输出到 /var/log/upstart/hellonode.log
+  env NODE_ENV=production                         # 设置环境变量
+  exec pm2 start app.js -i 4             			# 启动的脚本命令
+  
+  ```
 
   
 
