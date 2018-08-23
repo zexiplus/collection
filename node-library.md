@@ -249,11 +249,56 @@ notifier.nogiry({
 
 * **ora**
 
-> 彩色显示 stdout
+>  界面友好的交互式输出工具
 
 > https://github.com/sindresorhus/ora
 
-```js
+```shell
 npm i ora
+```
+
+
+
+* **Commander.js**
+
+> 创建命令行工具的库
+
+> https://github.com/tj/commander.js
+
+```shell
+npm install commander --save
+```
+
+```shell
+#!/usr/bin/env node
+const programe = require('commander')
+
+
+```
+
+
+
+* **ansi.js**
+
+> 彩色化命令行 文字, 前景色, 背景色 
+
+> https://github.com/TooTallNate/ansi.js
+
+```bash
+ npm install ansi
+```
+
+```js
+const ansi = require('ansi')
+  , cursor = ansi(process.stdout)
+
+// You can chain your calls forever:
+cursor
+  .red()                 // Set font color to red
+  .bg.grey()             // Set background color to grey
+  .write('Hello World!') // Write 'Hello World!' to stdout
+  .bg.reset()            // Reset the bgcolor before writing the trailing \n,
+                         //      to avoid Terminal glitches
+  .write('\n')           // And a final \n to wrap things up
 ```
 

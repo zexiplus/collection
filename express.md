@@ -19,6 +19,14 @@
 
 ### 快速使用
 
+> 下载生成器
+
+```shell
+npm i -g express-generator
+```
+
+
+
 ```js
 var express = require('express')
 var path = require('path')
@@ -27,21 +35,21 @@ var app = express()
 // 应用中间件
 app.use(express.static(path.join(__dirname, 'www/')))
 
-app.use((req,res,next) => {
+app.use((req, res, next) => {
   
 })
-app.get('/',(req,res) => {
+app.get('/',(req, res) => {
   res.end('hello')
 })
 
 // 挂载多个中间件函数
-app.get('/',fn1,fn2,fn3) 
+app.get('/', fn1, fn2, fn3) 
 app.listen(3000)
 
 // 定义路由
 var users = express.Router()
-users.get('/',fn)
-users.get('/home',fn)
+users.get('/', fn)
+users.get('/home', fn)
 
 // 自定义路径
 router.get('/:name', function (req, res) {     
@@ -64,8 +72,6 @@ app.use(users)
     const app = express()
     ```
 
-    
-
   * **express.static(dirname)**
 
     > 设置express服务器静态目录
@@ -81,8 +87,6 @@ app.use(users)
     ```js
     http.createServer(app).listen(3001)
     ```
-
-    
 
 * #### app
 
@@ -104,9 +108,7 @@ app.use(users)
     })
     ```
 
-    
-
-  * **app.use(path, fn)**
+  * **app.use(path,  fn)**
 
     > 使用中间件
 
@@ -136,8 +138,6 @@ app.use(users)
     app.use('/path', (req, res, next) => {})
     ```
 
-    
-
   * **app.all('*', fn)**
 
     > 所有请求都经过此方法
@@ -150,8 +150,6 @@ app.use(users)
         next()
     })
     ```
-
-    
 
   * **app.get(path, fn),   app.post(),    app.put(),    app.delete ...**
 
@@ -185,7 +183,7 @@ app.use(users)
     })
     ```
 
-  
+
 
   - **app.set(key, val)**
 
@@ -197,13 +195,9 @@ app.use(users)
     app.set('views', __dirname + '/views')
     ```
 
-    
-
   - **app.listen(port, [callback])**
 
     > 监听端口
-
-    
 
   - **app.engine(ext, callback)**
 
@@ -214,7 +208,7 @@ app.use(users)
     app.engine('pug', require('pug').__express)
     ```
 
-  
+
 
   - **app.path()**
 
@@ -237,25 +231,17 @@ app.use(users)
 
     > 对服务器实例app的引用
 
-    
-
   * **req.ip**
 
     > 请求的IP地址
-
-    
 
   * **req.files**
 
     > 请求上传的文件
 
-    
-
   * **req.method**
 
     > 请求的方法
-
-    
 
   * **req.headers**
 
@@ -264,8 +250,6 @@ app.use(users)
     ```js
     req.headers['x-no-compression']
     ```
-
-    
 
   * **req.params**
 
@@ -279,8 +263,6 @@ app.use(users)
   * **req.url**
 
     > 请求的路径
-
-    
 
   * **req.query**
 
@@ -308,10 +290,6 @@ app.use(users)
     
     req.signedCookies.user // tobi
     ```
-
-    
-
-    
 
   * **req.protocol**
 
@@ -386,8 +364,6 @@ app.use(users)
     res.setHeader('cache-control': 'max-age=315360000, public, immutable')
     ```
 
-    
-
   * **res.redirect([statusCode], url)**
 
     >重定向
@@ -405,8 +381,6 @@ app.use(users)
     res.sendFile('/path/to/play.mp4');
     ```
 
-    
-
   * **res.render(templateName, message)**
 
     > 用模版渲染页面
@@ -416,8 +390,6 @@ app.use(users)
     res.render('index', {message: 'hello world'})
     ```
 
-    
-
   * **res.status(code)**
 
     > 返回状态码
@@ -425,8 +397,6 @@ app.use(users)
     ```js
     res.status(500).send('something error')
     ```
-
-    
 
   * **res.send(body)**
 
@@ -437,8 +407,6 @@ app.use(users)
     res.send({some: 'json'})
     res.send(new Buffer('hello world'))
     ```
-
-    
 
   * **res.download(path, [filename], [fn])**
 
@@ -510,7 +478,6 @@ app.use(users)
     res.status(500).json({ error: 'message' })
     ```
 
-    
 
 ### express router
 
@@ -527,8 +494,6 @@ app.use(users)
   
   // url: www.demo.com/app/about  
   ```
-
-  
 
 * **router.route**
 
@@ -562,7 +527,6 @@ app.use(users)
   })
   ```
 
-  
 
 
 
@@ -613,8 +577,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     app.use(express.static(__dirname + '/static'))
     ```
 
-    
-
 * ####第三方中间件
 
   * **cookie-parser**
@@ -646,8 +608,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     
     ```
 
-    
-
   * **body-parser**
 
     > https://github.com/expressjs/body-parser
@@ -672,8 +632,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     app.use(express.json())
     
     ```
-
-    
 
   * **cookie-session**
 
@@ -705,8 +663,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     })
     ```
 
-    
-
   * **compression**
 
     > https://github.com/expressjs/compression
@@ -732,8 +688,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
         }
     }}))
     ```
-
-    
 
   * **error-handler**
 
@@ -762,8 +716,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     }
     ```
 
-    
-
   * **express-session**
 
     > https://github.com/expressjs/session
@@ -791,8 +743,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
         next()
     })
     ```
-
-    
 
   * **morgan** 
 
@@ -823,8 +773,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     
     ```
 
-    
-
   * **passport**
 
     > https://github.com/jaredhanson/passport
@@ -834,8 +782,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     ```shell
     npm i passport
     ```
-
-    
 
   * **multer**
 
@@ -871,8 +817,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     </form>
     ```
 
-    
-
   * **serve-favicon**
 
     > https://www.npmjs.com/package/serve-favicon
@@ -889,8 +833,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     
     app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
     ```
-
-    
 
   * **cors**
 
@@ -913,8 +855,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
         res.status(201).end('hello world')
     })
     ```
-
-    
 
   * **method-override**
 
@@ -951,7 +891,6 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     })
     ```
 
-    
 
 ### debug
 
@@ -971,13 +910,11 @@ set DEBUG=express:* & node server.js
 
 * **forever | supervisor**
 
-  > 开发环境node程序管理程序
-
-  
+  > 开发环境 node 进程刷新
 
 * **pm2**
 
-  > 生产环境程序管理程序
+  > 生产环境node 程序 重启
 
   ```shell
   npm i -g pm2
@@ -1007,8 +944,6 @@ set DEBUG=express:* & node server.js
   pm2 delete 0
   ```
 
-  
-
 * **upstart**
 
   > **系统**进程管理工具
@@ -1018,15 +953,18 @@ set DEBUG=express:* & node server.js
   sudo apt install upstart
   
   # 修改配置文件 必须位于/etc/init/ 目录下
-  sudo touch /etc/init/hellonode.conf
+  sudo touch /etc/init/autonode.conf
+  
+  # 启动程序
+  sudo service autonode
   ```
 
-  
+
 
   > hellonode.conf
 
   ```bash
-  author            "float"                      	# 指定作者
+  author            "float"                     	# 指定作者
   description       "hellonode"					# 程序的名称或描述
   setuid            "nonrootuser"        			# 用nonrootuser用户运行程序
   
@@ -1039,7 +977,3 @@ set DEBUG=express:* & node server.js
   exec pm2 start app.js -i 4             			# 启动的脚本命令
   
   ```
-
-  
-
-  

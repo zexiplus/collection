@@ -1,6 +1,23 @@
 # html
 
+### web components
+
+1. **html imports**
+
+   > 状态, 草案
+
+   > 垫片方案   引用google 的 webcomponents.js
+
+   ```html
+   <link rel="imports" href="myFile.html" />
+   ```
+
+   
+
+
+
 ### tag
+
 1. <figure>
 
 ```html

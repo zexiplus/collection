@@ -37,7 +37,7 @@
 | --------------------------------- | ----------------------------------------- |
 | 开启命令面板                      | **command + shift + p**                   |
 | 转到定义                          | **command + option + ↓**                  |
-| 开启/切换终端面板                 | **command  + shift + Y**                  |
+| 开启/切换终端面板                 | **ctrl + `**                              |
 | 格式化代码                        | **option + shift + f**                    |
 | 把文件夹在 finder 中显示          | **command + option + R**                  |
 | 向上移动行                        | **option + ↓**                            |
@@ -49,6 +49,8 @@
 | 停用quokka                        | **command + K S**                         |
 | 使用markdonw toc 插件生成文档目录 | **markdown 中右键 , markdown toc insert** |
 | 使用expand-region 选中括号内内容  | **command + shift + M**                   |
+| 注册code 系统命令                 | **command + shift + P >  shell code**     |
+| 在命令行中使用vscode              | **code main.js**                          |
 
 
 

@@ -28,7 +28,11 @@ npm i electron@latest
   
   cd my-project
   yarn 
+  # 开发模式
   yarn run dev
+  
+  # 编译生成二进制文件
+  yarn run build
   ```
 
 * **electron-forge**
@@ -78,7 +82,117 @@ npm i electron@latest
   yarn add electron-builder --dev
   ```
 
-  
+
+
+
+
 
 ### API
+
+
+
+* **BrowserWindow**
+
+  > 创建或销毁窗口 
+
+  ```js
+  const { BowserWindow } = require('electron').remote
+  
+  let win = new BowserWindow({
+      width: 400,
+      height: 400,
+      minWidth: 400,
+      minHeight: 400,
+      resizable: true,
+      frame: false, // 无边框
+      show: true, // 显示或隐藏
+  })
+  
+  win.loadURL(path.join(`file://${__dirname}/app/index.html`))
+  
+  // 监听页面 window.close() 事件
+  win.on('close', () => {
+      app = null
+  })
+  
+  // 监听页面的crash事件并给出提示框
+  win.on('crash', () => {
+      const option = {
+        type: 'info',
+        message: 'This process has crashed.',
+      }
+      electron.dialog.showMessageDialog(option, fn)
+  })
+  
+  win.on('move', function () {
+      app.getSize() // 获得尺寸
+      app.getPosition() // 获得位置
+  })
+  win.on('resize', fn)
+  win.show()
+  
+  ```
+
+  > app/index.html
+
+  ```html
+  <a href="javascript:window.close()">点击关闭窗口</a>
+  <a href="javascript:process.crash()">点击触发crash</a>
+  ```
+
+  
+
+
+
+* **dialog 对话框** 
+
+  > 打开文件夹
+
+  ```js
+  const { dialog } = require('electron').remote
+  
+  dialog.showOpenDialog({
+      properties: ['openDirectory', 'openFile', 'multiSelections'],//允许选择目录,文件,多选 
+      defaultPath: '', // 默认打开路径
+  }, function (filePaths) {
+      // filePaths 为路径数组
+  })
+  ```
+
+  > 保存文件操作
+
+  ```js
+  dialog.showSaveDialog({
+      defaultPath: '',
+  }, function (filename) {
+      
+  })
+  ```
+
+  > 系统通知对话框
+
+  ```js
+  dialog.showMessageDialog({
+      type: 'info',
+      title: 'Renderer Process Crashed',
+      message: 'This process has crashed.',
+      buttons: ['Reload', 'Close']
+  })
+  ```
+
+  
+
+* **IpcRenderer**
+
+  > 从渲染进程到主进程的异步通讯
+
+  ```js
+  // 绑定信道事件
+  ipcRenderer.on(channel, listener)
+  
+  // 向主进程发送事件
+  ipcRenderer.send(channel, args)
+  ```
+
+  
 
