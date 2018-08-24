@@ -206,10 +206,6 @@ someAsyncTask(foo, function(err, result){
 
 
 
-8.**uglifyjs**
-
-> 压缩混淆代码工具
-
 ### webfont library
 
 
