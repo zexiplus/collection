@@ -14,6 +14,8 @@
 | GR       | graceful degradation              | 优雅降级, 先从最主流的浏览器实现,再回头兼容老版本浏览器,修复bug |
 | PE       | progressive enhancement           | 先从最基本的功能做起, 保证高度的兼容性, 逐渐迭代复杂功能     |
 | FAQ      | Frequently asked question         | 常见问题                                                     |
+| TCP      | Transmisssion control protocol    | 传输控制协议 负责在不可靠的传输信道上提供可靠的抽象层        |
+| IP       | internet Protocol                 | 因特网协议                                                   |
 |          |                                   |                                                              |
 |          |                                   |                                                              |
 
@@ -666,7 +668,7 @@
 
 290. **opt 选择**
 
-     ​      
+           
 
 291. **crypto 加密**
 
@@ -688,7 +690,7 @@
 
 300. **truncat  截去**
 
-     ​      
+           
 
 301. **backslashes 反斜线**
 
@@ -710,7 +712,7 @@
 
 310. **represent 表示**
 
-     ​      
+           
 
 311. **synopsis 概要**
 
@@ -732,7 +734,7 @@
 
 320. **compile 编译**      
 
-     ​     
+          
 
 321. **idiosyncratic 特质**
 
@@ -754,7 +756,7 @@
 
 330. **mandarin 普通话 官话**
 
-     ​      
+           
 
 331. **retweet 转载，转推**
 
@@ -776,7 +778,7 @@
 
 340. **witch 巫婆**
 
-     ​      
+           
 
 341. **drone 无人机**
 
@@ -798,7 +800,7 @@
 
 350. **hereby 特此**
 
-     ​      
+           
 
 351. **obtaining 获得**
 
@@ -820,7 +822,7 @@
 
 360. **conduct 开展**
 
-     ​      
+           
 
 361. **domestic 国内的**
 
@@ -842,7 +844,7 @@
 
 370. **cons 缺点**
 
-     ​      
+           
 
 371. **gauge 衡量**
 
@@ -864,7 +866,7 @@
 
 380. **constraints 限制**
 
-     ​      
+           
 
 381. **interferes 干涉**
 
@@ -886,7 +888,7 @@
 
 390. **periodic 定期**
 
-     ​      
+           
 
 391. **quizzes 测验**
 
@@ -908,7 +910,7 @@
 
 400. **epic 史诗般的**
 
-     ​      
+           
 
 401. **criteria 标准**
 
@@ -952,7 +954,7 @@
 
 420. discard 抛弃
 
-     ​      
+           
 
 421. eliminate 消除
 
@@ -974,7 +976,7 @@
 
 430. landscape mode 横屏模式
 
-     ​      
+           
 
 431. mockup 模型，样例
 
@@ -996,7 +998,7 @@
 
 440. contemplating 考虑
 
-     ​      
+           
 
 441. manipulate 操作
 
@@ -1018,7 +1020,7 @@
 
 450. ink 墨水
 
-     ​      
+           
 
 451. dip 浸
 
@@ -1040,7 +1042,7 @@
 
 460. mass 块
 
-    ​      
+          
 
 461. critical 临界
 
@@ -1062,7 +1064,7 @@
 
 470. crisply 清晰
 
-    ​      
+          
 
 471. fuzzy 模糊
 
@@ -1084,7 +1086,7 @@
 
 480. former 前者
 
-    ​      
+          
 
 481. get around 绕过
 
@@ -1106,7 +1108,7 @@
 
 490. communities 社区
 
-    ​      
+          
 
 491. thrive 茁壮成长
 
@@ -1128,7 +1130,7 @@
 
 500. trade-offs 权衡
 
-    ​     
+         
 
 501. Scavenger 清道夫
 
@@ -1308,7 +1310,7 @@
 
 580. scalar 标量
 
-     ​      
+           
 
 581. matrices  矩阵，模型
 
@@ -1333,7 +1335,9 @@
  
 
 591. saturate 饱和度
+
 592. chaos 混沌
+
 593. keygen 注册机
 
 594. material 材料
@@ -1350,11 +1354,19 @@
 
 600. monotony 单调，乏味
 
-     
+           
 
 601. address 解决
 
 602. reproducible 可复现的
+
+603. unobtrusive 不显眼的
+
+604. partial 局部的
+
+605. coercion 强制
+
+606. ephemeral 短暂的
 
 
 

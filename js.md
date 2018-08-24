@@ -464,7 +464,7 @@ import { foo } from 'my_module';
 ##### 注释规范
 
 ```js
-	函数（sublime快捷键 /** + 回车）
+	// 函数（sublime快捷键 /** + 回车）
 	/**
     * 数据格式化
     * @param src {Array}        长度自由的一维数组，子元素为json对象

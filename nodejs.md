@@ -13,36 +13,19 @@
 * module.exports 初始值为一个空对象 {}
 * exports 是指向的 module.exports 的引用
 * require() 返回的是 module.exports 而不是 exports
+* process.argv    [node路径，js文件路径，命令行参数]
+* process.env     系统环境对象
 
 
 
-### develop
+### develop cli
 
-> 使用forever 保持node长时间运行&监听文件变化自动重启服务
+> 常用node开发调试 cli命令
 
 ```shell
-# 全局下载 forever
-sudo npm i -g forever
-
-# 使用 forever 启动node进程
-forever start server.js
-
-# 查看 forever 正在跑的进程
-forever list
-
-# 结束 forever 的node进程
-forever stop server.js
-
-# 启动并监听 node 文件的变化（文件变化后会自动重启）
-
-forever -w start server.js
-
-# [node路径，js文件路径，命令行参数]
-process.argv        
-
-# 系统环境对象
-process.env                 
-
+# 时时监听文件变化 重启node进程
+supervisor server.js
+         
 # 设置环境变量  
 windows => set NODE_ENV=test node test.js  
 linux => NODE_ENV=test node test.js
@@ -56,6 +39,12 @@ npm config set prefix /usr/local/node_modules
 
 # 检查node代码
 node inspect myscript.js
+
+# 根据进程端口查看进程信息
+lsof -i :3000
+
+# 根据pid 杀死进程
+kill -9 pid
 ```
 
 
@@ -113,11 +102,7 @@ readFile2('./one.js').then(data => {
 
 ### 常用库
 
-```js
-var path = require('path')            //内置路径处理模块
-path.join(__dirname,'www/')           //return 'currPath/www'
-path.resolve('/usr','./local','bin')   //把路径解析为绝对路径的函数
-```
+
 
 ### fs
 
@@ -134,6 +119,27 @@ path.resolve('/usr','./local','bin')   //把路径解析为绝对路径的函数
 
 
 
+> 打开文件夹并遍历文件拷贝到另一目录
+
+```js
+fs.readDir(path, (err, files) => {
+    files.forEach(item => {
+        fs.writeFileSync(__dirname + '/copy', fs.readFileSync(__dirname + '/origin'))
+    })
+})
+```
+
+
+
+> 新建目录
+
+```js
+// 若没有重名目录 则新建目录
+fs.existsSync(logFold) || fs.mkdirSync(logFold)
+```
+
+
+
 > Open file
 
 ```js
@@ -143,6 +149,8 @@ fs.open('test.txt', 'r+', (err, fd) => {
     console.log(fd)
 })
 ```
+
+
 
 > Write file
 
@@ -162,6 +170,8 @@ fs.open('test.txt', 'a+', (err, fd) => {
     })
 })
 ```
+
+
 
 > Read file
 
@@ -185,6 +195,8 @@ fs.open('test.txt', 'r', (err, fd) => {
 })
 ```
 
+
+
 > close file
 
 ```js
@@ -197,6 +209,8 @@ fs.open('test.txt', 'r+', (err, fd) => {
     })
 })
 ```
+
+
 
 > watch file
 
@@ -343,20 +357,37 @@ http.createServer((req,res) => {
 ### path
 
 ```js
-path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');// Returns: '/foo/bar/baz/asdf'
+//内置路径处理模块
+var path = require('path')  
 
-path.parse('C:\\path\\dir\\file.txt');// Returns:// { root: 'C:\\',//   dir: 'C:\\path\\dir',//   base: 'file.txt',//   ext: '.txt',//   name: 'file' }
+//return 'currPath/www'
+path.join(__dirname,'www/')  
+
+//把路径解析为绝对路径的函数
+path.resolve('/usr','./local','bin')   
+
+// Returns: '/foo/bar/baz/asdf'
+path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');
+
+
+// Returns:// { root: 'C:\\',//   dir: 'C:\\path\\dir',//   base: 'file.txt',//   ext: '.txt',//   name: 'file' }
+path.parse('C:\\path\\dir\\file.txt');
 ┌─────────────────────┬────────────┐
 │          dir        │    base    │
 ├──────┬              ├──────┬─────┤
 │ root │              │ name │ ext │"  /    home/user/dir / file  .txt "
 └──────┴──────────────┴──────┴─────┘
 The path.resolve() method resolves a sequence of paths or path segments into an absolute path.
-path.resolve('/foo/bar', './baz');// Returns: '/foo/bar/baz'
 
-path.resolve('/foo/bar', '/tmp/file/');// Returns: '/tmp/file'
+// Returns: '/foo/bar/baz'
+path.resolve('/foo/bar', './baz');
 
-path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');// if the current working directory is /home/myself/node,// this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
+// Returns: '/tmp/file'
+path.resolve('/foo/bar', '/tmp/file/');
+
+// if the current working directory is /home/myself/node,// this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
+path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
+
 
 ```
 
@@ -364,7 +395,7 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');// if the curre
 
 ### process
 
-```js
+```shell
 process.env           // 环境变量   系统上得键值对对象
 DEBUG=1 node one.js   // process.env.DEBUG == 1
 
@@ -372,6 +403,8 @@ process.argv          // 运行node时指定得参数[node路径，文件路径�
 node one.js hello world // process.argv = [‘/usr/bin/node’,/home/code/one.js’,’hello’,’world’]
 
 ```
+
+
 
 ### dns
 
@@ -438,28 +471,4 @@ ls.on('close', code => {
 
 
 
-
-### connect
-
-```js
-var connect = require('connect')
-var http = require('http')
-var app = connect()
-app.use((req,res,next)=> {
-  res.send('middleware')
-  next()          // 全局中间件要执行next才能执行其它中间件
-})
-app.use('/hello'(req,res) => {   
-  res.end('hello')
-})
-http.createServer(app).listen(555)
-```
-
-
-
-### express
-
-```js
-
-```
 

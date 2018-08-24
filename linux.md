@@ -1,13 +1,58 @@
-### linux
+# linux
+
+> 关于linux 系统 的基本概念和操作总结
 
 
 
-##### Mac os 文件结构
+### 文件结构
 
-* / 系统根目录
-  * /Applications 存放所有可执行软件
+| 目录                 | 描述                                                         |
+| -------------------- | ------------------------------------------------------------ |
+| `/`                  | *主层次* 的根，也是整个文件系统层次结构的根目录              |
+| `/bin`               | 存放在单用户模式可用的必要命令二进制文件，所有用户都可用，如 cat、ls、cp等等 |
+| `/boot`              | 存放引导加载程序文件，例如kernels、initrd等                  |
+| `/dev`               | 存放必要的设备文件，例如`/dev/null`                          |
+| `/etc`               | 存放主机特定的系统级配置文件。                               |
+| `/etc/opt`           | 存储着新增包的配置文件 `/opt/`.                              |
+| `/etc/sgml`          | 存放配置文件，比如 catalogs，用于那些处理SGML(译者注：标准通用标记语言)的软件的配置文件 |
+| `/etc/X11`           | X Window 系统11版本的的配置文件                              |
+| `/etc/xml`           | 配置文件，比如catalogs，用于那些处理XML(译者注：可扩展标记语言)的软件的配置文件 |
+| `/home`              | 用户的主目录，包括保存的文件，个人配置，等等                 |
+| `/lib`               | `/bin/` 和 `/sbin/`中的二进制文件的必需的库文件              |
+| `/lib<架构位数>`     | 备用格式的必要的库文件。 这样的目录是可选的，但如果他们存在的话肯定是有需要用到它们的程序 |
+| `/media`             | 可移动的多媒体(如CD-ROMs)的挂载点。(出现于 FHS-2.3)          |
+| `/mnt`               | 临时挂载的文件系统                                           |
+| `/opt`               | 可选的应用程序软件包                                         |
+| `/proc`              | 以文件形式提供进程以及内核信息的虚拟文件系统，在Linux中，对应进程文件系统（procfs ）的挂载点 |
+| `/root`              | 根用户的主目录                                               |
+| `/sbin`              | 必要的系统级二进制文件，比如， init, ip, mount               |
+| `/srv`               | 系统提供的站点特定数据                                       |
+| `/tmp`               | 临时文件 (另见 `/var/tmp`). 通常在系统重启后删除             |
+| `/usr`               | *二级层级*存储用户的只读数据； 包含(多)用户主要的公共文件以及应用程序 |
+| `/usr/bin`           | 非必要的命令二进制文件 (在单用户模式中不需要用到的)；用于所有用户 |
+| `/usr/include`       | 标准的包含文件                                               |
+| `/usr/lib`           | 库文件，用于`/usr/bin/` 和 `/usr/sbin/`中的二进制文件        |
+| `/usr/lib<架构位数>` | 备用格式库(可选的)                                           |
+| `/usr/local`         | *三级层次* 用于本地数据，具体到该主机上的。通常会有下一个子目录, *比如*, `bin/`, `lib/`, `share/`. |
+| `/usr/local/sbin`    | 非必要系统的二进制文件，比如用于不同网络服务的守护进程       |
+| `/usr/share`         | 架构无关的 (共享) 数据.                                      |
+| `/usr/src`           | 源代码，比如内核源文件以及与它相关的头文件                   |
+| `/usr/X11R6`         | X Window系统，版本号:11，发行版本：6                         |
+| `/var`               | 各式各样的（Variable）文件，一些随着系统常规操作而持续改变的文件就放在这里，比如日志文件，脱机文件，还有临时的电子邮件文件 |
+| `/var/cache`         | 应用程序缓存数据. 这些数据是由耗时的I/O(输入/输出)的或者是运算本地生成的结果。这些应用程序是可以重新生成或者恢复数据的。当没有数据丢失的时候，可以删除缓存文件 |
+| `/var/lib`           | 状态信息。这些信息随着程序的运行而不停地改变，比如，数据库，软件包系统的元数据等等 |
+| `/var/lock`          | 锁文件。这些文件用于跟踪正在使用的资源                       |
+| `/var/log`           | 日志文件。包含各种日志。                                     |
+| `/var/mail`          | 内含用户邮箱的相关文件                                       |
+| `/var/opt`           | 来自附加包的各种数据都会存储在 `/var/opt/`.                  |
+| `/var/run`           | 存放当前系统上次启动以来的相关信息，例如当前登入的用户以及当前运行的[daemons(守护进程)](http://en.wikipedia.org/wiki/Daemon_%28computing%29). |
+| `/var/spool`         | 该spool主要用于存放将要被处理的任务，比如打印队列以及邮件外发队列 |
+| `/var/mail`          | 过时的位置，用于放置用户邮箱文件                             |
+| `/var/tmp`           | 存放重启后保留的临时文件                                     |
 
 
+
+### 操作
 
 ##### ssh连接服务器
 
@@ -17,6 +62,29 @@ ssh username@ipAddress
 
 # 登出
 logout
+
+# 重启
+sudo reboot
+sudo init 6
+
+# 关机
+sudo power off
+sudo init 0
+
+# 编辑ssh配置文件
+vim /etc/ssh/sshd_config
+
+# 设置 sshd_config 文件的客户端链接时长,心跳
+# 增加下列字段
+# 1、客户端每隔多少秒向服务发送一个心跳数据
+# 2、客户端多少秒没有相应，服务器自动断掉连接
+
+ClientAliveInterval 30
+ClientAliveCountMax 86400
+
+# 重启sshd服务
+service sshd reload
+
 ```
 
 
@@ -36,10 +104,81 @@ scp /localPath/folderName/fileName username@ip:/remotePath/folderName
 scp -r username@ip:/remotePath/folderName /localPath/
 
 # 将整个目录同步到服务器
-
 scp -r /localPath/folderName username@ip:/remotePath/folderName
 
 ```
+
+
+
+##### 注册开机启动程序
+
+> 使用 upstart 或者 systemd , 取决于你的系统使用的哪种服务管理
+
+* **systemd**
+
+  * **命令行工具 systemctl**
+
+    ```bash
+    # 查看systemctl 版本
+    systemctl --version
+    
+    # 增加配置文件
+    touch /etc/systemd/system/nodeserver.service
+    ```
+
+  * **Create the service file**
+
+    > nodeserver.service
+
+    ```shell
+    [Unit]
+    Description=Node.js Example Server
+    #Requires=After=mysql.service       # Requires the mysql service to run first
+    
+    [Service]
+    ExecStart=/usr/bin/node /opt/nodeserver/server.js
+    # Required on some systems
+    #WorkingDirectory=/opt/nodeserver
+    Restart=always
+     # Restart service after 10 seconds if node service crashes
+     RestartSec=10
+     # Output to syslog
+    StandardOutput=syslog
+    StandardError=syslog
+    SyslogIdentifier=nodejs-example
+    #User=<alternate user>
+    #Group=<alternate group>
+    Environment=NODE_ENV=production PORT=1337
+    
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+  * **enable the service**
+
+    ```bash
+    systemctl enable nodeserver.service
+    ```
+
+  * **start the service**
+
+    ```bash
+    systemctl start nodeserver.service
+    ```
+
+  * **verify it's running**
+
+    ```bash
+    systemctl status nodeserver.service
+    ```
+
+
+* **upstart**
+
+  ```shell
+  
+  ```
+
 
 
 
@@ -110,8 +249,6 @@ traceroute bing.com
 
 
 
-
-
 ##### 改变文件/文件夹所有者
 
 ```shell
@@ -167,13 +304,30 @@ echo "aaaa" > foo.txt
 ```shell
 top -o cpu
 
-# 杀死进程
-sudo kill 2200
+# 杀死进程 2200 为进程id
+sudo kill -9 2200
 ```
 
 
 
-### nginx
+##### 按端口占用查看进程
+
+ ```bash
+ # 查看3000端口对应的进程
+ lsof -i :3000
+ 
+ kill -9 pid
+ ```
+
+
+
+### 其他软件配置
+
+##### nginx
+
+**nginx默认静态html目录**
+
+> /usr/share/nginx/html
 
 ##### 配置文件
 
@@ -305,15 +459,13 @@ http {
 }
 ```
 
-**nginx默认静态html目录**
-
-> /usr/share/nginx/html
-
 
 
 ##### vim
 
-1. 强行退出不保存修改 ctrl + c =>  :q!
+>  强行退出不保存修改 ctrl + c =>  :q!
+
+
 
 ##### 解压文件
 
