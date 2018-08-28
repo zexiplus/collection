@@ -1,10 +1,14 @@
- ### javascript
+# javascript
 
 > javascript 常用知识点总结
 
 
 
-##### Skill
+### catalague
+
+
+
+### Skill
 
 ```js
 // 求值表达式 （0, val）
@@ -42,6 +46,10 @@ Object.getOwnPropertyDescriptor(obj, 'a')
 
 
 
+### JS Class
+
+
+
 ##### Array 
 
 ```js
@@ -66,7 +74,7 @@ Array(3) // [,,,]
 // 数组查询 find() 找到并返回第一个为true的元素
 Array.prototype.find((n) => n > 10)
 
-//数组排序
+// 数组排序
 arr.sort(function(prev, next) {
   return prev - next
 })
@@ -74,8 +82,8 @@ arr.sort(function(prev, next) {
 // 数组去重
 […new Set(arr)]				//es6 Set 不允许有重复值
 Array.from(new Set(arr))  
-双重循环
-先排序，再循环
+// 双重循环
+// 先排序，再循环
 
 // 数组的解构赋值
 let [a, b, c] = [1, 2, 3]
@@ -173,8 +181,6 @@ let str2 = JSON.stringify(obj, function (key, val) {
 /* 注意 函数遍历器接收的第一个key是空字符串, val是传入的obj这个对象. 第二次key才是属性a
 
 ```
-
-
 
 
 
@@ -330,69 +336,89 @@ location.reload() //reload()重新加载当前页,若有缓存则从缓存加载
 
 
 
-##### new webApi
+### new webApi
 
-```js
-/************ js动画 以60hz调用函数得函数 requestAnimationFrame **********/
-requestAnimationFrame(function (timeStack) {
-    // 接受一个函数作为参数，这个函数得参数为一个 date 对象，代表当前函数运行时的时间戳
-})
-somethingAnimation() {
-  el.style.width = `${parseInt(el.style.width, 10) + 1}%`; // 每一帧的操作
-  if(something) { // 根据判断条件调用下一帧动画
-    requestAnimationFrame(somethingAnimation)
-  }
-}
 
-/************* 文件读取构造函数 构造函数  FileReader *************************/
-<input type="file" id="fileUp">
-document.addEventListener(document.querySelector('#fileUp'), 'change', function(e) {
-  var reader = new FileReader();
-  reader.readAsDataURL(e.target.files[0]);
-  reader.onload = function() {
-    someDom.innerHTML = `<img src="${reader.result}" />`
-  }
-})
 
-/********* 对象URL  window.URL.createObjectURL() *******************/
-var objUrl = window.URL.createObjectURL(e.target.files[0]);  //指向一块内存地址
-someDom.innerHTML = `<img src="${objUrl}" />`
+* **requestAnimationFrame**
 
-/*********** xhr 上传文件 构造函数 FormData ******************/
-var data = new FormData();
-data.append('file',e.target.files[0]);
-xhr.send(data)
-
-/*********** Web Worker 多线程对象 ***********/
-var worker = new Worker('sort.js')
-var arr = [68,66,89,32,18]
-worder.onmessage = function(event) {
-  var data = event.data;
-  console.log('sorted array is', data)
-}
-worker.postMessage(arr)
-
-// sort.js 文件
-self.onmessage = function(event) {
-  var data = event.data;
-  data.sort(function(a, b) {
-    return a - b
+  ```js
+  /************ js动画 以60hz调用函数得函数 requestAnimationFrame **********/
+  requestAnimationFrame(function (timeStack) {
+      // 接受一个函数作为参数，这个函数得参数为一个 date 对象，代表当前函数运行时的时间戳
   })
-  self.postMessage(data)
-}
-```
+  somethingAnimation() {
+    el.style.width = `${parseInt(el.style.width, 10) + 1}%`; // 每一帧的操作
+    if(something) { // 根据判断条件调用下一帧动画
+      requestAnimationFrame(somethingAnimation)
+    }
+  }
+  ```
+
+* **fileReader**
+
+  ```js
+  /************* 文件读取构造函数 构造函数  FileReader *************************/
+  <input type="file" id="fileUp">
+  document.addEventListener(document.querySelector('#fileUp'), 'change', function(e) {
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload = function() {
+      someDom.innerHTML = `<img src="${reader.result}" />`
+    }
+  })
+  ```
+
+* **内存URL**
+
+  ```js
+  /********* 对象URL  window.URL.createObjectURL() *******************/
+  var objUrl = window.URL.createObjectURL(e.target.files[0]);  //指向一块内存地址
+  someDom.innerHTML = `<img src="${objUrl}" />`
+  
+  /*********** xhr 上传文件 构造函数 FormData ******************/
+  var data = new FormData();
+  data.append('file',e.target.files[0]);
+  xhr.send(data)
+  ```
+
+* **Web worker**
+
+  ```js
+  /*********** Web Worker 多线程对象 ***********/
+  var worker = new Worker('sort.js')
+  var arr = [68,66,89,32,18]
+  worder.onmessage = function(event) {
+    var data = event.data;
+    console.log('sorted array is', data)
+  }
+  worker.postMessage(arr)
+  
+  // sort.js 文件
+  self.onmessage = function(event) {
+    var data = event.data;
+    data.sort(function(a, b) {
+      return a - b
+    })
+    self.postMessage(data)
+  }
+  ```
+
+* **Html5 notification API**
+
+  ```js
+  var myNotify = new Notification('标题', {
+      body: '这是正文内容'
+  })
+  
+  myNotify.onclick = function () {
+      console.log('消息被点击')
+  }
+  ```
 
 
 
-##### es-lint
-
-```js
-//去除es-lint警告
-/* eslint no-param-reassign: 0 */
-
-// 去除下一行 警告
-// eslint-disable-next-line
-```
+### others
 
 
 

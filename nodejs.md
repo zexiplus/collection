@@ -100,7 +100,7 @@ readFile2('./one.js').then(data => {
 
 
 
-### 常用库
+### 内置模块
 
 
 
@@ -117,7 +117,7 @@ readFile2('./one.js').then(data => {
 | w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖    |
 | w+   | 打开文件并读取和写入。如果文件不存在则创建，存在则覆盖 |
 
-
+##### fs.readDir
 
 > 打开文件夹并遍历文件拷贝到另一目录
 
@@ -129,7 +129,7 @@ fs.readDir(path, (err, files) => {
 })
 ```
 
-
+##### fs.mkdir
 
 > 新建目录
 
@@ -138,7 +138,7 @@ fs.readDir(path, (err, files) => {
 fs.existsSync(logFold) || fs.mkdirSync(logFold)
 ```
 
-
+##### fs.open
 
 > Open file
 
@@ -150,7 +150,7 @@ fs.open('test.txt', 'r+', (err, fd) => {
 })
 ```
 
-
+##### fs.writeFile
 
 > Write file
 
@@ -171,7 +171,7 @@ fs.open('test.txt', 'a+', (err, fd) => {
 })
 ```
 
-
+##### fs.readFile
 
 > Read file
 
@@ -195,7 +195,7 @@ fs.open('test.txt', 'r', (err, fd) => {
 })
 ```
 
-
+##### fs.close
 
 > close file
 
@@ -210,13 +210,18 @@ fs.open('test.txt', 'r+', (err, fd) => {
 })
 ```
 
+##### fs.watch
 
-
-> watch file
+> 监听文件/目录变化
 
 ```js
 // 监听filePath文件变化， 一旦改变，则运行回调函数
-fs.watchFile('filePath', (curr, prev) => {
+const options = {
+	recursive: true, // 如果是目录, 是否递归监听子目录, 默认false
+    encoding: 'utf8' // 监听文件名的字符编码
+}
+
+fs.watch('filePath', options,  (eventType, filename) => {
     console.log(`current file state is ${curr.sate}`)
     cp.exec('mv index.js index-dep.js')
 })
@@ -370,14 +375,17 @@ path.resolve('/usr','./local','bin')
 path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');
 
 
-// Returns:// { root: 'C:\\',//   dir: 'C:\\path\\dir',//   base: 'file.txt',//   ext: '.txt',//   name: 'file' }
+// Returns:
+// { root: 'C:\\',//   dir: 'C:\\path\\dir',
+//   base: 'file.txt',//   ext: '.txt',//   name: 'file' }
 path.parse('C:\\path\\dir\\file.txt');
 ┌─────────────────────┬────────────┐
 │          dir        │    base    │
 ├──────┬              ├──────┬─────┤
 │ root │              │ name │ ext │"  /    home/user/dir / file  .txt "
 └──────┴──────────────┴──────┴─────┘
-The path.resolve() method resolves a sequence of paths or path segments into an absolute path.
+// The path.resolve() method resolves a sequence of paths or path 
+// segments into an absolute path.
 
 // Returns: '/foo/bar/baz'
 path.resolve('/foo/bar', './baz');
@@ -385,7 +393,8 @@ path.resolve('/foo/bar', './baz');
 // Returns: '/tmp/file'
 path.resolve('/foo/bar', '/tmp/file/');
 
-// if the current working directory is /home/myself/node,// this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
+// if the current working directory is /home/myself/node,
+// this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
 path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
 
 
@@ -396,11 +405,16 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
 ### process
 
 ```shell
-process.env           // 环境变量   系统上得键值对对象
-DEBUG=1 node one.js   // process.env.DEBUG == 1
+# 环境变量   系统上得键值对对象
+# process.env  
 
-process.argv          // 运行node时指定得参数[node路径，文件路径，指定参数]
-node one.js hello world // process.argv = [‘/usr/bin/node’,/home/code/one.js’,’hello’,’world’]
+DEBUG=1 node one.js   
+# process.env.DEBUG == 1
+
+# 运行node时指定得参数[node路径，文件路径，指定参数]
+# process.argv
+node one.js hello world 
+# process.argv = [‘/usr/bin/node’,/home/code/one.js’,’hello’,’world’]
 
 ```
 

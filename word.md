@@ -485,7 +485,7 @@
 
 207. **purity 纯度 ， 纯净**
 
-208. **practicality 实际性**
+208. **practical 实用的**
 
 209. **ambiguity 歧义**
 
@@ -1354,7 +1354,7 @@
 
 600. monotony 单调，乏味
 
-           
+                 
 
 601. address 解决
 
@@ -1367,6 +1367,14 @@
 605. coercion 强制
 
 606. ephemeral 短暂的
+
+607. gradual 缓增
+
+608. adoption 采用
+
+609. relevant 相应
+
+610. tray 托盘
 
 
 
