@@ -226,6 +226,11 @@ npm shrinkwrap
 
 
 
+* **uglifyjs**
+
+> 压缩混淆代码工具
+
+
 * **node-notifier**
 
     > 跨平台的系统通知插件
@@ -261,23 +266,18 @@ npm shrinkwrap
 
 * **commander.js**
 
-    > 创建命令行工具的库
+  > 创建命令行工具的库
 
-    > https://github.com/tj/commander.js
+  > https://github.com/tj/commander.js
 
-    ```shell
-    npm install commander --save
-    ```
+  ```shell
+  npm install commander --save
+  ```
 
-    ```shell
-    #!/usr/bin/env node
-    const programe = require('commander')
-    ```
-
-
-    ```
-
-
+  ```bin
+  #!/usr/bin/env node
+  const programe = require('commander')
+  ```
 
 * **ansi.js**
 
