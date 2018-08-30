@@ -1,6 +1,27 @@
 ## vue record
 
-### vue core
+
+
+### vue remind
+
+* **使用html字符串**
+
+  ```html
+  <script>
+      new Vue({
+          el: '#app',
+          data() {
+              return {
+                  htmlTemplate: '<p>这里是一段html</p>'
+              }
+          }
+      })
+  </script>
+  <div v-html="htmlTemplate">
+      
+  </div>
+  ```
+
 
 **vue cli**
 
@@ -268,10 +289,6 @@ export default {
   }
 }
 ```
-
-
-
-### vue plugins
 
 
 

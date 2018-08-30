@@ -12,7 +12,7 @@
 | A/B test |                                   | 网站更新了新UI，统计用户是否更喜欢新页面。定义之前的页面为A，新页面为B，一半用户会被重定向至B， 统计下通过A/B页面到达网站内页的用户占的百分比是多少。 |
 | UX       | User expreience                   | 用户体验                                                     |
 | GR       | graceful degradation              | 优雅降级, 先从最主流的浏览器实现,再回头兼容老版本浏览器,修复bug |
-| PE       | progressive enhancement           | 先从最基本的功能做起, 保证高度的兼容性, 逐渐迭代复杂功能     |
+| PE       | progressive enhancement           | 渐进增强, 先从最基本的功能做起, 保证高度的兼容性, 逐渐迭代复杂功能 |
 | FAQ      | Frequently asked question         | 常见问题                                                     |
 | TCP      | Transmisssion control protocol    | 传输控制协议 负责在不可靠的传输信道上提供可靠的抽象层        |
 | IP       | internet Protocol                 | 因特网协议                                                   |
@@ -485,7 +485,7 @@
 
 207. **purity 纯度 ， 纯净**
 
-208. **practicality 实际性**
+208. **practical 实用的**
 
 209. **ambiguity 歧义**
 
@@ -1354,7 +1354,7 @@
 
 600. monotony 单调，乏味
 
-           
+                 
 
 601. address 解决
 
@@ -1367,6 +1367,14 @@
 605. coercion 强制
 
 606. ephemeral 短暂的
+
+607. gradual 缓增
+
+608. adoption 采用
+
+609. relevant 相应
+
+610. tray 托盘
 
 
 
