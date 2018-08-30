@@ -60,7 +60,7 @@ app.use(users)
 
 
 
-###API
+### API
 
 * #### express
 
@@ -235,6 +235,10 @@ app.use(users)
 
     > 请求的IP地址
 
+  * **req.url**
+
+    > 请求的路径
+
   * **req.files**
 
     > 请求上传的文件
@@ -256,13 +260,11 @@ app.use(users)
     > 请求的参数对象
 
     ```js
-    let url = 'http://www.test.com/params/123/params2/345';
+    app.get('/path/:params/route/:params2', (req, res) => {
+        
+    })
     req.params // returns {params: 123, params2: 345}
     ```
-
-  * **req.url**
-
-    > 请求的路径
 
   * **req.query**
 
@@ -328,7 +330,6 @@ app.use(users)
 
     ```js
     req.get('Contentd-Type') // 'text/html'
-    
     ```
 
   * **req.accepts(contentType)**
@@ -352,11 +353,11 @@ app.use(users)
 
     > 设置http状态吗和响应头信息
 
-  * ```js
+    ```js
     res.writeHead(200, {'Content-Type': 'text/plain', 'Content-Length': 1234})
     ```
 
-  * **res.setHeader(key, value)**
+  * **res.setHeader(key,  value)**
 
     > 设置响应头
 
@@ -364,7 +365,7 @@ app.use(users)
     res.setHeader('cache-control': 'max-age=315360000, public, immutable')
     ```
 
-  * **res.redirect([statusCode], url)**
+  * **res.redirect([statusCode],  url)**
 
     >重定向
 
@@ -408,6 +409,16 @@ app.use(users)
     res.send(new Buffer('hello world'))
     ```
 
+  * **res.end(body)**
+
+    > 发送响应并结束响应
+
+    ```js
+    res.end('<p>this is end</p>')
+    ```
+
+    
+
   * **res.download(path, [filename], [fn])**
 
     > 下载文件
@@ -448,8 +459,6 @@ app.use(users)
 
     ```js
     res.format({})
-    res.format({})
-    res.format({)
     
     res.format({
         'text/plain': function () { res.send('hello world') },
@@ -500,7 +509,7 @@ app.use(users)
   > 挂载多个方法
 
   ```js
-  const router = express.router()
+  const router = express.Router()
   router.route('/api')
       .post((req, res) => {
       	
@@ -577,7 +586,7 @@ openssl req -x509 -new -key key.pem > key-cert.pem
     app.use(express.static(__dirname + '/static'))
     ```
 
-* ####第三方中间件
+* #### 第三方中间件
 
   * **cookie-parser**
 

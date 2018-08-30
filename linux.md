@@ -140,9 +140,9 @@ scp -r /localPath/folderName username@ip:/remotePath/folderName
     # Required on some systems
     #WorkingDirectory=/opt/nodeserver
     Restart=always
-     # Restart service after 10 seconds if node service crashes
-     RestartSec=10
-     # Output to syslog
+    # Restart service after 10 seconds if node service crashes
+    RestartSec=10
+    # Output to syslog
     StandardOutput=syslog
     StandardError=syslog
     SyslogIdentifier=nodejs-example
