@@ -944,7 +944,7 @@ set DEBUG=express:* & node server.js
   pm2 delete 0
   ```
 
-* **upstart**
+* **upstart** 
 
   > **系统**进程管理工具
 
@@ -959,6 +959,43 @@ set DEBUG=express:* & node server.js
   sudo service autonode
   ```
 
+* **systemd**
+
+  > 系统进程管理工具2
+
+  ```shell
+  systemctl --version
+  
+  touch /etc/systemd/system/autonode.service
+  
+  vim /etc/systemd/system/autonode.service
+  ```
+
+  autonode.service
+
+  ```bash
+  [Unit]
+  Description=Node.js Example Server
+  #Requires=After=mysql.service       # Requires the mysql service to run first
+  
+  [Service]
+  ExecStart=/usr/bin/node /opt/nodeserver/server.js
+  # Required on some systems
+  #WorkingDirectory=/opt/nodeserver
+  Restart=always
+   # Restart service after 10 seconds if node service crashes
+   RestartSec=10
+   # Output to syslog
+  StandardOutput=syslog
+  StandardError=syslog
+  SyslogIdentifier=nodejs-example
+  #User=<alternate user>
+  #Group=<alternate group>
+  Environment=NODE_ENV=production PORT=1337
+  
+  [Install]
+  WantedBy=multi-user.target
+  ```
 
 
   > hellonode.conf

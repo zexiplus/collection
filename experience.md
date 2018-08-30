@@ -8,4 +8,11 @@
    <router-link @click.native="handleClick" ></router-link>
    ```
 
-2. ​
+2. 在vue中绑定html 字符串, 使用 **v-html** 指令
+
+   ```html
+   <div v-html="htmlTemplate"></div>
+   ```
+
+3. 
+

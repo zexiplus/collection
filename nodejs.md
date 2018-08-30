@@ -1,14 +1,10 @@
-## node knowladge points
+# Nodejs
 
-### require
+### Module
 
 *  require过的文件会加载到缓存，所以多次 require 同一个文件（模块）不会重复加载
 
 *  ( a->b,b->a)循环引用并不会报错，导致的结果是 require 的结果是空对象 {}，原因是 b require 了 a，a 又去 require 了 b，此时 b 还没初始化好，所以只能拿到初始值 {}
-
-
-
-### module.exports
 
 * module.exports 初始值为一个空对象 {}
 * exports 是指向的 module.exports 的引用
@@ -18,7 +14,7 @@
 
 
 
-### develop cli
+### Develop Cli
 
 > 常用node开发调试 cli命令
 
@@ -47,9 +43,24 @@ lsof -i :3000
 kill -9 pid
 ```
 
+### Package.json
+
+* **dependency**
+
+  > 分为开发依赖和全局依赖
+
+  ```json
+  {
+      "dependencies": {
+          "compression": "^1.2.3"
+      }
+  }
+  ```
 
 
-### async operator control
+
+
+### Async operator control
 
 ```js
 var fs = require('fs')

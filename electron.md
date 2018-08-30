@@ -230,7 +230,6 @@ npm i electron@latest
 
   ```js
   ipcMain.on(channel, function (event, arg) {})
-  ipcMain.send(channel, args)
   ```
 
 
@@ -472,19 +471,22 @@ npm i electron@latest
 
   > https://electronjs.org/docs/api/notification
 
-  > 创建操作系统级别的通知
+  > 系统通知栏
 
   ```js
   import Notification from 'electron'
   
   Notification.isSuported() // 返回系统是否支持通知
   
-  const notify = new Notification({
+  const opt = {
       title: '通知',
       body: '这是一条通知',
       icon: '/assets/img/nogify.png',
       sound: '/assets/sound/notify.mp3',
-  })
+  }
+  const notify = new Notification(opt)
+  // 显示这条通知
+  notify.show()
   ```
 
 
@@ -511,6 +513,12 @@ npm i electron@latest
   
   // 获取当前焦点的web 内容页
   contents.getFocusedWebContents()
+  
+  // 主进程向渲染进程发消息
+  contents.send(channel, function (args) {
+      // do someting 
+  })
+  
   
   ```
 
