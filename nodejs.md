@@ -1,5 +1,13 @@
 # Nodejs
 
+
+
+### Catalague
+
+
+
+
+
 ### Module
 
 *  require过的文件会加载到缓存，所以多次 require 同一个文件（模块）不会重复加载
@@ -19,9 +27,6 @@
 > 常用node开发调试 cli命令
 
 ```shell
-# 时时监听文件变化 重启node进程
-supervisor server.js
-         
 # 设置环境变量  
 windows => set NODE_ENV=test node test.js  
 linux => NODE_ENV=test node test.js
@@ -43,19 +48,7 @@ lsof -i :3000
 kill -9 pid
 ```
 
-### Package.json
 
-* **dependency**
-
-  > 分为开发依赖和全局依赖
-
-  ```json
-  {
-      "dependencies": {
-          "compression": "^1.2.3"
-      }
-  }
-  ```
 
 
 
@@ -111,160 +104,157 @@ readFile2('./one.js').then(data => {
 
 
 
-### 内置模块
+### Built-in module
 
+* **fs**
 
+  > File system flags
 
-### fs
+  | Flag | detail                                                 |
+  | ---- | ------------------------------------------------------ |
+  | a    | 打开文件进行追加。如果文件不存在，则创建该文件         |
+  | a+   | 打开文件读取并追加。如果文件不存在，则创建该文件       |
+  | r    | 打开文件并读取。如果文件不存在，则发生异常             |
+  | r+   | 打开文件读取并写入。如果不存在，则发生异常             |
+  | w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖       |
+  | w+   | 打开文件并读取和写入。如果文件不存在则创建，存在则覆盖 |
 
-> File system flags
+* **fs.readDir**
 
-| Flag | detail                      |
-| ---- | --------------------------- |
-| a    | 打开文件进行追加。如果文件不存在，则创建该文件     |
-| a+   | 打开文件读取并追加。如果文件不存在，则创建该文件    |
-| r    | 打开文件并读取。如果文件不存在，则发生异常       |
-| r+   | 打开文件读取并写入。如果不存在，则发生异常       |
-| w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖    |
-| w+   | 打开文件并读取和写入。如果文件不存在则创建，存在则覆盖 |
+  > 打开文件夹并遍历文件拷贝到另一目录
 
-##### fs.readDir
+  ```js
+  fs.readDir(path, (err, files) => {
+      files.forEach(item => {
+          fs.writeFileSync(__dirname + '/copy', fs.readFileSync(__dirname + '/origin'))
+      })
+  })
+  ```
 
-> 打开文件夹并遍历文件拷贝到另一目录
+* **fs.mkdir**
 
-```js
-fs.readDir(path, (err, files) => {
-    files.forEach(item => {
-        fs.writeFileSync(__dirname + '/copy', fs.readFileSync(__dirname + '/origin'))
-    })
-})
-```
+  > 新建目录
 
-##### fs.mkdir
+  ```js
+  // 若没有重名目录 则新建目录
+  fs.existsSync(logFold) || fs.mkdirSync(logFold)
+  ```
 
-> 新建目录
+* **fs.open**
 
-```js
-// 若没有重名目录 则新建目录
-fs.existsSync(logFold) || fs.mkdirSync(logFold)
-```
+  > Open file
 
-##### fs.open
+  ```js
+  const fs = require('fs')
+  fs.open('test.txt', 'r+', (err, fd) => {
+      if (err) throw err
+      console.log(fd)
+  })
+  ```
 
-> Open file
+* **fs.writeFile**
 
-```js
-const fs = require('fs')
-fs.open('test.txt', 'r+', (err, fd) => {
-    if (err) throw err
-    console.log(fd)
-})
-```
+  > Write file
 
-##### fs.writeFile
+  ```js
+  // fs.writeFile(path, data, options, cb)
+  fs.writeFile('text.txt', 'hello world', {encoding: 'utf8', flag: 'w'}, err => {
+      if (err) console.error(err)
+  })
+  
+  // fs.write(fd, string, [position], [encoding], cb)
+  fs.open('test.txt', 'a+', (err, fd) => {
+      fs.write(fd, 'hello world', err => {
+          if (err) return console.error(err)
+      })
+      fs.close(fd, err => {
+          if (err) console.error(err)
+      })
+  })
+  ```
 
-> Write file
+* **fs.readFile**
 
-```js
-// fs.writeFile(path, data, options, cb)
-fs.writeFile('text.txt', 'hello world', {encoding: 'utf8', flag: 'w'}, err => {
-    if (err) console.error(err)
-})
+  > Read file
 
-// fs.write(fd, string, [position], [encoding], cb)
-fs.open('test.txt', 'a+', (err, fd) => {
-    fs.write(fd, 'hello world', err => {
-        if (err) return console.error(err)
-    })
-    fs.close(fd, err => {
-        if (err) console.error(err)
-    })
-})
-```
+  ```js
+  // fs.readFile(path, options, cb)
+  fs.readFile('test.txt', {encoding: null, flag: 'r'}, (err, data) => {
+      if (err) console.error(err)
+      console.log(data)
+  })
+  
+  // fs.read(fd, buffer, offset, length, position, cb)
+  fs.open('test.txt', 'r', (err, fd) => {
+      if (err) return console.error(err)
+      let buffer = new Buffer(1024)
+      fs.read(fd, buffer, 0, buffer.length, 0, (err, bytes) => {
+          if (err) return console.error(err)
+          if (bytes > 0) {
+              console.log(buffer.slice(0, bytes).toString())
+          }
+      })
+  })
+  ```
 
-##### fs.readFile
+* **fs.close**
 
-> Read file
+  > close file
 
-```js
-// fs.readFile(path, options, cb)
-fs.readFile('test.txt', {encoding: null, flag: 'r'}, (err, data) => {
-    if (err) console.error(err)
-    console.log(data)
-})
+  ```js
+  // fs.close(fd, cb)
+  fs.open('test.txt', 'r+', (err, fd) => {
+      if (err) throw err
+      fs.close(fd, err => {
+          if (err) throw err
+          console.log('close file successfully')
+      })
+  })
+  ```
 
-// fs.read(fd, buffer, offset, length, position, cb)
-fs.open('test.txt', 'r', (err, fd) => {
-    if (err) return console.error(err)
-    let buffer = new Buffer(1024)
-    fs.read(fd, buffer, 0, buffer.length, 0, (err, bytes) => {
-        if (err) return console.error(err)
-        if (bytes > 0) {
-            console.log(buffer.slice(0, bytes).toString())
-        }
-    })
-})
-```
+* **fs.watch**
 
-##### fs.close
+  > 监听文件/目录变化
 
-> close file
+  ```js
+  // 监听filePath文件变化， 一旦改变，则运行回调函数
+  const options = {
+  	recursive: true, // 如果是目录, 是否递归监听子目录, 默认false
+      encoding: 'utf8' // 监听文件名的字符编码
+  }
+  
+  fs.watch('filePath', options,  (eventType, filename) => {
+      console.log(`current file state is ${curr.sate}`)
+      cp.exec('mv index.js index-dep.js')
+  })
+  ```
 
-```js
-// fs.close(fd, cb)
-fs.open('test.txt', 'r+', (err, fd) => {
-    if (err) throw err
-    fs.close(fd, err => {
-        if (err) throw err
-        console.log('close file successfully')
-    })
-})
-```
-
-##### fs.watch
-
-> 监听文件/目录变化
-
-```js
-// 监听filePath文件变化， 一旦改变，则运行回调函数
-const options = {
-	recursive: true, // 如果是目录, 是否递归监听子目录, 默认false
-    encoding: 'utf8' // 监听文件名的字符编码
-}
-
-fs.watch('filePath', options,  (eventType, filename) => {
-    console.log(`current file state is ${curr.sate}`)
-    cp.exec('mv index.js index-dep.js')
-})
-```
-
-
+  
 
 ### http
->  index.js
+* **server.js**
 
-```js
-var http = require('http')
-//最基本服务器
-http.createServer((req,res) => {
-  if(req.url == '/hello') {
-    res.end('hello')
-  }
-  if(req.url == '/world') {
-    res.end('world')
-  }
-}).listen(6666)
+  ```js
+  var http = require('http')
+  //最基本服务器
+  http.createServer((req,res) => {
+    if(req.url == '/hello') {
+      res.end('hello')
+    }
+    if(req.url == '/world') {
+      res.end('world')
+    }
+  }).listen(6666)
+  ```
 
-```
+  
 
+* **http method&properties**
 
-
-> http **method&properties**
-
-1. http.get(options, callback)
+  * **http.get(options, callback)**
 
     ```js
-      http.get('http://nodejs.org/dist/index.json', (res) => {
+     http.get('http://nodejs.org/dist/index.json', (res) => {
      const { statusCode } = res;
      const contentType = res.headers['content-type'];
       
@@ -284,45 +274,44 @@ http.createServer((req,res) => {
       });
     ```
 
+  * **http.request(options,[callback])**
 
+    ```js
+    const postData = querystring.stringify({
+         'msg' : 'Hello World!'
+       });
+       
+       const options = {
+         hostname: 'www.google.com',
+         port: 80,
+         path: '/upload',
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/x-www-form-urlencoded',
+           'Content-Length': Buffer.byteLength(postData)
+         }
+       };
+       
+       const req = http.request(options, (res) => {
+         res.setEncoding('utf8');
+         res.on('data', (chunk) => {
+           console.log(`响应主体: ${chunk}`);
+         });
+         res.on('end', () => {
+           console.log('响应中已无数据。');
+         });
+       });
+       
+       req.on('error', (e) => {
+         console.error(`请求遇到问题: ${e.message}`);
+       });
+       
+       // 写入数据到请求主体
+       req.write(postData);
+       req.end();
+    ```
 
-2. http.request(options,[callback])
-
-
-   ```js
-   const postData = querystring.stringify({
-     'msg' : 'Hello World!'
-   });
-   
-   const options = {
-     hostname: 'www.google.com',
-     port: 80,
-     path: '/upload',
-     method: 'POST',
-     headers: {
-       'Content-Type': 'application/x-www-form-urlencoded',
-       'Content-Length': Buffer.byteLength(postData)
-     }
-   };
-   
-   const req = http.request(options, (res) => {
-     res.setEncoding('utf8');
-     res.on('data', (chunk) => {
-       console.log(`响应主体: ${chunk}`);
-     });
-     res.on('end', () => {
-       console.log('响应中已无数据。');
-     });
-   });
-   
-   req.on('error', (e) => {
-     console.error(`请求遇到问题: ${e.message}`);
-   });
-   
-   // 写入数据到请求主体
-   req.write(postData);
-   req.end();
-   ```
+    
 
    
 
@@ -494,6 +483,37 @@ ls.on('close', code => {
 ```
 
 
+
+### Package.json
+
+- **dependency**
+
+  > 主版本号.次版本号.修正号
+
+  > - 主版本号：当你做了不兼容的API 修改，
+  > - 次版本号：当你做了向下兼容的功能性新增，
+  > - 修订号：当你做了向下兼容的问题修正
+
+  | 表达式                                | 版本范围             | 说明                                                         |
+  | ------------------------------------- | -------------------- | ------------------------------------------------------------ |
+  | 1.2.1                                 | 1.2.1                | 匹配指定版本，这里是匹配1.2.1。                              |
+  | ^1.0.0                                | >=1.0.0 且 <2.0.0    | `^`表示与指定的版本兼容，左边第一个非0字段不可变，后面的可变 |
+  | ^5.x                                  | >=5.0.0 且 <6.0.0    | 同上                                                         |
+  | ~0.1.1                                | >=0.1.1 且 <0.2.0    | `~`表示约等于版本，如果存在次版本号，则允许修订号为最高的，否则允许次版本为最高，如 ~1匹配>=1.0.0 且 <2.0.0 |
+  | *                                     | 匹配 >=0.0.0         | 通配符                                                       |
+  | >=3.0.0                               | >=3.0.0              | 其他符号还有<,<=,>,>=,=.字面意思。可使用空格表示AND，双竖线表示OR. |
+  | 1.30.2 - 2.30.2                       | >=1.30.2 且 <=2.30.2 |                                                              |
+  | git://github.com/user/some.git#commit | Git URL形式的依赖    | 还支持URL、GitHub URL、本地 URL                              |
+  | latest                                | 当前发布的版本       |                                                              |
+
+  ```json
+  {
+      "dependencies": {
+          "compression": "^1.2.3",
+          "axios": "~1.2.3"
+      }
+  }
+  ```
 
 
 
