@@ -228,8 +228,7 @@ npm shrinkwrap
 
 * **uglifyjs**
 
-> 压缩混淆代码工具
-
+  >  压缩混淆代码工具
 
 * **node-notifier**
 
@@ -260,9 +259,64 @@ npm shrinkwrap
 
     ```shell
     npm i ora
+    const spinner = ora('Loading unicorns').start();
+    
+    setTimeout(() => {
+    	spinner.color = 'yellow';
+    	spinner.text = 'Loading rainbows';
+    }, 1000);
     ```
 
+    
 
+* **ansi.js**
+
+    > 彩色化命令行 文字, 前景色, 背景色 
+
+    > https://github.com/TooTallNate/ansi.js
+
+    ```bash
+    npm install ansi
+    ```
+
+    ```js
+    const ansi = require('ansi'), 
+          cursor = ansi(process.stdout)
+    
+    // You can chain your calls forever:
+    cursor
+        .red()                 // Set font color to red
+        .bg.grey()             // Set background color to grey
+        .write('Hello World!') // Write 'Hello World!' to stdout
+        .bg.reset()            // Reset the bgcolor before writing the trailing \n,
+    //      to avoid Terminal glitches
+        .write('\n')           // And a final \n to wrap things up
+    ```
+
+    
+
+* **chalk**
+
+    > 彩色化输出
+
+    > https://github.com/chalk/chalk
+
+    ```shell
+    npm i chalk
+    ```
+
+    ```js
+    const chalk = require('chalk')
+    console.log(chalk.red('hello'))
+    
+    // 自定义
+    const error = chalk.bold.red
+    const info = chalk.keyword('origin')
+    console.log(error('error occured'))
+    console.log(info('be careful origin'))
+    ```
+
+    
 
 * **commander.js**
 
@@ -278,36 +332,12 @@ npm shrinkwrap
   #!/usr/bin/env node
   const programe = require('commander')
   ```
-
-* **ansi.js**
-
-  > 彩色化命令行 文字, 前景色, 背景色 
-
-  > https://github.com/TooTallNate/ansi.js
-
-  ```bash
-  		npm install ansi
-  ```
-
-  ```js
-  const ansi = require('ansi'), 
-        cursor = ansi(process.stdout)
   
-  // You can chain your calls forever:
-  cursor
-      .red()                 // Set font color to red
-      .bg.grey()             // Set background color to grey
-      .write('Hello World!') // Write 'Hello World!' to stdout
-      .bg.reset()            // Reset the bgcolor before writing the trailing \n,
-  //      to avoid Terminal glitches
-      .write('\n')           // And a final \n to wrap things up
-  ```
-
 
 
 * **chromix-too**
 
-  >控制浏览器刷新, 关闭, 重启
+  >控制浏览器刷新, 关闭, 重启, 不支持windows系统
 
   > **npm** https://www.npmjs.com/package/chromix-too
   >
@@ -343,3 +373,7 @@ npm shrinkwrap
   // module use
   const chromix = require('chromix-too')().chromix
   ```
+
+* **chromix**
+
+  > 支持windows 操纵浏览器

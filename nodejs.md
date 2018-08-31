@@ -2,17 +2,15 @@
 
 
 
-### Catalague
+## Catalague
 
 
 
-
-
-### Module
+## Module
 
 *  require过的文件会加载到缓存，所以多次 require 同一个文件（模块）不会重复加载
 
-*  ( a->b,b->a)循环引用并不会报错，导致的结果是 require 的结果是空对象 {}，原因是 b require 了 a，a 又去 require 了 b，此时 b 还没初始化好，所以只能拿到初始值 {}
+*  ( a->b,b->a )循环引用并不会报错，导致的结果是 require 的结果是空对象 {}，原因是 b require 了 a，a 又去 require 了 b，此时 b 还没初始化好，所以只能拿到初始值 {}
 
 * module.exports 初始值为一个空对象 {}
 * exports 是指向的 module.exports 的引用
@@ -22,16 +20,11 @@
 
 
 
-### Develop Cli
+## Develop Cli
 
 > 常用node开发调试 cli命令
 
 ```shell
-# 设置环境变量  
-windows => set NODE_ENV=test node test.js  
-linux => NODE_ENV=test node test.js
-跨平台 => npm i cross-env -g             cross-env NODE_ENV=test node test.js
-
 # 查看npm 配置 (全局node_modules路径位置之类)
 npm config list 
 
@@ -50,74 +43,343 @@ kill -9 pid
 
 
 
+## Built-in module
 
 
 
-### Async operator control
+#### os
+
+> **获取系统信息**
+
+> http://nodejs.cn/api/os.html#os_os_platform
+
+* **os.platform()**
+
+  > 显示系统平台， 等价于 process.platform
+
+  > darwin - mac系统， win32 - window系统， linux- linux系统
+
+* **os.arch()**
+
+  > 系统架构 例如 'x64'
+
+* **os.cpus()**
+
+  > 返回系统的cpus数组
+
+* **os.userInfo()**
+
+  > 返回用户信息
+
+  ```js
+  { uid: -1,
+    gid: -1,
+    username: 'Administrator',
+    homedir: 'C:\\Users\\Administrator',
+    shell: null 
+  }
+  ```
+
+* **os.hostname()**
+
+  > 返回计算机主机名 例如 ipanel-pc
+
+* **os.homedir()**
+
+  > 返回当前用户home目录路径 例如 'C:\\Users\\Administrator'
+
+* **os.freemem()**
+
+  > 返回空闲系统内存字节数 例如 4228706304
+
+* **os.totalmem()**
+
+  > 返回系统的总内存数
+
+* **os.networkInterfaces()**
+
+  > 返回网络信息对象 ，如下
+
+  ```JS
+  { '本地连接 3':
+     [ { address: 'fe80::94e1:8930:9f9c:b6c1',
+         netmask: 'ffff:ffff:ffff:ffff::',
+         family: 'IPv6',
+         mac: '6c:4b:90:0d:74:d3',
+        ...
+  }
+  ```
+
+  
+
+#### cluster
+
+> 集群
+
+> http://nodejs.cn/api/cluster.html
+
+* **cluster.isMaster**
+
+  > 一个node程序只有一个主进程, 此方法返回当前程序是否在主进程
+
+* **cluster.fork()**
+
+  > 只在**主进程**中可用, 复制出一个工作进程, 工作进程可以共享任意tcp连接
+
+* **cluster.workers**
+
+  > 返回所有进程的对象, 以进程id为键, 的哈希表
+
+* **cluster.woker**
+
+  > 当前工作对象的引用
+
+* **cluster.on('message', function (worker, message, handle) {})**
+
+  > 当**主进程**收到工作进程的任意消息时触发
+
+* **process.on('message', function () {})**
+
+  > 当**工作进程**收到主进程的消息时触发
+
+* **worker.send(message, [handle])**
+
+  > 发送一个消息给**工作进程或主进程**，也可以附带发送一个handle
+
+* **process.send({msg: 'hello'})**
+
+  > 从工作进程中发送消息给主进程
+
+* **cluster.js demo**
+
+  ```js
+  const cluster = require('cluster')
+  const http = require('http')
+  
+  let cpuNum = require('os').cpus().length
+  let workers = []
+  if (cluster.isMaster) {
+      for(let i = 0; i < cpuNum; i ++) {
+          workers.push(cluster.fork())
+          // 向工作进程发送消息
+          workers[i].send('hello child cluster')
+      }
+      cluster.on('exit', worker => {
+          console.log(`${worker.process.pid} 工作进程已退出`)
+      })
+      // 监听工作进程的消息事件
+      cluster.on('message', function (worker, msg) {
+          console.log(`from worker message is${msg}`)
+      })
+  } else {
+      // 监听来自主进程的消息事件
+      process.on('message', msg => {
+          console.log(`receive ${msg}`)
+      })
+      
+      http.createServer((req, res) => {
+          res.end('hello world')
+          // 向主进程发送消息
+          process.send('the same to next')
+          cluster.worker.send('i am a server')
+      }).listen(3000) // 共享http端口
+  }
+  ```
+
+#### stream
+
+> 流， 分为可读，可写， 可读写 都是EventEmitter的实例
+
+
+
+#### buffer
+
+>
+
+* **buf.toString(encoding)**
+
+  ```js
+  buf.toString('utf8')
+  ```
+
+  
+
+
+
+#### process
+
+> process 对象是全局对象， 不需要手动require引入
+
+> http://nodejs.cn/api/process.html
+
+* **process.env**
+
+  > 系统环境变量
+
+  ```shell
+  # 运行程序时设置环境变量 
+  # windows 
+  set NODE_ENV=test node test.js  
+  # uinx
+  NODE_ENV=test node test.js
+  # 跨平台
+  npm i cross-env -g             
+  cross-env NODE_ENV=test node test.js
+  
+  # node 程序中设置
+  process.env.NODE_ENV = 'test'
+  ```
+
+* **process.argv**
+
+  > 运行node程序的参数数组
+
+  ```shell
+  node one.js hello world 
+  # process.argv => ['/usr/bin/node', '/home/code/one.js', 'hello', 'world']
+  ```
+
+* **process.cwd()**
+
+  > process.cwd() 代表 **node 进程**当前工作的目录,  **__dirname**只返回当前文件的路径
+
+  ```js
+  // /usr/lib/other.js
+  console.log(`process.cwd is ${process.cwd()}`) // /usr/lib
+  console.log(`__dirname is ${__dirname}`)       // /usr/lib
+  
+  // /usr/main.js
+  require('./lib/other')
+  // /usr
+  // /usr/lib
+  ```
+
+* **process.nextTick(cb)**
+
+  > 一旦当前事件轮询队列的任务全部完成 , 所有cb就会依次调用
+
+* **process.stdout**
+
+  > 输出流， 是一个可写流， console.log 也属于process.stdout
+
+  * **process.stdout.write()**
+
+    ```js
+    // 把用户输入输出到终端
+    process.stdin.pipe(process.stdout)
+    ```
+
+* **process.stdin**
+
+  > 输入流， 可读流
+
+  ```js
+  process.stdin.setEncoding('utf8')
+  process.stdin.on('readable', () => {
+      let chunk = process.stdin.read()
+      process.stdout.write(`receive data is ${chunk}`)
+  })
+  process.stdin.on('end', () => {
+      process.stdout.write('end')
+  })
+  ```
+
+* **process.on('exit', cb)**
+
+  > 进程退出事件
+
+  ```js
+  process.on('exit', code => {
+      console.log(`退出码${code}`)
+  })
+  ```
+
+* **process.kill(pid[,signal])**
+
+  > 结束进程
+
+  ```js
+  process.kill(123)
+  ```
+
+  
+
+#### child_process
 
 ```js
-var fs = require('fs')
-var Promise = require('bluebird')  //第三方promise模块，兼容
-global.Promise = Promise           //全局promise
+const cp = require('child_process')
 
-function readFile(filename) {
-  return new Promise((resolve, reject) => {
-     fs.readFile(filename,(err, file) => {
-       if(err) {
-          reject(err)
-       }      
-       else resolve(file)
-     })
-  })
-}
-readFile('./one.js').then(data => {
-  	console.log(data)
+// spawn 第一个参数命令，第二个参数 命令的参数
+let ls = cp.spawn('ls', ['-lh', '/usr'])
+ls.stdout.on('data', (data) => {
+    console.log(data)
 })
-
-//自己写的把普通函数转换为promise函数的函数
-Function.prototype.convertPromise = function() {
-  var fn = this
-  return function() {
-      var args = [].slice.call(arguments, 0)
-      return new Promise((resolve, reject) => {
-          args.push(function (err, file) {
-            if(err) {
-              reject(err)
-            }
-            else {
-              resolve(file)
-            }
-          })
-    	  fn.apply(null, args)
-      })
-  }
-}
-
-var readFile2 = fs.readFile.convertPromise()
-readFile2('./one.js').then(data => {
-  	console.log(data)
+ls.stdin.on('data', data => {
+    console.log(data)
 })
-
+ls.stderr.on('data', err => {
+    console.err(err)
+})
+ls.on('close', code => {
+    console.log(`退出码${code}`)
+})
 ```
 
 
 
+#### path
+
+```js
+//内置路径处理模块
+var path = require('path')  
+
+//return 'currPath/www'
+path.join(__dirname,'www/')  
+
+//把路径解析为绝对路径的函数 返回 
+path.resolve('/usr','./local','bin')   
+
+// Returns: '/foo/bar/baz/asdf'
+path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');
 
 
-### Built-in module
+// Returns:
+// { root: 'C:\\',//   dir: 'C:\\path\\dir',
+//   base: 'file.txt',//   ext: '.txt',//   name: 'file' }
+path.parse('C:\\path\\dir\\file.txt');
+┌─────────────────────┬────────────┐
+│          dir        │    base    │
+├──────┬              ├──────┬─────┤
+│ root │              │ name │ ext │"  /    home/user/dir / file  .txt "
+└──────┴──────────────┴──────┴─────┘
+// The path.resolve() method resolves a sequence of paths or path 
+// segments into an absolute path.
 
-* **fs**
+// Returns: '/foo/bar/baz'
+path.resolve('/foo/bar', './baz');
 
-  > File system flags
+// Returns: '/tmp/file'
+path.resolve('/foo/bar', '/tmp/file/');
 
-  | Flag | detail                                                 |
-  | ---- | ------------------------------------------------------ |
-  | a    | 打开文件进行追加。如果文件不存在，则创建该文件         |
-  | a+   | 打开文件读取并追加。如果文件不存在，则创建该文件       |
-  | r    | 打开文件并读取。如果文件不存在，则发生异常             |
-  | r+   | 打开文件读取并写入。如果不存在，则发生异常             |
-  | w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖       |
-  | w+   | 打开文件并读取和写入。如果文件不存在则创建，存在则覆盖 |
+// if the current working directory is /home/myself/node,
+// this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
+path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
+```
+
+
+
+#### file-system
+
+> File system flags
+
+| Flag | detail                                                 |
+| ---- | ------------------------------------------------------ |
+| a    | 打开文件进行追加。如果文件不存在，则创建该文件         |
+| a+   | 打开文件读取并追加。如果文件不存在，则创建该文件       |
+| r    | 打开文件并读取。如果文件不存在，则发生异常             |
+| r+   | 打开文件读取并写入。如果不存在，则发生异常             |
+| w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖       |
+| w+   | 打开文件并读取和写入。如果文件不存在则创建，存在则覆盖 |
 
 * **fs.readDir**
 
@@ -131,6 +393,8 @@ readFile2('./one.js').then(data => {
   })
   ```
 
+  
+
 * **fs.mkdir**
 
   > 新建目录
@@ -139,6 +403,8 @@ readFile2('./one.js').then(data => {
   // 若没有重名目录 则新建目录
   fs.existsSync(logFold) || fs.mkdirSync(logFold)
   ```
+
+  
 
 * **fs.open**
 
@@ -151,6 +417,8 @@ readFile2('./one.js').then(data => {
       console.log(fd)
   })
   ```
+
+  
 
 * **fs.writeFile**
 
@@ -172,6 +440,8 @@ readFile2('./one.js').then(data => {
       })
   })
   ```
+
+  
 
 * **fs.readFile**
 
@@ -197,6 +467,8 @@ readFile2('./one.js').then(data => {
   })
   ```
 
+  
+
 * **fs.close**
 
   > close file
@@ -211,6 +483,8 @@ readFile2('./one.js').then(data => {
       })
   })
   ```
+
+  
 
 * **fs.watch**
 
@@ -231,7 +505,8 @@ readFile2('./one.js').then(data => {
 
   
 
-### http
+#### http
+
 * **server.js**
 
   ```js
@@ -311,116 +586,42 @@ readFile2('./one.js').then(data => {
        req.end();
     ```
 
-    
+* **response  methods&properties**                          
 
-   
+  * res.**setEncoding**('utf-8')                                      设置编码格式
+  * res.**setHeader**('Content-type', 'text/html')      设置响应头
+  * res.**headers**['content-type']                               获取content-type响应头
+  * res.**resume**()                                                        消耗res, 释放内存空间
 
-   ​                         
+  * res.**writeHead**(statusCode, [headers])     设置响应头和响应码，会和setHeader合并，setHeader优先级高
 
+  ```js
+  res.writeHead(200, {
+      'Content-Type': 'text/plain', 
+      'Content-Length': Buffer.length(body)
+  })
+  ```
 
-> response  **methods&properties**
->
+* **request methods&properties**
 
-1. res.**setEncoding**('utf-8')                                      设置编码格式
+  * req.**headers**
 
-2. res.**setHeader**('Content-type', 'text/html')      设置响应头
+  ```js
+  { 'host': 'localhost:3001',
+    'connection': 'keep-alive',
+    'cache-control': 'max-age=0',
+    'upgrade-insecure-requests': '1',
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) ...',
+    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,zh-HK;q=0.7',
+     'cookie': 'name=float'          // cookie会随请求头一起发送至服务器
+  }
+  ```
 
-3. res.**headers**['content-type']                               获取content-type响应头
+  
 
-4. res.**resume**()                                                        消耗res, 释放内存空间
-
-5. res.**writeHead**(statusCode, [headers])     设置响应头和响应码，会和setHeader合并，setHeader优先级高
-
-   ```js
-      res.writeHead(200, {
-          'Content-Type': 'text/plain', 
-          'Content-Length': Buffer.length(body)
-      })
-   ```
-
-
-> request **methods&properties**
-
-
-1. req.**headers**                                                        响应头对象,格式如下
-
-   ```js
-   { host: 'localhost:3001',
-     connection: 'keep-alive',
-     'cache-control': 'max-age=0',
-     'upgrade-insecure-requests': '1',
-     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) ...',
-     accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-     'accept-encoding': 'gzip, deflate, br',
-     'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,zh-HK;q=0.7',
-      cookie: 'name=float'          // cookie会随请求头一起发送至服务器
-   }
-   ```
-
-
-
-### path
-
-```js
-//内置路径处理模块
-var path = require('path')  
-
-//return 'currPath/www'
-path.join(__dirname,'www/')  
-
-//把路径解析为绝对路径的函数
-path.resolve('/usr','./local','bin')   
-
-// Returns: '/foo/bar/baz/asdf'
-path.join('/foo', 'bar', 'baz/asdf', 'quux', '..');
-
-
-// Returns:
-// { root: 'C:\\',//   dir: 'C:\\path\\dir',
-//   base: 'file.txt',//   ext: '.txt',//   name: 'file' }
-path.parse('C:\\path\\dir\\file.txt');
-┌─────────────────────┬────────────┐
-│          dir        │    base    │
-├──────┬              ├──────┬─────┤
-│ root │              │ name │ ext │"  /    home/user/dir / file  .txt "
-└──────┴──────────────┴──────┴─────┘
-// The path.resolve() method resolves a sequence of paths or path 
-// segments into an absolute path.
-
-// Returns: '/foo/bar/baz'
-path.resolve('/foo/bar', './baz');
-
-// Returns: '/tmp/file'
-path.resolve('/foo/bar', '/tmp/file/');
-
-// if the current working directory is /home/myself/node,
-// this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
-path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
-
-
-```
-
-
-
-### process
-
-```shell
-# 环境变量   系统上得键值对对象
-# process.env  
-
-DEBUG=1 node one.js   
-# process.env.DEBUG == 1
-
-# 运行node时指定得参数[node路径，文件路径，指定参数]
-# process.argv
-node one.js hello world 
-# process.argv = [‘/usr/bin/node’,/home/code/one.js’,’hello’,’world’]
-
-```
-
-
-
-### dns
+#### dns
 
 ```js
 const dns = require('dns')
@@ -453,38 +654,56 @@ server.getServers()
 
 
 
-### child_process
+## Async operator control
 
 ```js
-const cp = require('child_process')
+var fs = require('fs')
+var Promise = require('bluebird')  //第三方promise模块，兼容
+global.Promise = Promise           //全局promise
 
-// spawn 第一个参数命令，第二个参数 命令的参数
-let ls = cp.spawn('ls', ['-lh', '/usr'])
-ls.stdout.on('data', (data) => {
-    console.log(data)
+function readFile(filename) {
+  return new Promise((resolve, reject) => {
+     fs.readFile(filename,(err, file) => {
+       if(err) {
+          reject(err)
+       }      
+       else resolve(file)
+     })
+  })
+}
+readFile('./one.js').then(data => {
+  	console.log(data)
 })
-ls.stdin.on('data', data => {
-    console.log(data)
+
+//自己写的把普通函数转换为promise函数的函数
+Function.prototype.convertPromise = function() {
+  var fn = this
+  return function() {
+      var args = [].slice.call(arguments, 0)
+      return new Promise((resolve, reject) => {
+          args.push(function (err, file) {
+            if(err) {
+              reject(err)
+            }
+            else {
+              resolve(file)
+            }
+          })
+    	  fn.apply(null, args)
+      })
+  }
+}
+
+var readFile2 = fs.readFile.convertPromise()
+readFile2('./one.js').then(data => {
+  	console.log(data)
 })
-ls.stderr.on('data', err => {
-    console.err(err)
-})
-ls.on('close', code => {
-    console.log(`退出码${code}`)
-})
+
 ```
 
 
 
-### cluster
-
-```js
-
-```
-
-
-
-### Package.json
+## Package.json
 
 - **dependency**
 
