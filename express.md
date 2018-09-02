@@ -1,4 +1,4 @@
-# express
+# Express
 
 > 介绍了express 框架的搭建， 配置， 简单使用和扩展用法
 
@@ -416,8 +416,6 @@ app.use(users)
     ```js
     res.end('<p>this is end</p>')
     ```
-
-    
 
   * **res.download(path, [filename], [fn])**
 

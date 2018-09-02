@@ -8,6 +8,16 @@
 
 
 
+- [javascript](#javascript)
+        - [catalague](#catalague)
+        - [Skill](#skill)
+        - [Class](#class)
+        - [ES6](#es6)
+        - [new webApi](#new-webapi)
+        - [others](#others)
+
+
+
 ### Skill
 
 * **求值表达式 (0, vald)**
@@ -275,7 +285,7 @@
 
 ### ES6
 
-* **decorator**
+* **Decorator**
 
   ```js
   // 装饰器修饰类 
@@ -335,7 +345,7 @@
   }
   ```
 
-* **fileReader**
+* **FileReader**
 
   ```js
   /************* 文件读取构造函数 构造函数  FileReader *************************/
@@ -349,7 +359,7 @@
   })
   ```
 
-* **内存URL**
+* **RAM URL**
 
   ```js
   /********* 对象URL  window.URL.createObjectURL() *******************/
@@ -464,7 +474,7 @@
   ```
 
 
-* **注释规范**
+* **comment specification**
 
   ```js
   // 函数（sublime快捷键 /** + 回车）

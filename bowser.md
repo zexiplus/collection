@@ -1,4 +1,4 @@
-### chrome.runtime
+# chrome.runtime
 
 1.**chrome.runtime summary**     [链接](https://developer.chrome.com/apps/runtime)
 
