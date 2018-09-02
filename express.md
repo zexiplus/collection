@@ -1,4 +1,4 @@
-# Express
+#  Express
 
 > 介绍了express 框架的搭建， 配置， 简单使用和扩展用法
 
@@ -6,16 +6,7 @@
 
 ## 目录
 
-- [express](#express)
-        - [快速使用](#快速使用)
-        - [API](#api)
-        - [express router](#express-router)
-        - [express with https](#express-with-https)
-        - [express middleware](#express-middleware)
-        - [debug](#debug)
-        - [others](#other)
-
-
+[TOC]
 
 ### 快速使用
 
