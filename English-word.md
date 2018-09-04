@@ -16,7 +16,7 @@
 | FAQ      | Frequently asked question         | 常见问题                                                     |
 | TCP      | Transmisssion control protocol    | 传输控制协议 负责在不可靠的传输信道上提供可靠的抽象层        |
 | IP       | internet Protocol                 | 因特网协议                                                   |
-|          |                                   |                                                              |
+| SSR      | server side render                | 服务端渲染                                                   |
 |          |                                   |                                                              |
 
 
@@ -1354,7 +1354,7 @@
 
 600. monotony 单调，乏味
 
-                 
+                       
 
 601. address 解决
 
@@ -1375,6 +1375,18 @@
 609. relevant 相应
 
 610. tray 托盘
+
+611. denied 拒绝
+
+612. crawle 爬行, 抓取
+
+
+
+
+
+
+
+
 
 
 

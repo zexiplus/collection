@@ -1,3 +1,7 @@
+# node package library
+
+
+
 ### package.json options
 
 ```js
@@ -267,8 +271,6 @@ npm shrinkwrap
     }, 1000);
     ```
 
-    
-
 * **ansi.js**
 
     > 彩色化命令行 文字, 前景色, 背景色 
@@ -293,8 +295,6 @@ npm shrinkwrap
         .write('\n')           // And a final \n to wrap things up
     ```
 
-    
-
 * **chalk**
 
     > 彩色化输出
@@ -315,8 +315,6 @@ npm shrinkwrap
     console.log(error('error occured'))
     console.log(info('be careful origin'))
     ```
-
-    
 
 * **commander.js**
 

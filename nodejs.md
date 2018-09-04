@@ -110,7 +110,6 @@ kill -9 pid
   }
   ```
 
-  
 
 #### cluster
 
@@ -190,6 +189,31 @@ kill -9 pid
 
 > 流， 分为可读，可写， 可读写 都是EventEmitter的实例
 
+> http://nodejs.cn/api/stream.html
+
+* **事件**
+
+  * **data** - 当有数据可读时触发。
+
+  - **end** - 没有更多的数据可读时触发。
+  - **error** - 在接收和写入过程中发生错误时触发。
+  - **finish** - 所有数据已被写入到底层系统时触发。
+
+* **stream.Writable(obj)**
+
+  > 创建可写流 , obj 必须要有_write方法
+
+  ```js
+  const { Writable } = require('stream')
+  const writable = new Writable({
+      _write(chunk, encoding, callback) {
+          // do something
+          callback()
+      } 
+  })
+  ```
+
+
 
 
 #### buffer
@@ -202,7 +226,6 @@ kill -9 pid
   buf.toString('utf8')
   ```
 
-  
 
 
 
@@ -302,7 +325,6 @@ kill -9 pid
   process.kill(123)
   ```
 
-  
 
 #### child_process
 
@@ -393,8 +415,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
   })
   ```
 
-  
-
 * **fs.mkdir**
 
   > 新建目录
@@ -403,8 +423,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
   // 若没有重名目录 则新建目录
   fs.existsSync(logFold) || fs.mkdirSync(logFold)
   ```
-
-  
 
 * **fs.open**
 
@@ -417,8 +435,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
       console.log(fd)
   })
   ```
-
-  
 
 * **fs.writeFile**
 
@@ -440,8 +456,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
       })
   })
   ```
-
-  
 
 * **fs.readFile**
 
@@ -467,8 +481,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
   })
   ```
 
-  
-
 * **fs.close**
 
   > close file
@@ -483,8 +495,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
       })
   })
   ```
-
-  
 
 * **fs.watch**
 
@@ -503,7 +513,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
   })
   ```
 
-  
 
 #### http
 
@@ -521,8 +530,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
     }
   }).listen(6666)
   ```
-
-  
 
 * **http method&properties**
 
@@ -619,7 +626,6 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
   }
   ```
 
-  
 
 #### dns
 
