@@ -51,6 +51,7 @@
 | 使用expand-region 选中括号内内容  | **command + shift + M**                   |
 | 注册code 系统命令                 | **command + shift + P >  shell code**     |
 | 在命令行中使用vscode              | **code main.js**                          |
+| 插入假数据                        | 命令面板 输入 faker                       |
 
 
 

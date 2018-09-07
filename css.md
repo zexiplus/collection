@@ -254,7 +254,7 @@ margin-left: auto; /* 会把item撑到右侧 */
 }
 
 .trans {
-   transform: translate3d(10px, 10px, 10px) | translateX(30px) | translateY(30px) | translateZ(30px);
+   transform: translate3d(10px, 10px, 10px) | translateX(30px) | translateY(30px) | 		      translateZ(30px);
    transform: rotateX(90deg) | rotateY(90deg) | rotateZ(90deg);
    transform: scale3d(1, 1, 1) | scaleX(1.2) | scaleY(1.2) |  scaleZ(1.2);
 }

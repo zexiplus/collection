@@ -1,4 +1,24 @@
-# Vue-axios	
+# Vue Plugins
+
+
+
+### prerender-spa-plugin
+
+>预加载插件， 提升首屏徐然速度， seo优化 
+
+> https://github.com/chrisvfritz/prerender-spa-plugin
+
+
+
+
+
+### vue-server-renderer
+
+服务端渲染插件
+
+
+
+### Vue-axios
 
 [Click](https://github.com/axios/axios)
 
@@ -127,9 +147,7 @@ export default {
 
 
 
-
-
-#  vue router
+### vue router
 
 > [参考链接](https://router.vuejs.org/installation.html)
 
@@ -355,7 +373,7 @@ new Vue({
 
 
 
-# vuex
+### vuex
 
 [doc链接](https://vuex.vuejs.org/zh/guide/state.html)
 
@@ -531,7 +549,9 @@ new Vue({
 
   
 
-### code
+
+
+##### code
 
 ------
 
