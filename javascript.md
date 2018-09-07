@@ -211,6 +211,17 @@
 
 * **String**
 
+
+  * **match方法**
+
+    > 把字符串中匹配模式的的字符串组成数组并返回 相当于 regexp的exec方法
+
+    ```js
+    let arr = 'dog yellow green bat cat dat'.match(/.at/)
+    // arr => ['bat', 'cat', 'dat']
+    ```
+
+
   ```js
   // 返回是否包含字符串
   String.prototype.includes(searchString[, position])

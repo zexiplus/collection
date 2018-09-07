@@ -100,6 +100,9 @@ git add .
 # 把某个文件从暂存区移除（工作区该文件还存在，会影响之后的本地仓库提交）
 git rm --cached filePath 
 
+# 把某个文件中从暂存区移除(本地还存在)
+git rm -r --cached node_modules
+
 # 把所有文件修改，删除，增加添加到暂存区
 git add . 
 
