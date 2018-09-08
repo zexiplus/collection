@@ -78,7 +78,6 @@
   console.dir(obj)
   ```
 
-  
 
 #### debugger
 
@@ -164,19 +163,54 @@ node debug test.js
 
   > 进入repl环境
 
-  
 
 #### node debug with chrome
 
-* 启动
+* **调试服务程序**
+  * 启动
 
-  ```shell
-  node --inspect app.js
-  ```
+    ```shell
+    node --inspect app.js
+    ```
 
-* 打开浏览器 输入 chrome://inspect， 点击target 
+  * 打开浏览器 输入 chrome://inspect， 点击target 
 
-  
+  * Source 面板 Add folder to Workspace 选择开发项目的目录
+
+  * 在文件中添加响应断点 查看变量
+
+* **调试非服务程序**
+
+  * 启动
+
+    > 在第一行就增加断点, 这样可以避免非服务脚本,运行太快而退出
+
+    ```shell
+    node --inspect-brk=9229 app.js
+    ```
+
+  * 之后类似
+
+* **调试运行时脚本**
+
+  * 启动程序
+
+    ```shell
+    node app.js
+    ```
+
+  * 按端口查看进程pid
+
+    ```shell
+    lsof -i :3000
+    ```
+
+  * 启动调试程序
+
+    ```shell
+    node -e 'process._debugProcess()'
+    ```
+
 
 
 
