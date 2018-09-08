@@ -1,73 +1,158 @@
+# git
+
+> git 配置, 命令
+
+
+
+## catalogue
+
+[TOC]
+
+##git config
+
+* **新建ssh key**
+
+  ```shell
+  ssh-keygen -t rsa -C 'zexiplus@outlook.com'
+  ```
+
+* **新增远程仓库**
+
+  ```shell
+  git remote add origin git@github.com:zexiplus/oo.git
+  ```
+
+* **显示秘钥**
+
+  ```shell
+  cat /c/Users/username/.ssh/id_rsa.pub 
+  ```
+
+* **配置用户名密码**
+
+  ```shell
+  git config --global user.name 'username'
+  git config --global user.email 'username@tt.com'
+  ```
+
+
+
 ## git command
 
+> git 常用命令, [中括号内]代表可省略
+
+* **显示所有仓库列表**
+
+  ```shell
+  git branch -a
+  ```
+
+* **显示所有仓库列表**
+
+  ```shell
+  git branch -r
+  ```
+
+* **显示本地仓库列表**
+
+  ```shell
+  git branch
+  ```
+
+* **新建本地仓库分支**
+
+  ```shell
+  git branch A
+  # or
+  git checkout -b A
+  ```
+
+* **从远程拉取分支到本地分支(新建)**
+
+  ```shell
+  git checkout -b R origin/A
+  ```
+
+* **切换分支**
+
+  ```shell
+  git checkout A
+  ```
+
+* **切换回上次分支**
+
+  ```shell
+  git checkout -
+  ```
+
+* **删除分支**
+
+  ```shell
+  git branch -d A
+  ```
+
+* **把A分支合并到当前分支并作记录**
+
+  ```shell
+  git merge -no-off A
+  ```
+
+* **修改上一条commit记录**
+
+  ```shell
+  git commit --amend
+  ```
+
+* **图形化查看记录**
+
+  ```shell
+  git log --graph
+  ```
+
+* **回滚到记录**
+
+  ```shell
+  git reset --hard #hash
+  ```
+
+* **查看回滚记录**
+
+  ```shell
+  git reflog
+  ```
+
+* **查看工作区和暂存区差别**
+
+  ```shell
+  git diff
+  ```
+
+* **查看工作区和最新提交的差别**
+
+  ```shell
+  git diff HEAD
+  ```
+
+* **推送至远程仓库**
+
+  ```shell
+  git push -u [origin master]
+  ```
+
+* **从远程仓库拉取到本地仓库并合并到当前分支**
+
+  ```shell
+  git pull [origin master]
+  ```
+
+* **从远程仓库拉取到本地仓库不自动合并**
+
+
+
 ```shell
-### 配置git
+                                                                               
 
-# 新建ssh key....
-ssh-keygen -t rsa -C 'zexiplus@outlook.com'
 
-# 新增远程仓库地址
-git remote add origin git@github.com:zexiplus/oo.git         
-
-# 显示密钥
-cat /c/Users/username/.ssh/id_rsa.pub 
-
-# 设置账户密码
-
-git config --global user.name 'username'
-git config --global user.email 'username@tt.com'
-
-###
-
-# 显示所有仓库信息
-git branch -a  
-
-# 显示远程仓库信息
-git branch -r
-
-# 显示本地仓库信息
-git branch                                   
-
-# 新建A分支
-git branch A === git checkout -b A 		      
-
-# 从远程拉取本地不存在的分支
-git checkout -b 本地分支名 origin/远程分支名    
-
-# 删除A分支
-git branch -d A                              
-
-# 切换到A分支(从远程拉取A分支)
-git checkout A                                
-
-# 切换回上一分支
-git checkout -                                
-
-#把A分支合并到当前分支并做记录
-git merge -no-off A							  
-
-#修改上一条commit 记录
-git commit --amend                            
-
-#图形化查看历史记录
-git log --graph                               
-
-# 回滚    
-git reset --hard '#hash'                             
-
-# 查看回滚日志
-git reflog                                    
-
-# 查看工作区和暂存区差别
-git diff                                     
-
-# 查看工作区和最新提交区别(git commit后)
-git diff HEAD                                 
-
-# 推送至远程仓库
-git push -u [origin master]                   
-
-# 从远程仓库拉取到本地仓库并合并到当前分支
 git pull [origin master]                      
 
 # 从远程仓库拉取到本地仓库不自动合并
@@ -117,49 +202,63 @@ git checkout ${commit} filePath
 
 ## git 四个阶段的撤销
 
-**1**.查看工作区和暂存区差别  (只修改了没有git add )
+* **概念**
+  * 工作区: 文件在硬盘上的操作记录, git add 之前的状态
+  * 暂存区: 文件的暂存操作记录, git add 之后 git commit 之前
+  * 本地版本库: 已经提交的文件记录, git commit 之后, git push 之前, 会有对应的hash版本号
+  * 远程版本库: 已经推送到远程仓库的文件记录 , git push 之后
 
-git diff
+* **查看/撤销工作区文件变更  (只修改了没有git add )**
 
-撤销工作区和暂存区差别
-
-git checkout **.    **或  git reset –-hard
-
-------
-
-**2**.查看暂存区和本地仓库差异（已经git add 没有 git commit）
-
-git diff –-cached
-
-撤销修改
-
-git reset    // 把更改撤销至暂存区 及git add . 之前的状态（git add 的反向操作） 
-
-git checkout . // 完全还原至上次的commit 
-
-或 git reset –-hard
+  ```shell
+  # 查看差别
+  git diff
+  
+  git checkout . 
+  # or
+  git reset –-hard
+  ```
 
 ------
 
-**3**.查看本地仓库和远程仓库差异（已提交未推送, git commit后还没有git push）
+* **查看/撤销暂存区和本地仓库差异（已经git add 没有 git commit）**
 
-git diff master origin/master
-
-撤销修改
-
-git reset –hard origin/master
+  ```shell
+  # 查看差别
+  git diff –-cached
+  
+  # 还原暂存区(git add 反向操作)
+  git reset
+  
+  # 还原工作区和暂存区
+  git checkout .
+  # or
+  git reset --hard
+  ```
 
 ------
 
-**4**.已经推送到远程仓库撤回(git push)
+* **查看/撤销本地仓库和远程仓库差异（已提交未推送, git commit后还没有git push）**
 
-git diff master origin/master
+  ```shell
+  # 查看差异
+  git diff master origin/master
+  
+  # 撤销修改至远程版本库
+  git reset --hard origin/master
+  ```
 
-撤回
 
-git reset –hard HEAD^ 
 
-git push -f
+------
+
+* **已经推送到远程仓库撤回(git push)**
+
+  ```shell
+  # 恢复至上次提交 并推送重新覆盖
+  git reset --hard HEAD^
+  git push -f
+  ```
 
 ------
 

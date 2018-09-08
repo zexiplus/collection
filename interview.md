@@ -1,28 +1,30 @@
-## interview
+# interview
+
+> 收录了经典前端面试题和解答
 
 
 
-### keep in mind
+### 目录
 
-- mistake can clear your eyes
-- convert failure to expreience
-- Fun & Enjoy
+[TOC]
 
-### awesome interview collection
+
+
+
+
+### 优质网站
 
 - https://blog.csdn.net/kongjiea/article/details/46341575
-
 - https://segmentfault.com/a/1190000000465431
-
 - http://www.cnblogs.com/syfwhu/p/4434132.html
 
-### Terminology
 
-------
 
-#### 1.xss 和 csrf区别
+### 术语
 
-- csrf (Cross-site request forgery) 
+#### xss 和 csrf区别
+
+- **csrf (Cross-site request forgery)** 
 
   跨站请求伪造， 攻击者盗用了你的身份，以你的名义发送恶意请求 。
 
@@ -34,37 +36,32 @@
 
   ![csfr](./imgs/csrf.jpg)
 
-- xss （Cross-site scripting）
+- **xss （Cross-site scripting）**
 
-  分类
+  * 分类
 
-  1.持久性（永久上传某段代码，之后的所有用户都会被攻击）
+    1.持久型（永久上传某段代码，之后的所有用户都会被攻击）
 
-  2.非持久性（让某个用户点击恶意代码片段连接，只对这个用户攻击）
+    2.非持久型（让某个用户点击恶意代码片段连接，只对这个用户攻击）恶意代码注入，将恶意代码片段通过任何途径上传到服务器端，当下次用户进行访问时就会执行恶意代码
 
-  恶意代码注入，将恶意代码片段通过任何途径上传到服务器端，当下次用户进行访问时就会执行恶意代码
+  * 防御
 
-   防御
-
-  1.过滤用户输入，谨慎存取
-  2.对用户输入进行转码
-
-  
-------
-
-#### 2.http 和 https 的区别
-
-http默认端口80，https默认端口443
-
-https采用ssl加密，http无加密
-
-https的web服务器启用ssl需要获得一个服务器证书，并将该证书与要使用ssl的服务器绑定
-
-------
+    1.过滤用户输入，谨慎存取
+    2.对用户输入进行转码
 
 
 
-#### 3.懒加载（load on demand)
+#### http 和 https 的区别
+
+* http默认端口80，https默认端口443
+
+* https采用ssl加密，http无加密
+
+* https的web服务器启用ssl需要获得一个服务器证书，并将该证书与要使用ssl的服务器绑定
+
+
+
+#### 懒加载（load on demand)
 
 懒加载或者按需加载，是一种很好的优化网页或应用的方式。这种方式实际上是先把你的代码在一些逻辑断点处分离开，然后在一些代码块中完成某些操作后，立即引用或即将引用另外一些新的代码块
 
@@ -93,56 +90,47 @@ export default class LoadableDashboard extends React.Component {
 
 ------
 
-#### 4.浏览器在输入url敲回车后发生了什么
+#### 浏览器在输入url敲回车后发生了什么
+
+* **步骤**
+
+  1.DNS域名解析；
+  2.建立TCP连接；
+  3.发送HTTP请求；
+  4.服务器处理请求；
+  5.返回响应结果；
+  6.关闭TCP连接；
+  7.浏览器解析HTML；
+  8.浏览器布局渲染；
 
 
-
-1.DNS域名解析；
-2.建立TCP连接；
-3.发送HTTP请求；
-4.服务器处理请求；
-5.返回响应结果；
-6.关闭TCP连接；
-7.浏览器解析HTML；
-8.浏览器布局渲染；
-
-#### 步骤详解
-
-**建立tcp连接**
+* **步骤详解**
+  * **建立tcp连接**
 
 ![tcp三次握手](./imgs/tcp.jpg)
 
-​	客户端：“你好，在家不，有你快递。”
+​	
 
-​	服务端：“在的，送来就行。”
-
-​	客户端：“好嘞。”
-
-**发送http请求**
+* **发送http请求**​	
 
 ![http-request](./imgs/http_request.jpg)
 
-**关闭tcp连接**
+* **关闭tcp连接**
+
 
 ![closeLink](./imgs/closeLink.jpg)
 
-客户端：“兄弟，我这边没数据要传了，咱关闭连接吧。”
 
-服务端：“收到，我看看我这边有木有数据了。”
 
-服务端：“兄弟，我这边也没数据要传你了，咱可以关闭连接了。”
+* **浏览器解析html**
 
-客户端：“好嘞。”
+  浏览器需要加载解析的不仅仅是HTML，还包括CSS、JS。以及还要加载图片、视频等其他媒体资源。
 
-**浏览器解析html**
+  浏览器通过解析HTML，生成DOM树，解析CSS，生成CSS规则树，然后通过DOM树和CSS规则树生成渲染树。渲染树与DOM树不同，渲染树中并没有head、display为none等不必显示的节点。
 
-浏览器需要加载解析的不仅仅是HTML，还包括CSS、JS。以及还要加载图片、视频等其他媒体资源。
+  要注意的是，浏览器的解析过程并非是串连进行的，比如在解析CSS的同时，可以继续加载解析HTML，但在解析执行JS脚本时，会停止解析后续HTML，这就会出现阻塞问题。
 
-浏览器通过解析HTML，生成DOM树，解析CSS，生成CSS规则树，然后通过DOM树和CSS规则树生成渲染树。渲染树与DOM树不同，渲染树中并没有head、display为none等不必显示的节点。
-
-要注意的是，浏览器的解析过程并非是串连进行的，比如在解析CSS的同时，可以继续加载解析HTML，但在解析执行JS脚本时，会停止解析后续HTML，这就会出现阻塞问题。
-
-**浏览器布局渲染**
+* **浏览器布局渲染**
 
 根据渲染树布局，计算CSS样式，即每个节点在页面中的大小和位置等几何信息。HTML默认是流式布局的，CSS和js会打破这种布局，改变DOM的外观样式以及大小和位置。这时就要提到两个重要概念：replaint和reflow。
 
@@ -153,13 +141,13 @@ export default class LoadableDashboard extends React.Component {
 
 最后浏览器绘制各个节点，将页面展示给用户。
 
-------
+
+
+### 高级问题
 
 
 
-### advanced question
-
-#### 1.分析双向数据绑定的原理，并用简单的代码实现
+#### 分析双向数据绑定的原理，并用简单的代码实现
 
 ```js
 
@@ -207,21 +195,21 @@ console.log(vm._data.a)
 
 
 
-------
-
-#### 2.手动封装一个promise库，能实现基本的promise api。
 
 
-
-------
-
-#### 3.js实现快速排序（前端常见算法举例说明）
+#### 手动封装一个promise库，能实现基本的promise api。
 
 
 
-------
 
-#### 4.实现深度拷贝
+
+#### js实现快速排序（前端常见算法举例说明）
+
+
+
+
+
+#### 实现深度拷贝
 
 ```js
 function clone(obj) {

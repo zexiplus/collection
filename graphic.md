@@ -1,15 +1,28 @@
-# svg
+# Graphic
+
+web前端常用图形处理
+
+
+
+## 目录
+
+[TOC]
+
+## SVG
 
 > 简介：基于xml的矢量图形描述文件
 
 
 
-**展现方式**
+#### 展现方式
 
-1. 浏览器直接打开
-2. html中<img>标签引用
-3. html中svg标签引入
-4. css的background引入
+* 浏览器直接打开
+
+* html中<img>标签引用
+
+* html中svg标签引入
+
+* css的background引入
 
 ```html
    <!-- simple.svg -->
@@ -32,7 +45,9 @@
    </style>
 ```
 
-**基本元素**
+
+
+#### 基本元素
 
 ```html
 <rect />     
@@ -50,69 +65,89 @@
 <path />  
 ```
 
-**基本属性**
+
+
+#### 基本属性
 
 fill,   stroke,   stroke-width,   transform
 
-**基本图形样例**
 
-1. rect
+
+#### 基本图形样例
+
+* **rect**
+
+  ```html
+  <rect x="50" y="50" width="200" height="200" rx="10" ry="30" />
+  ```
+
 
 ![rect](./imgs/rect.bmp)
 
-```html
-<rect x="50" y="50" width="200" height="200" rx="10" ry="30" />
-```
 
-1. circle
 
-   ![circle](./imgs/circle.bmp)
+* **circle**
 
-```html
-<circle cx="50" cy="50" r="100" />
-```
+  ```html
+  <circle cx="50" cy="50" r="100" />
+  ```
 
-3.ellipse
+
+![circle](./imgs/circle.bmp)
+
+
+
+* **ellipse**
+
+  ```html
+  <ellipse cx="50" cy="50" rx="20" ry="40" />
+  ```
+
 
 ![ellipse](./imgs/ellipse.bmp)
 
-```html
-<ellipse cx="50" cy="50" rx="20" ry="40" />
-```
 
 
 
-1. line
+
+* **line**
+
+  ```html
+  <line x1="0" y1="50" x2="87" y2="500" />
+  ```
+
 
 ![line](./imgs/line.bmp)
 
-```html
-<line x1="0" y1="50" x2="87" y2="500" />
-```
 
-1. polyline
 
-   ![polyline](./imgs/polyline.bmp)
+* **polyline**
 
-   ```html
-   <polyline points="30 20 100 500 30 89" />
-   ```
+  ```html
+  <polyline points="30 20 100 500 30 89" />
+  ```
 
-   1. polygon 
 
-      ![polygon](./imgs/polygon.bmp)
-
-      ```html
-      <polygon points="20 20 30 58 59 59" />
-      ```
+![polyline](./imgs/polyline.bmp)
 
 
 
+* **polygon** 
+
+  ```html
+  <polygon points="20 20 30 58 59 59" />
+  ```
 
 
-# canvas
+![polygon](./imgs/polygon.bmp)
 
-##### 绘制路径
+
+
+
+
+## canvas
+
+#### 绘制路径
 
 ```js
 var ctx = canvas.getContext(‘2d’)   // 获取canvas2d上下文
@@ -125,7 +160,7 @@ ctx.strokeStyle = ‘red’ //设直线段颜色
 ctx.stroke() //绘制线段
 ```
 
-##### 绘制矩形
+#### 绘制矩形
 
 ```js
 ctx.fillStyle = ‘yellow’   //填充色
@@ -135,7 +170,7 @@ ctx.clearRect(x,y,w,h)    //清除矩形
 
 ```
 
-##### 绘制文本
+#### 绘制文本
 
 ```js
 ctx.font = ‘20px bold Arial’    //设置字体，大小
@@ -145,14 +180,14 @@ ctx.strokeText(text,x,y)       //绘制空心字体
 
 ```
 
-##### 绘制圆形和扇形
+#### 绘制圆形和扇形
 
 ```js
 //绘制扇形，anticlockwise 顺时针false，逆时针true，绘制扇形前需要调用beginPath方法
 ctx.arc(x,y,r,startAngle,endAngle,anticlockwise)
 ```
 
-##### 图像处理
+#### 图像处理
 
 ```js
 //绘制图像
@@ -164,7 +199,7 @@ ctx.putImageData(imgData,x,y)
 
 ```
 
-##### 设置渐变色
+#### 设置渐变色
 
 ```js
 //x1,y1起点坐标 x2，y2 终点坐标
@@ -178,9 +213,9 @@ createRadialGradient(x1,y1,r1,x2,y2,r2)
 
 
 
-#Icon图标引入方案
+## Icon图标引入方案
 
-##### 1.svg
+### svg
 
 使用[icons8](https://icons8.cn/)生成整张svg图像 ，按生成页提示名称引入svg
 
@@ -214,13 +249,15 @@ createRadialGradient(x1,y1,r1,x2,y2,r2)
 </svg>
 ```
 
-##### 2.sprit图
+
+
+### sprit图
 
 
 
+## highCharts
 
-
-#highCharts
+> 图表绘制工具
 
 ```js
 highCharts.chart(el,options);
