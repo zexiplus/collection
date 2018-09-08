@@ -16,5 +16,20 @@
    <div v-html="htmlTemplate"></div>
    ```
 
-3. 
+3. a 链接 控制 iframe跳转
+
+   ```HTML
+   <a href="target.html" target="iframepage"></a>
+   <iframe id="iframepage">
+       
+   </iframe>
+   ```
+
+4. 通过a标签访问javascript函数
+
+   ```html
+   <a href="javascript:dosomething();"></a>
+   ```
+
+   
 
