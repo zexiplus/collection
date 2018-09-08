@@ -4,6 +4,12 @@
 
 
 
+### 目录
+
+[TOC]
+
+
+
 ### 文件结构
 
 | 目录                 | 描述                                                         |
@@ -85,6 +91,21 @@ ClientAliveCountMax 86400
 # 重启sshd服务
 service sshd reload
 
+```
+
+
+
+##### 标准流
+
+```shell
+# 向info.log文件写入 1234 , 1代表标准输出流
+echo 1234 1>info.log
+
+# 输出错误流 2 代表标准错误流
+node error.js 2>error.log
+
+# error.js
+console.error('there is an error')
 ```
 
 
@@ -252,7 +273,11 @@ traceroute bing.com
 ##### 改变文件/文件夹所有者
 
 ```shell
-chown -R pi:pi Software    #把software文件夹拥有者改为pi
+# 把software文件夹拥有者改为pi
+# 首个pi为用户 必选, 第二个为可选用户组
+chown -R pi:pi Software   
+
+
 ```
 
 

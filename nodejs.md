@@ -2,21 +2,27 @@
 
 
 
-## Catalague
+### Catalague
+
+[TOC]
 
 
 
-## Module
+### Module
 
 *  require过的文件会加载到缓存，所以多次 require 同一个文件（模块）不会重复加载
-
 *  ( a->b,b->a )循环引用并不会报错，导致的结果是 require 的结果是空对象 {}，原因是 b require 了 a，a 又去 require 了 b，此时 b 还没初始化好，所以只能拿到初始值 {}
+*  module.exports 初始值为一个空对象 {}
+*  exports 是指向的 module.exports 的引用
+*  require() 返回的是 module.exports 而不是 exports
+*  **require.cache**  保存了当前模块引用的所有模块
 
-* module.exports 初始值为一个空对象 {}
-* exports 是指向的 module.exports 的引用
-* require() 返回的是 module.exports 而不是 exports
-* process.argv    [node路径，js文件路径，命令行参数]
-* process.env     系统环境对象
+
+
+### Node REPL 
+
+* .break 退出noderepl
+* .help 查看所有node repl命令
 
 
 

@@ -1,6 +1,16 @@
 # chrome.runtime
 
-1.**chrome.runtime summary**     [链接](https://developer.chrome.com/apps/runtime)
+>  chrome浏览器接口
+
+
+
+### catalogue
+
+[TOC]
+
+### chrome.runtime summary     
+
+> [链接](https://developer.chrome.com/apps/runtime)
 
 > Methods & properties
 >
@@ -24,7 +34,9 @@ chrome.runtime.onMessage.addListener(function callback)
 
 
 
-2.**插件和页面消息传递**    [链接](https://crxdoc-zh.appspot.com/apps/messaging#connect)
+### 插件和页面消息传递
+
+> [链接](https://crxdoc-zh.appspot.com/apps/messaging#connect)
 
 > content.js
 

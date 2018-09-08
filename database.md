@@ -1,14 +1,18 @@
-# NO-SQL
+# Database
+
+> 常用数据库操作
+
+
+
+## catalogue
+
+[TOC]
+
+## NO-SQL
 
 ### mongoDB
 
 > [doc](https://docs.mongodb.com/master/mongo/)
-
-
-
-### catalogue
-
-[TOC]
 
 
 
@@ -51,7 +55,6 @@
   mongo  -u "myUserAdmin" -p "abc123" --authenticationDatabase "admin"
   ```
 
-
 #### mongo config
 
 ```shell
@@ -73,36 +76,39 @@ security:
 
 #### mongo cli
 
-> [账号密码管理](https://blog.csdn.net/fofabu2/article/details/78983741)
+* **账号密码管理**
 
-1. mongodb的用户名和密码是基于特定数据库的，而不是基于整个系统的。so所有数据库db都需要设置密码
+  > https://blog.csdn.net/fofabu2/article/details/78983741
 
-```shell
-# 列出当前mongodb服务中的所有数据库
-show dbs
+  >  mongodb的用户名和密码是基于特定数据库的，而不是基于整个系统的。所有数据库db都需要设置密码
 
-# 选择数据库(若没有admin数据库，则创建admin数据库)
-use admin
+  ```shell
+  # 列出当前mongodb服务中的所有数据库
+  show dbs
+  
+  # 选择数据库(若没有admin数据库，则创建admin数据库)
+  use admin
+  
+  # 删除当前数据库
+  db.dropDatabase()
+  ```
 
-# 删除当前数据库
-db.dropDatabase()
-```
+  ```js
+  // 新建账户并赋予权限
+  db.createUser({user: 'xiaoxixi', pwd: 'admin123', roles: [{ 
+      role: 'userAdminAnyDatabase',
+  	db: 'admin',
+  }]})
+  
+  // 验证创建用户是否成功 0 失败， 1 成功
+  db.auth('xiaoxixi', 'admin123') 
+  ```
 
-```js
-// 新建账户并赋予权限
-db.createUser({user: 'xiaoxixi', pwd: 'admin123', roles: [{ 
-    role: 'userAdminAnyDatabase',
-	db: 'admin',
-}]})
+  > role取值
 
-// 验证创建用户是否成功 0 失败， 1 成功
-db.auth('xiaoxixi', 'admin123') 
-```
+  > readAndWrite   读写
 
-> role取值
-
-1. readAndWrite   读写
-2. userAdminAnyDatabase 用户管理身份任意数据库
+  >  userAdminAnyDatabase 用户管理身份任意数据库
 
 
 
@@ -242,10 +248,7 @@ db.auth('xiaoxixi', 'admin123')
 
 
 
-
-
-
-# SQL
+## SQL
 
 ### mySQL
 

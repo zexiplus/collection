@@ -424,7 +424,7 @@ programe.parse(process.argv)
 
 
 
-#### chromix-too
+#### chromix-too, chromix
 
 >控制浏览器刷新, 关闭, 重启, 不支持windows系统
 
@@ -465,6 +465,18 @@ const chromix = require('chromix-too')().chromix
 
 
 
-#### chromix
+#### shields
 
-> 支持windows 操纵浏览器
+> git repository 图标生成工具
+
+> https://github.com/badges/shields
+
+```shell
+npm install -g gh-badges
+badge build passed :green .png > mybadge.png
+```
+
+
+
+
+
