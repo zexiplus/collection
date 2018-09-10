@@ -1,7 +1,8 @@
 # koa
 
-> * 官方doc  [link](https://koajs.com/)
-> * 笔记 [link](https://github.com/zexiplus/koa2-note)
+> 官方doc  [link](https://koajs.com/)
+>
+> 笔记 [link](https://github.com/zexiplus/koa2-note)
 
 
 

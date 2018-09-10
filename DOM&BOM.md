@@ -1,30 +1,40 @@
-# DOM
+# DOM & BOM
+
+dom对象和bom对象总结
 
 
 
-### catalague
+## table of contents
 
 [TOC]
 
 
 
-#### HTMLCollection && nodeList
+## DOM 
 
-similiarty:
+document object model
 
-1. 都是类数组，都有length属性
-2. 都有getter， list.item(0) 或 list[0]
-3. 都是动态的， 其内元素变化会反映到其自身
 
-difference:
 
-1. nodeList 保存的是node( 包含含空节点，文本节点, 注释等)，HTMLCollection 保存的是 element（element继承node，不含其他元素， 只有element元素nodetype 为 1）
+### HTMLCollection && nodeList
 
-2. HTMLCollection有个nameItem() 方法，可以返回集合中name属性和id属性值的元素。
+#### similiarty:
 
-   
+* 都是类数组，都有length属性
 
-#### Node attribute 
+* 都有getter， list.item(0) 或 list[0]
+
+* 都是动态的， 其内元素变化会反映到其自身
+
+#### difference:
+
+* nodeList 保存的是node( 包含含空节点，文本节点, 注释等)，HTMLCollection 保存的是 element（element继承node，不含其他元素， 只有element元素nodetype 为 1）
+
+* HTMLCollection有个nameItem() 方法，可以返回集合中name属性和id属性值的元素。
+
+ 
+
+### Node attribute 
 
 | attribute | Intro                                  | demo                                                         |
 | ------------------------ | -------------------------------------- | ------------------------------------------------------------ |
@@ -45,13 +55,10 @@ difference:
 | someNode.nextElementSibling | 节点的兄弟节点（相邻的下一个元素节点） | |
 | someNode.childElementCount | 返回子元素（nodeType = 1）节点个数 |  |
 | **someNode.dataset** | 返回当前元素的**自定义属性集** | `<div data-myrule="123"></div>`    div.dataset.myrule // return '123' |
-|  |  | |
-|  |  | |
-|  |  | |
 
 
 
-#### Node method
+### Node method
 
 | method                               | Intro                                                        | Demo                                                         |
 | ------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -61,13 +68,10 @@ difference:
 | **someNode.removeChild(A)**          | 移除someNode下的某个子节点A                                  | A.removeChild(A.firstChild)                                  |
 | **someNode.cloneNode(boolean)**      | 复制节点 ，boolean 为 true 执行深复制， boolean 为 false 执行浅复制(只复制当前元素，不复制子元素)。执行复制之后的节点没有父节点，成了孤儿，必须通过以上集中操作才能显示。 | const deepNode  = someNode.cloneNode(true)  deepNode.length // 3                        const shallowNode = someNode.cloneNode(false)   shallowNode.length // 0 |
 | someNode.machesSelector(cssSelector) | 接收一个css选择符作为参数，返回                              | el.machesSelector('body.label') // => true or false          |
-|                                      |                                                              |                                                              |
-|                                      |                                                              |                                                              |
-|                                      |                                                              |                                                              |
 
 
 
-#### document 
+### document 
 
 | Attr & method                        | Intro                                                 | Demo                                                         |
 | ------------------------------------ | ----------------------------------------------------- | ------------------------------------------------------------ |
@@ -91,17 +95,10 @@ difference:
 | document.querySelector()             | 返回第一个匹配的节点                                  |                                                              |
 | document.querySelectorAll()          | 返回所有匹配的节点， 是一个nodeList快照，不会动态刷新 |                                                              |
 | doc.getElementsByClassName(classStr) | 参数传入类名字符串，多个类名用空格隔开                | document.getElementByClassName ('sidebar content green')     |
-|                                      |                                                       |                                                              |
-|                                      |                                                       |                                                              |
-|                                      |                                                       |                                                              |
-|                                      |                                                       |                                                              |
-|                                      |                                                       |                                                              |
-|                                      |                                                       |                                                              |
-|                                      |                                                       |                                                              |
 
 
 
-#### element
+### element
 
 * **Nodetype 为 1** (important)
 * nodevalue为 null
@@ -122,12 +119,10 @@ difference:
 | **el.scrollIntoView(true/false)** | 使元素出现在视窗内 | |
 | el.scrollByLines(lineCount) | 使元素滚动指定的行数,lineCount 可以是正负值     **non-standard** | |
 | el.scrollByPages(pageCount) | 使元素滚动指定的页数,pageCount 可以是正负值    **non-standard** | |
-|  |  | |
-|  |  | |
 
 
 
-#### dynamic script && style
+### dynamic script && style
 
 ```js
 // dynamic script
@@ -161,7 +156,7 @@ function dynamicStyle(url) {
 
 
 
-#### html translation
+### html translation
 
 | 显示 | 说明           | 实体名称 | 实体编号 |
 | ---- | -------------- | -------- | -------- |
@@ -190,14 +185,31 @@ function dynamicStyle(url) {
 
 
 
-#### dom size
+### dom size
 
-1. window.innerHeight     // 浏览器视窗内高度（当前页面 ，不包括外层iframe）
-2. window.innerWidth      // 浏览器内宽度
-3. div.offsetHeight            // 元素在垂直方向占用的空间大小（单位-像素）
-4. div.offsetWidth             // 元素在水平方向占用空间大小（单位-像素）
-5. div.offsetLeft                 // 元素的左外边框至包含元素的左内边框之间的像素距离\
-6. div.scrollLeft                  // 既可以确定元素当前滚动状态，又可以设置元素的**滚动位置**
+* **window.innerHeight**  
+
+  > 浏览器视窗内高度（当前页面 ，不包括外层iframe）
+
+* **window.innerWidth**  
+
+  > 浏览器内宽度
+
+* **div.offsetHeight** 
+
+  > 元素在垂直方向占用的空间大小（单位-像素）
+
+* **div.offsetWidth**    
+
+  > 元素在水平方向占用空间大小（单位-像素）
+
+* **div.offsetLeft**  
+
+  > 元素的左外边框至包含元素的左内边框之间的像素距离
+
+* **div.scrollLeft**     
+
+  > 既可以确定元素当前滚动状态，又可以设置元素的**滚动位置**
 
 
 
@@ -207,22 +219,45 @@ function dynamicStyle(url) {
 
 
 
-# BOM
+## BOM
 
-##### javascript BOM Api
+bowser object model
 
-```js
-// window.location === window.document.location
 
-// location对象属性
-location.href // 当前url的完整路径 'http://www.google.com?q=python&y=java#123'
-location.search // 当前url的搜索字符串 '?q=python&y=java'
-location.hash // 当前url的hash    '#123'
 
-// location对象方法
-location.href='http://www.bing.com'  //与location.assign()作用相同
-location.assign('http://www.bing.com') // assign() 重定向方法，浏览器会生成记录，可后退
-location.replace('http://www.bing.com') // replace() 重定向，浏览器不会生成记录，不可后退
-location.reload() //reload()重新加载当前页,若有缓存则从缓存加载,reload(true) 强制从服务器刷新
-```
+### location
+
+浏览器导航对象
+
+####location attribute
+
+* **Location.href**
+
+  > 读取/设置当前window的url
+
+  ```js
+  window.location === window.document.location
+  ```
+
+* **location.search**
+
+  > 读取/设置当前url的搜索字符串
+
+* **Location.hash**
+
+  > 读取/设置当前url的hash
+
+#### location method
+
+* **location.reload()**
+
+  > 刷新当前页面
+
+* **Location.assign(href)**
+
+  > 设置当前页面url, 浏览器可产生历史记录, 后退按钮可点击回到上一页
+
+* **Location.replace(href)** 
+
+  > 设置当前页面url, 浏览器不产生历史记录
 

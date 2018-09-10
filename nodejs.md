@@ -224,7 +224,7 @@ kill -9 pid
 
 #### buffer
 
->
+>node二进制数据
 
 * **buf.toString(encoding)**
 
@@ -257,6 +257,18 @@ kill -9 pid
   
   # node 程序中设置
   process.env.NODE_ENV = 'test'
+  ```
+
+* **process.exit(code)**
+
+  > 指定当前进程立即退出
+
+  ```js
+  // 以 success 方式退出node进程
+  process.exit(0)
+  
+  // 以 fail 方式退出node进程
+  process.exit(1)
   ```
 
 * **process.argv**

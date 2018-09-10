@@ -328,7 +328,7 @@ notifier.nogiry({
 
 #### ora
 
->  界面友好的交互式输出工具
+>  界面友好的交互式输出工具 spinner
 
 > https://github.com/sindresorhus/ora
 
@@ -403,24 +403,151 @@ console.log(info('be careful origin'))
 npm install commander --save
 ```
 
-```js
-#!/usr/bin/env node
-const programe = require('commander')
+* **基本用法**
 
-programe.version(require('../package.json').version)
+  ```js
+  #!/usr/bin/env node
+  const programe = require('commander')
+  
+  programe.version(require('../package.json').version)
+  
+  programe
+  	.command('init [env]')  // 命令名称
+  	.alias('i')       // 简称
+  	.description('init a project')  // 描述
+  	.option('-s --setup_mode [mode]', 'which setup mode to use')
+  	.action((env, options) => {                 // 执行命令的回调函数
+          let mode = options.setup_mode
+          env = env || 'dev'
+  	})
+  
+  programe.parse(process.argv)
+  ```
 
-programe
-	.command('init [env]')  // 命令名称
-	.alias('i')       // 简称
-	.description('init a project')  // 描述
-	.options('-s --setup_mode [mode]', 'which setup mode to use')
-	.action((env, options) => {                 // 执行命令的回调函数
-        let mode = options.setup_mode
-        env = env || 'dev'
-	})
+* **API**
 
-programe.parse(process.argv)
-```
+  * **version 版本**
+
+    ```js
+    programe.version('1.2.3', '-v --version')
+    ```
+
+    ```shell
+    programe --version
+    programe -v
+    # returns 1.2.3
+    ```
+
+  * **option 选项**
+
+    > 与参数不同的是 option 不区分顺序
+
+    ```js
+    programe
+    	.option('-p --peppers', 'Add peppers')
+    	.parse(process.argv)
+    
+    console.log(programe.peppers) // true
+    ```
+
+    ```shell
+    programe -p
+    # true
+    ```
+
+  * **command 命令**
+
+    ```js
+    programe
+    	.command('list <num>')
+        .action((num) => {
+        	conosle.log(num)
+    	})
+    ```
+
+    ```shell
+    programe list 10
+    # log 10
+    ```
+
+
+
+    * **命令必选参数 \<param>**
+
+      ```js
+      programe
+      	.command('rm <dir>')
+      	.option('-r --recursive')
+          .action((dir, cmd) => {
+              console.log(dir)
+              console.log(cmd.recursive)
+      	})
+      ```
+
+      ```shell
+      programe rm /bin
+      # /bin
+      # false
+      ```
+
+    * **命令可选参数 [param]**
+
+      ```js
+      programe
+      	.command('rm <dir> [otherdirs...]')
+          .action((dir, otherdirs) => {
+          	console.log(dir)
+          	if (otherdirs) {
+              	othersdirs.forEach((item) => { console.log(item) })
+          	}
+      	})
+      ```
+
+  * **arguments 声明参数**
+
+    ```js
+    programe
+    	.arguments('<dir> [env]')
+        .action((dir, env) => {
+        
+    	})
+    ```
+
+  * **正则参数**
+
+    ```js
+    programe
+    	.option('-s --size <size>', 'dick size', /^(large|medium|small)$/i, 'medium')
+        .action(cmd => {
+        	console.log(`dick size is  ${cmd.size}`)
+    	})
+    ```
+
+    ```shell
+    programe -s 18
+    # log medium
+    ```
+
+  * **usage 使用提示**
+
+    ```js
+    programe.usage('command [option] <param>')
+    ```
+
+    ```shell
+    programe
+    # returns Usage: programe command [option] <param>
+    ```
+
+* 
+
+* 参数列表
+
+  ```js
+  programe
+  	
+  ```
+
 
 
 
