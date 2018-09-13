@@ -410,22 +410,23 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
 
 #### file-system
 
-> File system flags
+* **File system flags**
 
-| Flag | detail                                                 |
-| ---- | ------------------------------------------------------ |
-| a    | 打开文件进行追加。如果文件不存在，则创建该文件         |
-| a+   | 打开文件读取并追加。如果文件不存在，则创建该文件       |
-| r    | 打开文件并读取。如果文件不存在，则发生异常             |
-| r+   | 打开文件读取并写入。如果不存在，则发生异常             |
-| w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖       |
-| w+   | 打开文件并读取和写入。如果文件不存在则创建，存在则覆盖 |
+  | Flag | detail                                                 |
+  | ---- | ------------------------------------------------------ |
+  | a    | 打开文件进行追加。如果文件不存在，则创建该文件         |
+  | a+   | 打开文件读取并追加。如果文件不存在，则创建该文件       |
+  | r    | 打开文件并读取。如果文件不存在，则发生异常             |
+  | r+   | 打开文件读取并写入。如果不存在，则发生异常             |
+  | w    | 打开文件并写入。如果文件不存在则创建，存在则覆盖       |
+  | w+   | 打开文件并读取和写入。如果文件不存在则创建，存在则覆盖 |
 
 * **fs.readDir**
 
-  > 打开文件夹并遍历文件拷贝到另一目录
+  > 打开文件夹
 
   ```js
+  // 把一个文件夹下的文件拷贝到另一文件夹
   fs.readDir(path, (err, files) => {
       files.forEach(item => {
           fs.writeFileSync(__dirname + '/copy', fs.readFileSync(__dirname + '/origin'))
@@ -529,6 +530,17 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
       console.log(`current file state is ${curr.sate}`)
       cp.exec('mv index.js index-dep.js')
   })
+  ```
+
+* **fs.createWriteStream**
+
+  > 创建可写流
+
+  ```js
+  let writableStream = fs.createWriteStream(path.join(__dirname, '../readme.md'))
+  let chunk = 'good good study day day up'
+  // 向可写流中写入数据
+  writableStream.write(chunk)
   ```
 
 
