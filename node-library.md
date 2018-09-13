@@ -105,7 +105,7 @@
 
 ### node packages
 
-####moment 
+#### moment 
 
 > 时间格式化库
 
@@ -470,48 +470,46 @@ npm install commander --save
     # log 10
     ```
 
-
-
-    * **命令必选参数 \<param>**
-
-      ```js
-      programe
-      	.command('rm <dir>')
-      	.option('-r --recursive')
-          .action((dir, cmd) => {
-              console.log(dir)
-              console.log(cmd.recursive)
-      	})
-      ```
-
-      ```shell
-      programe rm /bin
-      # /bin
-      # false
-      ```
-
-    * **命令可选参数 [param]**
-
-      ```js
-      programe
-      	.command('rm <dir> [otherdirs...]')
-          .action((dir, otherdirs) => {
-          	console.log(dir)
-          	if (otherdirs) {
-              	othersdirs.forEach((item) => { console.log(item) })
-          	}
-      	})
-      ```
-
-  * **arguments 声明参数**
+  * **命令必选参数 \<param>**
 
     ```js
     programe
-    	.arguments('<dir> [env]')
-        .action((dir, env) => {
-        
+    	.command('rm <dir>')
+    	.option('-r --recursive')
+        .action((dir, cmd) => {
+            console.log(dir)
+            console.log(cmd.recursive)
     	})
     ```
+
+    ```shell
+    programe rm /bin
+    # /bin
+    # false
+    ```
+
+  * **命令可选参数 [param]**
+
+    ```js
+    programe
+    	.command('rm <dir> [otherdirs...]')
+        .action((dir, otherdirs) => {
+        	console.log(dir)
+        	if (otherdirs) {
+            	othersdirs.forEach((item) => { console.log(item) })
+        	}
+    	})
+    ```
+
+    * **arguments 声明参数**
+
+      ```js
+      programe
+      	.arguments('<dir> [env]')
+          .action((dir, env) => {
+          
+      	})
+      ```
 
   * **正则参数**
 
@@ -539,15 +537,14 @@ npm install commander --save
     # returns Usage: programe command [option] <param>
     ```
 
-* 
+  * **参数列表**
 
-* 参数列表
+    ```js
+    programe
+    	
+    ```
 
-  ```js
-  programe
-  	
-  ```
-
+  
 
 
 
@@ -603,7 +600,15 @@ npm install -g gh-badges
 badge build passed :green .png > mybadge.png
 ```
 
-  
+
+
+#### Inquirer.js
+
+> 命令行用户交互界面库
+
+> https://github.com/sboudrias/Inquirer.js
+
+
 
 #### prerender.io
 
