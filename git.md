@@ -73,6 +73,12 @@
   git checkout -b R origin/A
   ```
 
+* **为当前仓库设置对应的远程仓库**
+
+  ```shell
+  git branch --set-upstream-to=origin/master master
+  ```
+
 * **切换分支**
 
   ```shell

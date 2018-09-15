@@ -544,7 +544,6 @@ npm install commander --save
     	
     ```
 
-  
 
 
 
@@ -607,6 +606,41 @@ badge build passed :green .png > mybadge.png
 > 命令行用户交互界面库
 
 > https://github.com/sboudrias/Inquirer.js
+
+```shell
+npm i inquirer
+```
+
+* 单个询问
+
+  ```js
+  const inquirer = require('inquirer')
+  
+  let prompt = inquirer.createPromptModule()
+  
+  let options = {
+      type: 'list | rawlist | expand | checkbox | confirm | input | password | editor',
+      name: 'question name',
+      choices: ['1', '2', '3 hello']
+  }
+  
+  prompt(options).then(cb)
+  ```
+
+* 多个询问
+
+  ```js
+  const inquirer = require('inquirer')
+  inquirer
+      .prompt([
+      	option1, 
+      	option2,
+      	option3,
+  	])
+      .then(anwser => {
+      	
+  	})
+  ```
 
 
 
