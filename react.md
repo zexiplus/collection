@@ -64,7 +64,7 @@
 
 
 
-### Components
+### Components and props
 
 * **Functional components**
 
@@ -104,12 +104,121 @@
       return 
           <div id={props.id}>
       		<Sub index="1"></Sub>
+          	<Sub index="2"></Sub>
       	</div>;
   }
   
   function Sub(props) {
       return <p>{props.index}</p>
   }
+  ```
+
+* **Read-only props**
+
+  > 组件的属性是只读的
+
+  ```jsx
+  // do not use like this
+  function Title(props) {
+      props.name += 'tail'
+      return <h1>name is {}</h1>
+  }
+  ```
+
+
+
+### State
+
+* **init state**
+
+  > 使用constructor 初始化state
+
+  ```jsx
+  class Num extends React.Component {
+      constructor(props) {
+          super(props)
+          // state只可以在constructor中可以直接赋值
+          this.state = {num: 1}
+      }
+      
+      render() {
+          return <div>num is {this.state.num}</div>
+      }
+  }
+  ```
+
+* **hooks**
+
+  > 钩子函数改变state
+
+  ```jsx
+  class Clock extends React.Component {
+      refreshClock() {
+          this.setState({time: new Date()})
+      }
+      componentDidMount() {
+          this.clockId = setInterval(() => this.refreshClock(), 1000)
+      }
+      componentWillUnmount() {
+          this.clearInterval(this.clockId)
+      }
+  }
+  ```
+
+* **setState**
+
+  > 改变state
+
+  ```jsx
+  // 对象作为参数
+  this.setState({
+      name: 'float',
+      age: 24
+  })
+  
+  // 函数作为参数, 用于引用state, props
+  this.setState((state, props) => ({
+      num: props.num + 1
+  })
+  ```
+
+
+
+### event
+
+* **event binding**
+
+  > 事件绑定
+
+  ```jsx
+  <button onClick={postData}></button>
+  ```
+
+* **preventDefault**
+
+  > 阻止事件默认行为
+
+  ```jsx
+  function Submit(props) {
+      function postData(e) {
+          e.preventDefault()
+          // do some thing
+      }
+      return (
+      	<div>
+          	<a href="#" onClick={postData}></a>
+          </div>
+      )
+  }
+  ```
+
+* **params**
+
+  > 事件传参
+
+  ```jsx
+  <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+  <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
   ```
 
 

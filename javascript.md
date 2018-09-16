@@ -70,6 +70,7 @@
   }
   ```
 
+# 
 
 ## Class
 
@@ -94,6 +95,7 @@
   parseInt(num, 10) // 123
   Number(num)       // NaN
   ```
+
 
 
 ### String
@@ -281,8 +283,6 @@
 
 
 
-
-
 ### JSON
 
 * **JSON.stringify(obj,  filter,  space)**
@@ -295,6 +295,32 @@
   // str1 => {a: 1, b: 2}
   ```
 
+
+
+### Date
+
+* **date.toLocaleDateString()**
+
+  > 转化为当地时间字符串
+
+  ```js
+  new Date().toLocaleDateString()
+  // 9/16/2018
+  ```
+
+* **date.toDateString()**
+
+  ```js
+  new Date().toDateString()
+  // "Sun Sep 16 2018"
+  ```
+
+* **date.toLocaleTimeString()**
+
+  ```js
+  new Date().toLocaleTimeString()
+  // 11:30:22 AM
+  ```
 
 
 ## ES6
