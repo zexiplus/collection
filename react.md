@@ -222,3 +222,95 @@
   ```
 
 
+
+### conditional render
+
+* **state conditional using if**
+
+  ```jsx
+  class LoginControl extends React.Component {
+      constructor(props) {
+          super(props)
+          this.state = {
+              isLogin: false
+          }
+      }
+      
+      login() {
+          this.setState({ isLogin: true , username: 'float'})
+      }
+      logout() {
+          this.setState({ isLogin: false })
+      }
+      
+      render() {
+  		const isLoginFlag = this.state.isLogin
+          let template
+          if (isLoginFlag) {
+              template = (
+              	<div>
+                  	<p>welcome {this.state.username}</p>
+                      <button onClick={this.logout}></button>
+                  </div>
+              );
+          } else {
+              template = (
+              	<div>
+                  	<p>please login</p>
+                      <button onClick={this.logout}></button>
+                  </div>
+              );
+          }
+          
+          return (
+          	<div>
+              	<p>this is login component</p>
+                  {template}
+              </div>
+          )
+      }
+  }
+  ```
+
+
+
+### list
+
+```jsx
+function List(props) {
+    return (
+    	<ul>
+            {
+                props.numbers.map( item => <li key={item.value.toString()}>{item.value}</li>)
+            }
+        </ul>
+    )
+}
+```
+
+
+
+### Form
+
+```jsx
+class Form extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { name: '' }
+    this.handleValueChange = this.handleValueChange.bind(this)
+  }
+  handleValueChange(e) {
+    this.setState({name: e.target.value})
+  }
+  render() {
+    return (
+      <form>
+        <label>type your name</label>
+        <input value={this.state.name} onChange={this.handleValueChange} />
+        <span>{this.state.name}</span>
+      </form>
+    );
+  }
+}
+```
+
