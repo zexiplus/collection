@@ -1,14 +1,16 @@
 # Nodejs
 
+nodejs 参考指南
 
 
-### Catalague
+
+## Catalague
 
 [TOC]
 
 
 
-### Module
+## Module
 
 *  require过的文件会加载到缓存，所以多次 require 同一个文件（模块）不会重复加载
 *  ( a->b,b->a )循环引用并不会报错，导致的结果是 require 的结果是空对象 {}，原因是 b require 了 a，a 又去 require 了 b，此时 b 还没初始化好，所以只能拿到初始值 {}
@@ -19,7 +21,7 @@
 
 
 
-### Node REPL 
+## Node REPL 
 
 * .break 退出noderepl
 * .help 查看所有node repl命令

@@ -1,8 +1,16 @@
-# react
+# react 参考
 
-> react 使用指南
 
-### 目录
+
+
+
+## 目录
+
+[TOC]
+
+## react
+
+> react 使用 api 
 
 
 
@@ -21,6 +29,20 @@
     # using yarn
     yarn create react-app my-app
     ```
+
+
+
+### API
+
+- **ReactDOM.render**
+
+  > 在指定dom元素上渲染react元素
+
+  ```jsx
+  const element  = <img src={img.url} />
+  const dom = document.querySelector('.pic')
+  ReactDOM.render(element, dom)
+  ```
 
 
 
@@ -46,20 +68,6 @@
   const element = <div>hello, {name}</div>
   const element2 = <div>hello, {userinfo({name: 'float'})}</div>
   ReactDOM.render(element, document.querySelector('body'))
-  ```
-
-
-
-### API
-
-* **ReactDOM.render**
-
-  > 在指定dom元素上渲染react元素
-
-  ```jsx
-  const element  = <img src={img.url} />
-  const dom = document.querySelector('.pic')
-  ReactDOM.render(element, dom)
   ```
 
 
@@ -182,6 +190,52 @@
   })
   ```
 
+* **share state**
+
+  > 当两个组件需要共享state时, 提升state
+
+  ```jsx
+  class ParentState extends React.Component {
+    constructor(props) {
+      super(props)
+      this.saveNum = this.saveNum.bind(this)
+      this.state = {
+        num: 0
+      }
+    }
+    saveNum(e) {
+      this.setState({
+        num: e.target.value
+      })
+    }
+    render() {
+      return (
+        <div>
+          <SubState num={this.state.num} tag='small' onHandleChange={this.saveNum} />
+          <SubState num={this.state.num} tag='big' onHandleChange={this.saveNum} />
+        </div>
+      );
+    }
+  }
+  
+  class SubState extends React.Component {
+    constructor(props) {
+      super(props)
+    }
+    render() {
+      let num = this.props.num
+      if (this.props.tag === 'big') {
+        num = Number(num) + 5
+      }
+      let changeHandler = this.props.onHandleChange
+      return (
+        <div>
+          <input value={num} onChange={changeHandler} />
+        </div>
+      );
+    }
+  }
+  ```
 
 
 ### event
@@ -276,41 +330,185 @@
 
 ### list
 
-```jsx
-function List(props) {
-    return (
-    	<ul>
-            {
-                props.numbers.map( item => <li key={item.value.toString()}>{item.value}</li>)
-            }
-        </ul>
-    )
-}
-```
+* **render list**
+
+  > 列表的渲染, 必须有全局唯一 key 属性
+
+  ```jsx
+  function List(props) {
+      return (
+      	<ul>
+              {
+                  props.numbers.map( item => <li key={item.value.toString()}>{item.value}</li>)
+              }
+          </ul>
+      )
+  }
+  ```
+
 
 
 
 ### Form
 
-```jsx
-class Form extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { name: '' }
-    this.handleValueChange = this.handleValueChange.bind(this)
+* 表单的渲染与事件绑定
+
+  ```jsx
+  class Form extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = { name: '' }
+      this.handleValueChange = this.handleValueChange.bind(this)
+    }
+    handleValueChange(e) {
+      this.setState({name: e.target.value})
+    }
+    render() {
+      return (
+        <form>
+          <label>type your name</label>
+          <input value={this.state.name} onChange={this.handleValueChange} />
+          <span>{this.state.name}</span>
+        </form>
+      );
+    }
   }
-  handleValueChange(e) {
-    this.setState({name: e.target.value})
+  ```
+
+
+
+### children
+
+* **props.children**
+
+  > 非命名子属性, 使用props.children 属性组合其他组件的内容
+
+  ```jsx
+  class Mavic extends React.Component {
+      constructor(props) {
+          super(props)
+      }
+      fly() {
+  		console.log('I can fly')
+      }
+      render() {
+  		return (
+  			<div className={'colorful' + this.props.color}>
+              	{this.props.children}
+              </div>
+          );
+      }
+      
   }
-  render() {
+  
+  class MavicPro extends React.Component {
+      constructor(props) {
+          super(props)
+      }
+      fly() {
+          console.log(' I can fly 60km/h')
+      }
+      render() {
+          <div>
+          	<Mavic>
+                  <span>hi I am mavic pro</span>
+                  <button>click to buy me</button>
+              </Mavic>
+              
+          </div>
+      }
+  }
+  ```
+
+* **props.left ...**
+
+  > 命名子属性
+
+  ```jsx
+  function TableContent(props) {
     return (
-      <form>
-        <label>type your name</label>
-        <input value={this.state.name} onChange={this.handleValueChange} />
-        <span>{this.state.name}</span>
-      </form>
+      <div>
+        <div className="left">
+          {props.left}
+        </div>
+        <div className="right">
+          {props.right}
+        </div>
+      </div>
     );
   }
-}
-```
+  
+  function RandL() {
+    let left = <div>hello left</div>
+    let right = <div>hello right</div>
+    return (
+      <div>
+        <TableContent
+          left={left}
+          right={right}
+        />
+      </div>
+    );
+  }
+  ```
+
+
+
+## react router
+
+
+
+### 初始化
+
+* **install**
+
+  ```shell
+  npm install react-router-dom
+  ```
+
+* **using router** 
+
+  ```jsx
+  // app.js
+  import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+  
+  const routing = (
+  	<Router>
+      	<div>
+          	<Route exact path="/" component={App} />
+              <Route path="/users" component={User} />
+              <Route path="/contract" component={Contract} />
+          </div>
+      </Router>
+  )
+  
+  ReactDOM.render(routing, document.querySelector('#root'))
+  ```
+
+  * exact 属性: 精确匹配, 若不加此属性, /users 和 /contract会匹配到 /
+
+* **link**
+
+  ```jsx
+  const routing = (
+  	<Router>
+      	<div>
+          	<ul>
+              	<li><Link to="/">home</Link></li>
+                  <li><Link to="/users">users</Link></li>
+                  <li><Link to="/contract">contract</Link></li>
+              </ul>
+              <Route path="/" component={App} />
+              <Route path="/users" component={Users} />
+              <Route path="/contract" component={Contract} />
+          </div>
+      </Router>
+  )
+  ```
+
+* Not found
+
+### API
+
+
 

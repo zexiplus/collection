@@ -497,7 +497,7 @@
 
 212. **duplicate 重复的**
 
-213. **mutated 变异得**
+213. **mutate 变异**
 
 214. **snip 剪断**
 
@@ -1383,6 +1383,12 @@
 613. variadic 可选的
 
 614. intact 原封不动的
+
+615. Hierarchy 等级制度
+
+616. Decompose 分解
+
+617. interlude 插曲
 
 
 

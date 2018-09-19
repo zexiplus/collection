@@ -375,7 +375,7 @@ span {
 
 
 
-#### others
+### others
 
 ```css
 /* 单行超出显示省略号：*/
@@ -440,6 +440,7 @@ user-select: none | text | all | element
 /* 倍数行距 当前字体乘以1.3 */
 line-height: 1.3;
 
-
+/* 背景图片大小自适应元素宽度高度 */
+background-size: 100% 100%;
 ```
 
